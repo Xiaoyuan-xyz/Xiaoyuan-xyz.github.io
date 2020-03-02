@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>方块更新与延迟理论的拓展 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="方块更新与延迟理论的拓展 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="线性空间与线性映射给定非空集合$V$和域$F$定义加法$\sigma:V\times V\rightarrow V,(v_1,v_2)\mapsto\sigma(v_1,v_2)$.  加法满足交换律,即$a+b&#x3D;b+a,\forall a,b\in V$ 加法满足结合律,即$(a+b)+c&#x3D;a+(b+c),\forall a,b,c\in V$ $\exists e\in V,e+v&#x3D;v,\fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵论">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="线性空间与线性映射给定非空集合$V$和域$F$定义加法$\sigma:V\times V\rightarrow V,(v_1,v_2)\mapsto\sigma(v_1,v_2)$.  加法满足交换律,即$a+b&#x3D;b+a,\forall a,b\in V$ 加法满足结合律,即$(a+b)+c&#x3D;a+(b+c),\forall a,b,c\in V$ $\exists e\in V,e+v&#x3D;v,\fo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-29T19:21:33.071Z">
+<meta property="article:modified_time" content="2020-03-02T02:48:01.066Z">
+<meta property="article:author" content="Xiaoyuan-xyz">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Xiaoyuan-xyz</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/Xiaoyuan-xyz/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(11)</small></div></li>
+    
+        
+            
+            <li><div data-rel="计算机">计算机<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数学">数学<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="红石原理">红石原理<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/about.html">原始</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+<input type="hidden" id="yelog_site_word_count" value="63.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+    
+    <div id=" local-search-result">
+
+</div>
+
+<nav id="title-list-nav">
+    
+    <a  class="计算机
+        " href="/2020/02/25/CSS/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="CSS">CSS</span>
+        <span class="post-date"
+            title="2020-02-25 14:00:59">2020/02/25</span>
+    </a>
+    
+    <a  class="" href="/2020/02/24/hello-world/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+        <span class="post-date"
+            title="2020-02-24 12:43:49">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/01/%E6%8A%BD%E4%BB%A3%E9%80%9A%E5%AD%A6%E7%BB%8F%E8%B7%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="抽代通学经路">抽代通学经路</span>
+        <span class="post-date"
+            title="2020-03-01 03:21:19">2020/03/01</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/02/24/HTML/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="HTML">HTML</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:34">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/02/27/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="抽象代数">抽象代数</span>
+        <span class="post-date"
+            title="2020-02-27 04:17:26">2020/02/27</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/02/25/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="概率论与数理统计">概率论与数理统计</span>
+        <span class="post-date"
+            title="2020-02-25 02:09:13">2020/02/25</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E7%B2%98%E6%B6%B2%E5%9D%97%E5%8F%8A%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="粘液块及观察者技术">粘液块及观察者技术</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="矩阵论">矩阵论</span>
+        <span class="post-date"
+            title="2020-03-01 03:21:33">2020/03/01</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="方块更新与延迟理论的拓展">方块更新与延迟理论的拓展</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/02/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="计算机三级网络技术">计算机三级网络技术</span>
+        <span class="post-date"
+            title="2020-02-25 02:09:05">2020/02/25</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="铁轨及矿车系统">铁轨及矿车系统</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+</nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-方块更新与延迟理论的拓展" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">方块更新与延迟理论的拓展</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="红石原理">红石原理</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-25 16:10:27'>2020-02-24 12:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:10.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一节-TEUD"><span class="toc-text">第一节 TEUD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的简介"><span class="toc-text">TEUD的简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的制作"><span class="toc-text">TEUD的制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的功能"><span class="toc-text">TEUD的功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二节-观察者"><span class="toc-text">第二节 观察者</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者的输出特性"><span class="toc-text">观察者的输出特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者的输入特性"><span class="toc-text">观察者的输入特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三节-方块更新信号"><span class="toc-text">第三节 方块更新信号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方块更新信号与方块变化的辩证关系"><span class="toc-text">方块更新信号与方块变化的辩证关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NC更新与PP更新（还没写）"><span class="toc-text">NC更新与PP更新（还没写）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新抑制（还没写）"><span class="toc-text">更新抑制（还没写）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第四节-漏斗理论"><span class="toc-text">第四节 漏斗理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#漏斗概述"><span class="toc-text">漏斗概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#即时更新理论对漏斗的修正"><span class="toc-text">即时更新理论对漏斗的修正</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#漏斗理论"><span class="toc-text">漏斗理论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五节-0t脉冲"><span class="toc-text">第五节 0t脉冲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0t脉冲的细化"><span class="toc-text">0t脉冲的细化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#活塞更新深度"><span class="toc-text">活塞更新深度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超频时钟"><span class="toc-text">超频时钟</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在基础红石原理中，我们将方块的亚稳态称为BUD态，能够更新处于BUD态的方块的信号称为方块更新信号，能够检测方块更新信号的装置称为BUD。但事实上，其他的一些装置如TEUD，观察者等似乎可以对其他信号做出相应，这意味着游戏存在更多类型的方块更新信号。对更多更新信号的研究对启动更新理论进行了拓展。</p>
+<p>TEUD是一种BUD，但不同于常规BUD，它检测的内容不止是方块更新，本质上与BUD“检测方块更新”这一最初的概念不相符合，因此BUD这一词的概念应当有所扩大。现在我们认为，BUD是一种直接或间接检测方块变化的装置，检测方块更新信号的BUD称为常规BUD，其余称为非常规BUD。在一些资料中，常规BUD被直接简称为BUD，《基础红石原理》也是这样做的。而现在BUD一词已经拥有较多含义，为使读者不至混淆而产生歧义，本书之后不再做这种简称。TEUD就是最典型、最常见、最具有代表性的非常规BUD。</p>
+<p>基础的延迟理论旨在解释红石元器件和活塞的运行规律，但游戏中的红石元件显然不仅限于此。漏斗和观察者也是非常重要的红石元件，延迟理论的拓展将主要研究这两个元件。</p>
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+<ul>
+<li><a href="#第一节-teud">第一节 TEUD</a><ul>
+<li><a href="#teud的简介">TEUD的简介</a></li>
+<li><a href="#teud的制作">TEUD的制作</a></li>
+<li><a href="#teud的功能">TEUD的功能</a></li>
+</ul>
+</li>
+<li><a href="#第二节-观察者">第二节 观察者</a><ul>
+<li><a href="#观察者的输出特性">观察者的输出特性</a></li>
+<li><a href="#观察者的输入特性">观察者的输入特性</a></li>
+</ul>
+</li>
+<li><a href="#第三节-方块更新信号">第三节 方块更新信号</a><ul>
+<li><a href="#方块更新信号与方块变化的辩证关系">方块更新信号与方块变化的辩证关系</a></li>
+<li><a href="#nc更新与pp更新还没写">NC更新与PP更新（还没写）</a></li>
+<li><a href="#更新抑制还没写">更新抑制（还没写）</a></li>
+</ul>
+</li>
+<li><a href="#第四节-漏斗理论">第四节 漏斗理论</a><ul>
+<li><a href="#漏斗概述">漏斗概述</a></li>
+<li><a href="#即时更新理论对漏斗的修正">即时更新理论对漏斗的修正</a></li>
+<li><a href="#漏斗理论">漏斗理论</a></li>
+</ul>
+</li>
+<li><a href="#第五节-0t脉冲">第五节 0t脉冲</a><ul>
+<li><a href="#0t脉冲的细化">0t脉冲的细化</a></li>
+<li><a href="#活塞更新深度">活塞更新深度</a></li>
+<li><a href="#超频时钟">超频时钟</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="第一节-TEUD"><a href="#第一节-TEUD" class="headerlink" title="第一节 TEUD"></a>第一节 TEUD</h1><h2 id="TEUD的简介"><a href="#TEUD的简介" class="headerlink" title="TEUD的简介"></a>TEUD的简介</h2><p>TEUD（Tile Entity Data Update Detector），又称DUD（Data Update Detector）或CUD（Comparator Update Detector），即比较器更新检测器，是一种BUD的拓展衍生物，其检测的不只是方块更新信号。</p>
+<p>游戏需要检测方块是否处于正常的状态，因而有了方块更新信号，检测方块更新信号的检测器就是方块更新检测器。同样，比较器具有满箱检测的功能，其可以检测容器、炼药锅、物品展示框、末地传送门框架及探测铁轨上的矿车等诸多项目，可以预想到这些项目的检测依赖于另一种更新信号，也就是比较器更新信号，检测比较器更新信号的检测器就是比较器更新检测器了。TEUD的核心元件是比较器，因此TEUD比常规BUD有更广的检测范围。</p>
+<p>最早已知且仍然稳定可用的一种TEUD实现是由NiceMarkMC给出的，时间不晚于2013年5月初。在此之前的若干研究与讨论都为TEUD的成型做出了铺垫。</p>
+<p>比较器更新信号具有和方块更新信号不同的性质。最大的不同就是方块更新信号一般的更新范围是方块的毗邻，即使红石元件有较大的更新范围，这个更新范围也是由产生更新的方块主导的；比较器更新信号则允许更新信号沿四周的实体方块传递一格，如果不存在实体方块，比较器更新信号也就不会产生。这显然是因为比较器可以通过实体方块进行满箱检测。</p>
+<h2 id="TEUD的制作"><a href="#TEUD的制作" class="headerlink" title="TEUD的制作"></a>TEUD的制作</h2><p>TEUD的核心是陷入BUD态的比较器，而TEUD必须实现自复位功能，这是TEUD的根本原理。让比较器陷入BUD态的方式多种多样，但大多数方案都使用了比较器检测戴尔功能。其中，箱基TEUD的制作最为简便。</p>
+<p>箱子可以被红石比较器直接检测或隔着一个实体方块被红石比较器检测，当箱子内有物品且箱子没有被实体方块压住时，比较器才会输出信号。如果在内含物品的箱子上方拿实体方块压住箱子，比较器理论上讲应该会熄灭，但是由于这一行为往往无法更新到比较器，比较器就会陷入BUD态。这样一来，比较器就可以检测比较器更新信号了。用活塞控制实体方块压箱子可以将这一原理自动化。下图就是一个箱基TEUD。当更新比较器时，比较器熄灭，活塞收回，收回结束更新到比较器，比较器点亮，活塞伸出，压住箱子，TEUD复位。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-880a3460.png" alt=""></p>
+<p>若使得箱基TEUD的活塞不会更新到比较器，便可以制作出双稳态箱基TEUD，可以使用大箱子做到这一点。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-2e508404.png" alt=""></p>
+<p>物品展示框可以被比较器检测。物品展示框作为一个实体可以与其他碰撞不完整的方块共处一个方块内，但是此时比较器无法检测物品展示框，因此可以做出TEUD。 值得一提的是，这是一个双稳态TEUD。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f85f8547.png" alt=""></p>
+<p>炼药锅可以用于制作TEUD，其可以被比较器检测，但重点在于其可以被活塞移动，这就给出了一种极佳的自复位方法。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-a2d9feec.png" alt=""></p>
+<p>比较器可以检测探测铁轨上的矿车，而粘性活塞可以移动探测铁轨。这一过程主要是探测铁轨在产生比较器更新信号。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f1de4f0a.png" alt=""></p>
+<p>箱基TEUD也可以不使用实体方块而使用猫，猫会主动坐在箱子、床及燃烧的熔炉上，当猫坐在箱子上时，箱子无法被打开，比较器也无法进行检测。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f8955afc.png" alt=""></p>
+<p>利用红石指向BUD可以使一切输出元件陷入BUD态，比较器也不例外。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c3f44a3d.png" alt=""></p>
+<h2 id="TEUD的功能"><a href="#TEUD的功能" class="headerlink" title="TEUD的功能"></a>TEUD的功能</h2><p>在TEUD中，比较器陷入了BUD态，这意味着TEUD也能检测常规BUD所能检测的事项，为将比较器更新信号从方块更新信号中分离出来，我们可以利用比较器更新信号特殊的传递方式，隔着一个实体方块用特定事项更新比较器，这一过程称为TEUD的分离，隔着一个实体方块使TEUD动作的过程称为TEUD的响应。但红石元件往往具有较大的更新范围，即使隔着一个实体方块有时也无法成功分离方块更新信号和比较器更新信号，这种情况称为TEUD的分离失效。</p>
+<p>除TEUD分离失效外，TEUD可以分离出许多比较器更新信号，从这一点来说，TEUD可以使纯红石系统的认知范围扩大。BUD现象的出现证实了游戏内存在方块更新信号，而TEUD则证实了游戏内存在着另一种更新信号——比较器更新信号。如果没有BUD和TEUD，这些更新信号像幽灵一样在游戏内运行而无法为人感知。因此是某些方块的变化，产生了特定的更新信号，这些更新信号由BUD或TEUD检测，才间接得知方块变化的发生，这是BUD和TEUD扩展纯红石系统的认知范围的原理。</p>
+<p>TEUD主要检测容器及类容器的“内容物”发生变化。TEUD会响应箱子、熔炉、酿造台等容器的内容物信息变化。放置或破坏容器、直接取走或放入物品、通过漏斗取走或放入物品、投掷器或发射器投出物品、用其他物品替代已有物品甚至是在容器内左键或右键均会使TEUD响应。投掷器的空投、按住Shift左键或右键容器内部、打开和关闭容器、在容器内拖动左键或右键但不放开不会造成内容物的变化，TEUD不会响应。工作台、末影箱、花盆和音符盒不是容器，TEUD不会响应。</p>
+<p>“类容器”是指类似容器的方块或实体，其没有类似箱子的GUI界面，但仍可以存储比较器可以检测的信息。其中如炼药锅、末地传送门框架等方块利用方块数据值存储信息，唱片机等方块使用方块实体值存储信息，物品展示框使用实体数据存储信息。探测铁轨可以“容纳”矿车，可以把探测铁轨也视为类容器，本小节会在最后对其进行研究。类容器方块会在被放置时产生比较器更新信号，破坏时不会产生；物品展示框在放置时不会产生比较器更新信号，破坏时会产生。</p>
+<p>以下展示了常见的TEUD响应项：</p>
+<ul>
+<li>将末影之眼放入末地传送门框架</li>
+<li>将唱片插入唱片机或从中取出</li>
+<li>炼药锅的水位变化</li>
+<li>在讲台上放置或取下书籍、翻书</li>
+</ul>
+<p>不过由于比较器本身就可以检测类容器的“内容物”变化，TEUD在这些项目的检测上并没有带来新的拓展。</p>
+<p>TEUD和探测铁轨搭配时，会产生令人吃惊的效果：TEUD不再检测容器的内容物，转而成为一个实体检测器——当探测铁轨所在方块与某一实体碰撞箱有交集时，TEUD便会响应。因此，即使是浮空的实体也会触发TEUD。物品展示框、闪电不会使TEUD响应。如下图右侧的箭会触发TEUD，而左侧不会。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f2c2be17.png" alt=""></p>
+<p>如下是一个角度刁钻的例子：</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-eb1ef670.png" alt="">。</p>
+<p>当实体与探测铁轨所在的方块接触时，实体会促使探测铁轨发出比较器更新信号，除箭外，这个信号是周期性的，但不同实体的周期不同：所有矿车的周期是20gt;物品为6gt；生物、钓鱼竿吊钩等大多数实体的周期为4gt；玩家的周期小于4gt，可以认为小于TEUD的自复位时间；箭只会在射到其上时产生1次比较器更新信号。<del>（在这一方面似乎需要更多的研究。）</del></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-1e2721d3.png" alt=""></p>
+<h1 id="第二节-观察者"><a href="#第二节-观察者" class="headerlink" title="第二节 观察者"></a>第二节 观察者</h1><p>观察者拥有一个检测端和一个输出端，其中检测端可以检测检测面方块的方块变化。当观察者认可该方块变化时，以15强度强充能其指向，给予毗邻及指向的毗邻方块更新，脉冲长度为2gt。另外，放置观察者不会引起检测端输入。</p>
+<p>虽然观察者的确可以对红石信号做出响应，但该响应是由于观察者检测到了方块变化，因而不认为观察者是输出元件，观察者是一个输入元件。</p>
+<h2 id="观察者的输出特性"><a href="#观察者的输出特性" class="headerlink" title="观察者的输出特性"></a>观察者的输出特性</h2><p>观察者是一个NTE元件，优先级为0，有2gt的启动延迟，换句话说，其会在检测端输入后的第二个NTE事件开始输出信号，信号持续2gt，并在第四个NTE事件停止输出信号。在检测端输入到停止输出这段时间内，观察者无视一切方块变化。观察者开始输出信号时，先给予毗邻更新信号，随后输出15强度红石信号；结束输出信号时，先结束红石信号的输出，随后给予毗邻更新信号。<em>（有待考察）</em></p>
+<p>观察者的一个重要特性是观察者可以被活塞推动，下面介绍观察者被活塞推动时的输出特性。</p>
+<ul>
+<li><strong>当观察者处于未触发态时（包括启动延迟），若观察者被活塞推动，其会将推动结束的BE事件或TE事件作为观察者的检测端输入。</strong></li>
+<li><strong>当观察者处于触发态时，若观察者被活塞推动，其在结束推动后保持无信号输出。</strong></li>
+</ul>
+<p>在1.11引入观察者后，狼顾之鬼怪才（Joker_小狼）在《观察者性质总结》中率先研究了观察者的诸多性质，如下的两道例题便引自该文献。</p>
+<p><em>例 2 计算上下路延迟，判断时序比较器的输出情况。</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-1.png" alt=""></p>
+<p><em>解：粘性活塞启动延迟1gt，观察者启动延迟2gt，因而在观察者未触发时，粘性活塞开始推动观察者。推动结束后，观察者于TE事件开始进入启动延迟，启动延迟2gt，故上路延迟5gt。下路延迟4gt，从而时序比较器激活锁定。<br>由于时序比较器在延迟相等时处于未激活锁定，这就证明了上路延迟一定大于4gt，从而说明观察者在被活塞推动结束后，启动延迟仍为2gt。</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-2.png" alt=""></p>
+<p><em>例 3 拉杆拉下后，TNT能否爆炸？为什么？</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-3.png" alt=""></p>
+<p><em>解： 中继器延迟2gt，活塞无启动延迟，故活塞将在观察者触发的第一个BE事件推动观察者，推出结束后无信号输出，TNT不会爆炸。</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-4.png" alt=""></p>
+<p>下面介绍“脸对脸”的观察者时钟，这种时钟构造简单，在观察者被引入后得到了许多玩家的喜爱。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-5.png" alt=""></p>
+<p>两个观察者“脸对脸”，互相检测对方的变化，两个输出端给出的是互补的，周期为4gt，占空比为50%的高频时钟信号。一般配合粘性活塞来关闭或开启这种时钟。</p>
+<p>下面应用红石更新延迟理论对该时钟进行分析。</p>
+<p>拉杆拉下，粘性活塞有1gt启动延迟，随后粘性活塞于BE事件伸出，左边的观察者以此为检测端输入，启动延迟为2gt。其于拉杆拉下3gt，也就是第三个NTE事件开始输出信号。粘性活塞总延迟3gt，其于第三个NTE事件后的TE事件将右边的观察者推出到位，观察者以此作为检测端输入。5gt后，左边观察者结束输出，右面观察者开始输出，由于左边观察者于3gt NTE事件进入NTE列表，右边观察者于3gt TE事件进入NTE列表，左边观察者先于右边观察者更新，因此在5gt时，左边观察者先结束输出，右边观察者后开始输出。因此右边观察者由非触发态转变为触发态的方块变化可以被左边的观察者检测到，左边观察者重新进入启动延迟。两个观察者以此往复，可以得出周期为4gt，占空比为50%的结论。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/paint1.png" alt="1-3-6 （草稿）"></p>
+<p>一个有意思的现象是，如果第二个观察者不是由活塞推入的，而是由玩家放置的，我们可以明显觉察到时钟变慢了，而且可以观察到两个观察者同时熄灭的瞬间，此时时钟周期不再是4gt，而是更慢的6gt。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-7.png" alt="1-3-7"></p>
+<p>下面对玩家放置的观察者时钟进行分析。</p>
+<p>玩家放置第二个观察者后，其本身不会响应，但第一个观察者会以此为检测端输入，2gt后，更新第二个观察者，同时自身开始输出信号。4gt后，第二个观察者开始输出信号，但第一个观察者结束输出晚于第二个观察者，故第一个观察者不会响应此次方块变化，而第二个观察者此时正处于激活态，不响应第一个观察者结束输出带来的方块变化。第一个观察者会在6gt后检测到第二个观察者结束输出的方块变化，并以此往复。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/paint2.png" alt="1-3-8（草稿）"></p>
+<h2 id="观察者的输入特性"><a href="#观察者的输入特性" class="headerlink" title="观察者的输入特性"></a>观察者的输入特性</h2><p>观察者的输入特性指的是观察者会对怎样的方块变化产生响应，亦即观察者可以检测到哪些方块变化。在1.15版本(1.13+)中观察者的输入特性较为简单，可以被总结为：</p>
+<blockquote>
+<p><strong>观察者检测一切方块名称和状态的变化。</strong></p>
+</blockquote>
+<p>在1.13的扁平化进程后，方块的英文ID被用来区分不同的方块，不同的方块一定有着不同的英文ID；方块的数据值用于区分同一方块的不同状态，如不同朝向的火把，或不同水量的炼药锅；方块的实体值用于记录方块的附加属性，如告示牌的文字，或箱子里的物品。那么，观察者检测是的英文ID的变化及方块数据值的变化。一切ID的变化或数据值的变化都能引起观察者的响应。打开F3界面可以轻易看出这一点。</p>
+<p>从观察者的引入到特性逐渐稳定，期间经过了若干个版本，但最后的观察者所保留的特性是较为简明的，我们可以简单地理解为：</p>
+<blockquote>
+<p><strong>观察者并不检测方块更新信号，观察者响应方块变化。</strong></p>
+</blockquote>
+<p>即使如此，我们仍有必要对一些特殊的示例具体分析。</p>
+<p>由于观察者检测的是方块变化，而非方块更新，而活塞推动方块会在开始推动时就将趋势位设置为36号方块，观察者就可以捕捉到这一变化。因此右侧的两个红石灯会同时亮起，而左侧的两个红石灯会有3gt的延迟差，这3gt相差在了前一个活塞的2gt推出延迟和后一个活塞的1gt启动延迟。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-9.png" alt="1-3-9"></p>
+<p>投掷器和发射器以及漏斗，在F3界面的triggered或enabled数据值往往不能反映其的真实状态，需要玩家查看其内容其才能被更新到正确的值，暂不明确这是否为一个bug。但观察者可以正常检测投掷器、发射器和漏斗工作状态。特别是投掷器的空投和漏斗的锁定解锁，这是非观察者所不能检测的。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-10.png" alt="1-3-10"></p>
+<p>栅栏，红石线，拌线等方块是依据自身的方块数据值来区分自己的连接情况的，因此观察者可以检测这些方块的连接状态是否发生改变，例如下图1的装置就可以区分一个方块能否与栅栏相连接，而下图2的示例中，无论破坏哪一个红石线，观察者都会响应。<br><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-11.png" alt="1-3-11"></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-12.png" alt="1-3-12"></p>
+<p>酿造台的数据值仅用于说明酿造台当前的瓶子数量及位置，因此观察者也只能检测这些。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-13.png" alt="1-3-13"></p>
+<p>在1.13的扁平化进程后，树叶使用1-7的distance数据值用于标明其与最近原木的距离，这个值最大是7。同理，观察者可以检测到树叶distance数据值的变化，这一特性最早由2No2Name于2018年7月23日发现。关于观察者检测树叶，下一节会做更多详细的描述。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-14.png" alt="1-3-14"></p>
+<p>脚手架于1.14被加入游戏，值得注意的是其拥有的两个数据值——bottom数据值和distance数据值。bottom数据值用于指示脚手架下方的方块是否能够支撑脚手架，0-7的distance数据值用于标明其累计横向拓展的距离，最大可以拓展6格，这个数据值与树叶的distance数据值具有相似的性质，但其只计量横向距离。观察者自然可以响应这两个数据值的变化。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/%E7%B2%98%E6%B6%B2%E5%9D%97%E5%8F%8A%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF-ee5f1bdd.png" alt=""></p>
+<p>可含水方块拥有waterlogged数据值，水流拥有level数据值，观察者可以检测这些方块或流体的数据值变化。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-15.png" alt="1-3-15"></p>
+<h1 id="第三节-方块更新信号"><a href="#第三节-方块更新信号" class="headerlink" title="第三节 方块更新信号"></a>第三节 方块更新信号</h1><h2 id="方块更新信号与方块变化的辩证关系"><a href="#方块更新信号与方块变化的辩证关系" class="headerlink" title="方块更新信号与方块变化的辩证关系"></a>方块更新信号与方块变化的辩证关系</h2><p>面对常规BUD，我们可以说某些方块变化引起了方块更新信号，从而更新常规BUD，使其响应。也可以说常规BUD检测某些相对位置上特定的方块变化，这就是方块变化与更新信号的辩证关系。实践证明这种关系在研究观察者的检测时提供了很好的思维动力。换句话讲，我们不再关心方块更新的底层实现，而只把BUD作为拓展纯红石体系认知能力的一种手段。</p>
+<p>事实上，这种思想在输出元件的激活上也有体现，我们分别使用两种角度对待元件的激活：红石灯等较为简单地元件使用的是“红石线激活红石灯则亮起”的思路，而活塞等实则是“活塞激活位上有信号则推出”的思路。我们把这一点类比到方块更新理论中。从更新信号的角度看，是方块变化引起更新信号，不同的更新信号更新到不同类型的BUD，从而使其响应。从方块变化的角度，是不同类型的BUD检测特定的方块变化项，在属于这个特性方块变化项集合的某一个方块变化项发生时，该类型BUD响应。</p>
+<p>那么，什么样的方块变化能够引起一类BUD的相应呢？很不幸，这两者之间没有绝对的关系。</p>
+<p>举例来说，红石元器件所产生方块更新信号范围都较大因而产生BUD覆盖，例如红石线的强度变化，TEUD和常规BUD会有相同的响应。漏斗传输物品并不会产生方块更新，因此能被TEUD分离，而且漏斗内部的物品变更，本身就是一个方块变化，因此可以被观察者检测。投掷器的撤销激活不会产生任何方块更新或附加值更新信号，其内部的物品甚至没有变化，但是我们曾在投掷器的激活判定一节中提到：投掷器被激活后会变为激活的投掷器，撤销激活会变回。这显然是一个变化，可以用观察者检测。而中继器充能方块激活红石线的过程，实质上是中继器借助了实体方块而激活红石线，我们只把这种充能看做玩家对电路的分析方式，实体方块本身并没有什么变化，因此不会被观察者响应。</p>
+<p>通常来说，常规BUD、TEUD、以及观察者的检测范围都是不一样的，需要根据不同的需求采取不同的检测方式。而观察者也带来了超出方块更新体系的一面，观察者作为可移动的信号方式，并且有着奇特的激活方式。这样说来，观察者是1.11加入的新方块，其具有的特殊价值，以及新的利用方式还有待玩家积极开发，观察者有着非常大的应用前景。</p>
+<h2 id="NC更新与PP更新（还没写）"><a href="#NC更新与PP更新（还没写）" class="headerlink" title="NC更新与PP更新（还没写）"></a>NC更新与PP更新（还没写）</h2><h2 id="更新抑制（还没写）"><a href="#更新抑制（还没写）" class="headerlink" title="更新抑制（还没写）"></a>更新抑制（还没写）</h2><h1 id="第四节-漏斗理论"><a href="#第四节-漏斗理论" class="headerlink" title="第四节 漏斗理论"></a>第四节 漏斗理论</h1><h2 id="漏斗概述"><a href="#漏斗概述" class="headerlink" title="漏斗概述"></a>漏斗概述</h2><p>漏斗是于1.5版本中加入的红石输出元件，其具有5格的存储空间。漏斗的主要功能被称为漏斗的输出特性，简述如下：</p>
+<ul>
+<li>将其上1×1×1范围内的物品实体吸入自己的存储空间。</li>
+<li>漏斗可以从上方的容器中抽取物品，如果漏斗上方有容器，漏斗不再尝试吸入物品实体。</li>
+<li>漏斗可以将存储空间中的物品，传输至自己指向的容器中。漏斗的指向只能是下方或四周，因此只用漏斗是不可能将物品向上传递的。</li>
+</ul>
+<p>当漏斗被激活时，称漏斗被“锁”住，此时失去如上的功能。漏斗被激活时可以发生变化，因此是一个输出元件。</p>
+<p>能与漏斗进行互动的容器或类容器有包括：</p>
+<ul>
+<li>箱子和陷阱箱，但不包括末影箱，漏斗能简单地从箱子中取出，或放入物品。</li>
+<li>发射器、投掷器、末影盒。</li>
+<li>箱子矿车、漏斗矿车。（尽管它们是实体而非方块）</li>
+<li>熔炉，在熔炉上方并指向熔炉的漏斗会将物品输入到待烧炼的物品格，在侧面并指向熔炉的漏斗会将物品输入到燃料的物品格，在熔炉下方的漏斗会将物品从成品的物品格中取出，不过，当使用岩浆桶作为燃料时，漏斗也可以将空桶取出。</li>
+<li>酿造台，漏斗可以向酿造台中输入水瓶、烈焰粉及酿造原料，同时也会将药水取出，不过值得注意的是只要输出栏中有药水，无论酿造是否完成，漏斗都会直接取出。</li>
+<li>其他漏斗，漏斗也可以将物品输入其他漏斗，或是从其他漏斗中将物品取出，两个漏斗可以同时进行自己的工作，相互独立。</li>
+</ul>
+<p>漏斗具有很多功能，而这些功能在实现时需要运算，也就会带来卡顿。激活漏斗可以禁用漏斗的一切功能，此时卡顿最小 <del>（有待考据）</del>。如果某些漏斗仅用作物品传输而非吸入物品，或不希望杂物导入物品中，可以在漏斗上放置容器，此时漏斗不再尝试吸入物品。但多放置的容器也会带来一定的卡顿，因为此时不仅漏斗要尝试从容器中取出物品，熔炉等方块还会尝试是否开始燃烧，选择合适的容器是有必要的。漏斗上的容器物品格数越少，漏斗取出物品时检测越少，卡顿也就越小，因此投掷器优于小箱子，后者又优于大箱子。熔炉、炼药台等容器物品栏较为特殊，需要特殊处理，最终效果与投掷器类似。堆肥桶没有物品栏，漏斗直接检测堆肥桶的方块数据值，带来的卡顿是极小的，这也是目前最合适的放置在漏斗上用于减小卡顿的类容器。</p>
+<p>漏斗的延迟是8gt，这是一个值得记忆的数据，这一延迟限制了物品在漏斗内的传输速率，换算成常用单位，也就是2.5物品每秒，或150物品每分钟，或9000物品每小时。</p>
+<p>漏斗是一个方块实体，统一在Tile Entity事件更新，同一游戏刻内的更新顺序取决于加载顺序，如玩家先放置的漏斗总先更新。必须注意的是区块重载会破坏已有的加载顺序，重载的顺序具有随机性。</p>
+<h2 id="即时更新理论对漏斗的修正"><a href="#即时更新理论对漏斗的修正" class="headerlink" title="即时更新理论对漏斗的修正"></a>即时更新理论对漏斗的修正</h2><p>Sancarn和Selulance尝试将漏斗纳入即时更新理论的范畴。</p>
+<p>必须研究漏斗对于不同同步性的下降沿信号，将物品开始漏下需要多久的延迟。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-36edd094.png" alt=""></p>
+<p>事实证明，对大部分信号，漏斗是一个同步元件，延迟为1pt。这意味着漏斗和活塞类似，有着1pt的固定延迟。</p>
+<p>接下来，必须研究比较器从漏斗中读取有信号时，漏斗作为输入元件的同步性。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-7c0a0eb0.png" alt=""></p>
+<p>事实证明，漏斗也是一个同步性输入元件，其会减少比较器的1pt延迟。</p>
+<p>然而漏斗并非是严格意义上的同步元件。换句话说，同步信号会减少非同步元件的1pt延迟，但不会对同步信号产生影响，漏斗却会被优先的几种同步信号减少1pt延迟，且这些同步信号总与实体有关，如掉落沙。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c7777872.png" alt=""></p>
+<p>可以预料到，掉落沙这种同步性输入方式会使得漏斗的延迟减少1pt，从而是无延迟的。这意味着上下两路都仅花费1pt，活塞同时收回。</p>
+<p>Sancarn和Selulance所做的诸多实验都指向一个事实，漏斗既非如中继器、比较器一类的非同步元件，又非如活塞一类的同步元件。漏斗更新的位置介于Block Event和下一游戏刻的Next Tick Entry之间，而掉落沙实验证明，漏斗更新的位置位于Entity Update之后。这与我们在《基础红石原理》中认识到的更新顺序一致。</p>
+<p>漏斗在Tile Entity事件工作，当漏斗被撤销激活时，会立即在下一个Tile Entity事件漏下一个物品，不过在时间轴顺序中，Tile Entity事件离活塞刻节点非常接近，因此大部分激活方式在更新到漏斗前都要先经过一个活塞刻节点，因此大部分激活方式都会使漏斗产生1pt的延迟。不过仍然有一小部分时间介乎于活塞刻节点与Tile Entity事件，Entity Update事件就是这样的。Entity Update事件提供信号下降沿时，按照更新顺序，漏斗会在下一个Tile Entity事件漏下物品，而没有跨过活塞刻节点，这就出现了我们上述实验中漏斗延迟消失的现象。</p>
+<p>这是一个具有启示意义的结论，因为我们知道玩家的活动是在Network Update事件进行更新，而其他实体的更新是在Entity Update事件，因此，利用漏斗，便可以做到检测一个实体是否是玩家。</p>
+<p>同样的事情也发生在上升沿，也就是说，只要漏斗被撤销激活，总会在下一个Tile Entity事件处理第一个物品，无论是取出、漏下、吸入物品。因此对于大部分输入方式，漏斗具有同步性，延迟为1pt，对少部分事件，漏斗没有延迟。而使用比较器检测漏斗时，无论是检测上升沿、下降沿，或是检测漏斗本身、上方的容器、指向的容器，信号都是同步的，比较器延迟恒为1pt，并输出一个在Next Tick Entry事件的非同步信号。</p>
+<p>以上结论只适合于漏斗处理第一个物品，当漏斗持续地工作时，延迟为8gt。</p>
+<h2 id="漏斗理论"><a href="#漏斗理论" class="headerlink" title="漏斗理论"></a>漏斗理论</h2><p>事实是，漏斗和中继器等NTE元件有着类似的工作方式，漏斗有着8的冷却值倒计时，这和中继器有着2、4、6、8的冷却值倒计时类似。每游戏刻的Tile Entity事件，漏斗的冷却值倒计时都减少1，接着漏斗都要检查自己的冷却值倒计时，为0时尝试处理物品，并在处理成功时将冷却值倒计时重设为8，否则没有任何响应。中继器只会在激活与撤销激活时使用它的冷却值倒计时，而漏斗无时不刻运行着它的倒计时。</p>
+<p>当漏斗的冷却值倒计时为0，但漏斗没有物品可供处理时，漏斗不会将冷却值倒计时设为8而是保持在0，这意味着漏斗会在之后的每一个Tile Entity事件尝试处理物品，包括漏下、取出或吸入物品。</p>
+<p>很明显，这个新的理论是兼容漏斗被撤销激活时的行为的，因为漏斗冷却值倒计时为0时，自然是在下一个Tile Entity事件立即尝试处理物品。</p>
+<p>通过漏斗理论，我们可以解释如下的现象：漏斗内物品的流动情况与两个漏斗的放置顺序有着一定区别。现在在上方漏斗放入一定量的物品。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c71e1370.png" alt=""></p>
+<p>当下方漏斗先被放置时，其首先更新。下方漏斗内没有物品，其取出上方漏斗的一个物品。紧随其后，上方漏斗将物品送入下方漏斗。整体效果就是每8游戏刻上方漏斗减少2个物品。</p>
+<p>当上方漏斗先被放置时，其首先更新，将物品送入下方漏斗，而下方漏斗会因此将冷却倒计时重置为8，在这一游戏刻中，冷却倒计时被减少为7。7gt后，下方漏斗将其中的物品放入箱子，再将一个物品从上方取出。8gt时，上方漏斗再将一个物品放入下方漏斗之中。因此物品虽然也是两个两个向下流的，但这两个物品间存在1gt的时间差。这就是说，如果漏斗将物品送入一个空漏斗，该空漏斗将物品送出需要7gt。</p>
+<p>《基础红石原理》对漏斗时钟有了初步的介绍，下面有必要详细计算漏斗时钟的周期。</p>
+<p>如下是一个尚未放入物品的漏斗时钟。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-cbb27eda.png" alt=""></p>
+<p>现在假设漏斗时钟中有一个物品在流动。当漏斗将左侧物品送入右侧，7游戏刻时右侧漏斗将物品漏回左侧。同理，14游戏刻时物品再次送往右侧，周期为14gt。</p>
+<p>现在假设漏斗时钟中有两个物品在流动，左侧和右侧漏斗各有一个物品，红石块锁住右侧漏斗，现在左侧漏斗将物品送入右侧漏斗，左侧漏斗内空。2gt后，比较器熄灭，活塞开始推出，红石块位置移动，右侧漏斗会在这一游戏刻将物品送回左侧漏斗，第二个物品则需要8gt。同理，恢复原位需要同样的10gt，总延迟为20gt。</p>
+<p>当漏斗内物品多于2个时，计算就和两个相同了。除了移走红石块同时流入的物品，其他物品都需要8gt来传输，比较器则需要2gt，当漏斗内共有n（n&gt;1）个物品时，漏斗时钟的周期为16n-12 gt。以此计算，单个漏斗时钟所能达到的周期最长是255.4秒。</p>
+<p>除了漏斗时钟外，另外一种常用的时钟是漏斗链时钟。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-3af5cef5.png" alt=""></p>
+<p>漏斗链时钟最大的特点在于无论不会因输入控制而产生混乱，因为拉杆仅控制一个漏斗的激活状态。拉杆拉回时，物品在漏斗链中循环，拉杆拉下时，物品会在若干游戏刻后被锁在开关控制的漏斗中。而下面的中继器时钟虽然拥有相同的周期和相近的占空比，但想做到这一点就比较困难了。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-2d1b5bbc.png" alt=""></p>
+<p>漏斗链时钟中，大多数漏斗都是空着的，这意味着漏斗可以在接收到物品的同一游戏刻进行一次更新，随后7游戏刻将物品送入下一漏斗。对n的漏斗的漏斗链时钟，周期为7n gt。</p>
+<p>漏斗移位器的原理与漏斗链时钟类似，向被锁住的漏斗链中输入短负脉冲，这一信号仅允许物品移动一个漏斗，从而达到移位的功能。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-002411ca.png" alt=""></p>
+<h1 id="第五节-0t脉冲"><a href="#第五节-0t脉冲" class="headerlink" title="第五节 0t脉冲"></a>第五节 0t脉冲</h1><h2 id="0t脉冲的细化"><a href="#0t脉冲的细化" class="headerlink" title="0t脉冲的细化"></a>0t脉冲的细化</h2><p>《基础红石原理》介绍了若干短脉冲，主要侧重于短脉冲作用于粘性活塞的若干情形，下面对0t脉冲进行细化。</p>
+<p>在一个标准游戏刻中，选取不同的事件充当上升沿和下降沿，就可以获得不同类型的短脉冲。除去Network Update事件，分别以其余五个事件作为上升沿和下降沿，便可以得到25种0t脉冲。这里的0t脉冲是相较于标准游戏刻长度而言的，有些0t脉冲甚至跨过了游戏刻节点，也可以被称为1gt脉冲；而有些0t脉冲由于无法使活塞响应，也可以被称为短0t脉冲。0t脉冲就是这样的一个种类丰富的大家族。</p>
+<p>不同元件对不同0t脉冲会有不同的反应，在《基础红石原理》中我们就已经认识到，中继器总会响应0t脉冲，无论它有多短；而比较器和红石火把则会在点亮前先检测是否仍有信号，否则不会亮起；活塞顺推的延迟取决于经过的Block Event事件个数。举例来说，NTE-TE的0t脉冲使得粘性活塞在本游戏刻的Block Event事件开始伸出，下一游戏刻的Block Event事件伸出完成，也就是1pt顺推；NTE-BE的0t脉冲使得粘性活塞在本游戏刻的Block Event事件开始推出并推出完成，也就是0t顺推；而NTE-NTE的0t脉冲不经过Block Event事件，活塞不会响应。</p>
+<p>红石线、动力铁轨、活板门、栅栏门等方块都是即时响应的，同时游戏总会播放栅栏门等开关的音效，但游戏会渲染其是否亮起或是否打开则是在Block Event事件之前，换句话说如果希望红石线闪烁或栅栏门打开，所使用的的0t脉冲就必须经过Block Event事件之前，如NTE-BE脉冲或NTE-TE脉冲，而BE-BE脉冲就不能让红石线闪烁。这一点至少对于1.12-1.13是成立的。<del>（在1.15中似乎在NTE前更新，有待考据）</del></p>
+<p><em>例 分析如下的短脉冲发生器，按下按钮，判断中继器和粘性活塞的响应情况。</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-406d1ed2.png" alt=""></p>
+<p><em>很明显，这是一个NTE-BE脉冲，中继器响应，粘性活塞0t顺推。</em></p>
+<p><em>例 分析如下的短脉冲发生器，拉回拉杆，判断中继器和粘性活塞的响应情况。</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-e320c52d.png" alt=""></p>
+<p><em>很明显，这是一个TE-NTE脉冲，中继器响应，粘性活塞无响应。</em></p>
+<p>Defanive中继器也可以用于制作短脉冲发生器，拉下拉杆，Defanive中继器给出NTE-BE短脉冲，随后信号常亮。如果只需要NTE-BE短脉冲，可以考虑输入一个短脉冲。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f1c22351.png" alt=""></p>
+<p>pi314159265358978串联了多个Defanive中继器，并说明这种NTE-BE短脉冲可以通过如下的装置。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-47a04b76.png" alt=""></p>
+<h2 id="活塞更新深度"><a href="#活塞更新深度" class="headerlink" title="活塞更新深度"></a>活塞更新深度</h2><p>由于红石线更新具有随机性，如下的装置无法准确判断拉杆拉下后的情况。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-b0a72c33.png" alt=""></p>
+<p>但如下的装置却并非如此，两个面对面的活塞处于BUD态，谁可以伸出取决于谁先受到更新。在拉杆拉下时，其后的四个普通活塞激活，可以确定这四个活塞从左向右更新，因此左侧活塞一定可以伸出而右侧无法伸出。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-752f76cf.png" alt=""></p>
+<p>和NTE元件类似地，每游戏刻中的Block Event事件，所有需要更新的活塞也会被加入一个列表，但这个列表的更新顺序并不仅仅取决于活塞加入列表的顺序，还取决于活塞更新的深度。活塞更新的深度指的是从信号源到活塞间需要几个活塞作为更新，如上图后侧的四个普通活塞，深度分别为0,1,2,3。从同一0深度活塞开始更新的更高深度的活塞，深度小的一定优先于深度大的更新。这一过程被称为广度优先。</p>
+<p>那么读者不难理解如下的装置，左侧在下降沿是一个BE-BE脉冲发生器，其下6个活塞深度从右至左分别为0,1,2,3,4,5。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f3559190.png" alt=""></p>
+<p>BE-BE脉冲于0深度活塞开始收回后产生，5深度活塞开始收回后结束。0深度活塞不仅会更新到1深度活塞，其还会更新到右侧的脉冲深度检测器，深度检测器中最左侧的活塞也会是1深度的，而受其影响，深度检测器中的活塞从左到右分别为1,2,3…且脉冲发生器中的各活塞优先于同深度的深度检测器中的活塞更新。因此右侧仅有深度为1-4的活塞会响应。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-94305299.png" alt=""></p>
+<p>因此，如果希望激活下图右侧的两个活塞，左侧的短脉冲发生器需要使用4个活塞。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-669d9885.png" alt=""></p>
+<p>并非所有BE-BE短脉冲发生器都能得到合理的深度，举例来说，如下的BE-BE短脉冲发生器就是如此。上升沿到来后，两个普通活塞深度分别为0和1，这就意味着被该短脉冲直接激活的活塞深度也为0，但一条红石线上的红石线更新顺序具有随机性，不能判断该活塞是否优先于复位的两个普通活塞先更新。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c8bff7aa.png" alt=""></p>
+<p>在上升沿和下降沿之间串联若干无延迟中继器便可以解决这一问题了。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-33de880b.png" alt=""></p>
+<h2 id="超频时钟"><a href="#超频时钟" class="headerlink" title="超频时钟"></a>超频时钟</h2><p>既然存在0t脉冲，那么就一定存在20Hz的时钟，这样的时钟被称为超频时钟。超频时钟是游戏中可以获得的周期最短的时钟，一般而言只有命令方块可以在这种时钟下如期工作，中继器、栅栏门等方块可以响应这种时钟信号。</p>
+<p>有各式各样的0t脉冲，就会有各式各样的超频时钟，而从0t脉冲发生器到超频时钟，只需要将若干短脉冲发生器错位并联而得到不同的相位，使用常规时钟驱动，保证每gt产生一次短脉冲即可。</p>
+<p>这是一个BE-BE超频，观察者时钟周期为4gt，故需要4个BE-BE短脉冲发生器来生成超频信号，两个观察者时钟错开1gt，时钟信号又由中继器错开2gt，就得到了BE-BE超频。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-b630f9e5.png" alt=""></p>
+<p>如下是NTE-BE超频，由于比较器不能响应过短的脉冲，这里用2挡中继器激活它们，也就用到了更多的NTE-BE短脉冲发生器。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-d218f51b.png" alt=""></p>
+<p>如下的BE-TE超频使用了压线的思路，每个粘液块时钟每6gt会给出一个TE-BE的短负脉冲，树叶电路使得6个粘液块时钟分别相差1gt，最后按正脉冲来记，得到的就是BE-TE超频。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-03284ef1.png" alt=""></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> article_txt </span>
+    </div>
+</article>
+
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '69419311f033b29ef0d4',
+            clientSecret: '180dfad4620a5a2774b1f9d6775a71d714fd2782',
+            repo: 'blogtalk',
+            owner: 'Xiaoyuan-xyz',
+            admin: ['Xiaoyuan-xyz'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">bottom_text</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

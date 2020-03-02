@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>计算机三级网络技术 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="计算机三级网络技术 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="线性空间与线性映射给定非空集合$V$和域$F$定义加法$\sigma:V\times V\rightarrow V,(v_1,v_2)\mapsto\sigma(v_1,v_2)$.  加法满足交换律,即$a+b&#x3D;b+a,\forall a,b\in V$ 加法满足结合律,即$(a+b)+c&#x3D;a+(b+c),\forall a,b,c\in V$ $\exists e\in V,e+v&#x3D;v,\fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵论">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="线性空间与线性映射给定非空集合$V$和域$F$定义加法$\sigma:V\times V\rightarrow V,(v_1,v_2)\mapsto\sigma(v_1,v_2)$.  加法满足交换律,即$a+b&#x3D;b+a,\forall a,b\in V$ 加法满足结合律,即$(a+b)+c&#x3D;a+(b+c),\forall a,b,c\in V$ $\exists e\in V,e+v&#x3D;v,\fo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-29T19:21:33.071Z">
+<meta property="article:modified_time" content="2020-03-02T02:48:01.066Z">
+<meta property="article:author" content="Xiaoyuan-xyz">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Xiaoyuan-xyz</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/Xiaoyuan-xyz/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(11)</small></div></li>
+    
+        
+            
+            <li><div data-rel="计算机">计算机<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数学">数学<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="红石原理">红石原理<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/about.html">原始</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+<input type="hidden" id="yelog_site_word_count" value="63.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+    
+    <div id=" local-search-result">
+
+</div>
+
+<nav id="title-list-nav">
+    
+    <a  class="计算机
+        " href="/2020/02/25/CSS/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="CSS">CSS</span>
+        <span class="post-date"
+            title="2020-02-25 14:00:59">2020/02/25</span>
+    </a>
+    
+    <a  class="" href="/2020/02/24/hello-world/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+        <span class="post-date"
+            title="2020-02-24 12:43:49">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/01/%E6%8A%BD%E4%BB%A3%E9%80%9A%E5%AD%A6%E7%BB%8F%E8%B7%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="抽代通学经路">抽代通学经路</span>
+        <span class="post-date"
+            title="2020-03-01 03:21:19">2020/03/01</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/02/24/HTML/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="HTML">HTML</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:34">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/02/27/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="抽象代数">抽象代数</span>
+        <span class="post-date"
+            title="2020-02-27 04:17:26">2020/02/27</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/02/25/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="概率论与数理统计">概率论与数理统计</span>
+        <span class="post-date"
+            title="2020-02-25 02:09:13">2020/02/25</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E7%B2%98%E6%B6%B2%E5%9D%97%E5%8F%8A%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="粘液块及观察者技术">粘液块及观察者技术</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="矩阵论">矩阵论</span>
+        <span class="post-date"
+            title="2020-03-01 03:21:33">2020/03/01</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="方块更新与延迟理论的拓展">方块更新与延迟理论的拓展</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/02/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="计算机三级网络技术">计算机三级网络技术</span>
+        <span class="post-date"
+            title="2020-02-25 02:09:05">2020/02/25</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="铁轨及矿车系统">铁轨及矿车系统</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+</nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-计算机三级网络技术" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">计算机三级网络技术</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="计算机">计算机</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-25 16:01:33'>2020-02-25 02:09</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题型与分值分布"><span class="toc-text">题型与分值分布</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#单选题（1题1分）"><span class="toc-text">单选题（1题1分）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综合题（1题5空，每空2分）"><span class="toc-text">综合题（1题5空，每空2分）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用题"><span class="toc-text">应用题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络系统结构与设计的基本原则"><span class="toc-text">网络系统结构与设计的基本原则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#广域网技术"><span class="toc-text">广域网技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#城域网技术"><span class="toc-text">城域网技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#宽带城域网的组建原则"><span class="toc-text">宽带城域网的组建原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训1：管理和运营宽带城域网的关键技术"><span class="toc-text">实训1：管理和运营宽带城域网的关键技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训2：构建宽带城域网的基本技术和方案"><span class="toc-text">实训2：构建宽带城域网的基本技术和方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训3：网络接入技术与方法"><span class="toc-text">实训3：网络接入技术与方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#中小型网络系统总体规划与设计"><span class="toc-text">中小型网络系统总体规划与设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基于网络的信息系统基本结构"><span class="toc-text">基于网络的信息系统基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训2：网络总体设计基本方法"><span class="toc-text">实训2：网络总体设计基本方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训3：网络关键设备选型"><span class="toc-text">实训3：网络关键设备选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训4：网络服务器选型"><span class="toc-text">实训4：网络服务器选型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IP地址规划设计技术"><span class="toc-text">IP地址规划设计技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择题"><span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训1：规划IP地址"><span class="toc-text">实训1：规划IP地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训2：规划子网地址"><span class="toc-text">实训2：规划子网地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训3：规划可变长度子网掩码地址"><span class="toc-text">实训3：规划可变长度子网掩码地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训4：规划CIDR地址"><span class="toc-text">实训4：规划CIDR地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训5：内部网络专用IP地址规划与网络地址转换"><span class="toc-text">实训5：内部网络专用IP地址规划与网络地址转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训6：规划IPv6地址"><span class="toc-text">实训6：规划IPv6地址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由设计技术基础"><span class="toc-text">路由设计技术基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实训1：自治系统（AS）与Internet的路由选择协议"><span class="toc-text">实训1：自治系统（AS）与Internet的路由选择协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训2：RIP"><span class="toc-text">实训2：RIP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训3：OSPF"><span class="toc-text">实训3：OSPF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训4：BGP"><span class="toc-text">实训4：BGP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#局域网技术"><span class="toc-text">局域网技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实训1：局域网互联设备"><span class="toc-text">实训1：局域网互联设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实训2：以太网组网"><span class="toc-text">实训2：以太网组网</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+<ul>
+<li><a href="#题型与分值分布">题型与分值分布</a><ul>
+<li><a href="#单选题1题1分">单选题（1题1分）</a></li>
+<li><a href="#综合题1题5空每空2分">综合题（1题5空，每空2分）</a></li>
+<li><a href="#应用题">应用题</a></li>
+</ul>
+</li>
+<li><a href="#网络系统结构与设计的基本原则">网络系统结构与设计的基本原则</a><ul>
+<li><a href="#广域网技术">广域网技术</a></li>
+<li><a href="#城域网技术">城域网技术</a></li>
+<li><a href="#宽带城域网的组建原则">宽带城域网的组建原则</a></li>
+<li><a href="#实训1管理和运营宽带城域网的关键技术">实训1：管理和运营宽带城域网的关键技术</a></li>
+<li><a href="#实训2构建宽带城域网的基本技术和方案">实训2：构建宽带城域网的基本技术和方案</a></li>
+<li><a href="#实训3网络接入技术与方法">实训3：网络接入技术与方法</a></li>
+</ul>
+</li>
+<li><a href="#中小型网络系统总体规划与设计">中小型网络系统总体规划与设计</a><ul>
+<li><a href="#基于网络的信息系统基本结构">基于网络的信息系统基本结构</a></li>
+<li><a href="#实训2网络总体设计基本方法">实训2：网络总体设计基本方法</a></li>
+<li><a href="#实训3网络关键设备选型">实训3：网络关键设备选型</a></li>
+<li><a href="#实训4网络服务器选型">实训4：网络服务器选型</a></li>
+</ul>
+</li>
+<li><a href="#ip地址规划设计技术">IP地址规划设计技术</a><ul>
+<li><a href="#选择题">选择题</a></li>
+<li><a href="#实训1规划ip地址">实训1：规划IP地址</a></li>
+<li><a href="#实训2规划子网地址">实训2：规划子网地址</a></li>
+<li><a href="#实训3规划可变长度子网掩码地址">实训3：规划可变长度子网掩码地址</a></li>
+<li><a href="#实训4规划cidr地址">实训4：规划CIDR地址</a></li>
+<li><a href="#实训5内部网络专用ip地址规划与网络地址转换">实训5：内部网络专用IP地址规划与网络地址转换</a></li>
+<li><a href="#实训6规划ipv6地址">实训6：规划IPv6地址</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="题型与分值分布"><a href="#题型与分值分布" class="headerlink" title="题型与分值分布"></a>题型与分值分布</h1><h2 id="单选题（1题1分）"><a href="#单选题（1题1分）" class="headerlink" title="单选题（1题1分）"></a>单选题（1题1分）</h2><table>
+<thead>
+<tr>
+<th>章节名</th>
+<th>题号</th>
+<th>分值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>网络系统结构与设计的基本原则</td>
+<td>1-4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>中小型网络技术总体规划与设计方法</td>
+<td>5-7</td>
+<td>3</td>
+</tr>
+<tr>
+<td>IP地址规划设计技术★</td>
+<td>8-11</td>
+<td>4</td>
+</tr>
+<tr>
+<td>路由设计基础</td>
+<td>12-14</td>
+<td>3</td>
+</tr>
+<tr>
+<td>局域网技术</td>
+<td>15-16</td>
+<td>2</td>
+</tr>
+<tr>
+<td>交换机及其配置★</td>
+<td>17-20</td>
+<td>4</td>
+</tr>
+<tr>
+<td>路由器及其配置★</td>
+<td>21-24</td>
+<td>4</td>
+</tr>
+<tr>
+<td>无限局域网安装与调试</td>
+<td>25-27</td>
+<td>3</td>
+</tr>
+<tr>
+<td>计算机网络信息服务系统嗯安装与配置</td>
+<td>28-32</td>
+<td>5</td>
+</tr>
+<tr>
+<td>网络安全技术</td>
+<td>33-36</td>
+<td>4</td>
+</tr>
+<tr>
+<td>网络管理技术</td>
+<td>37-40</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<h2 id="综合题（1题5空，每空2分）"><a href="#综合题（1题5空，每空2分）" class="headerlink" title="综合题（1题5空，每空2分）"></a>综合题（1题5空，每空2分）</h2><table>
+<thead>
+<tr>
+<th>考核内容</th>
+<th>章节</th>
+<th>题号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP地址计算</td>
+<td>第3章 IP地址计算</td>
+<td>41</td>
+</tr>
+<tr>
+<td>交换机/路由器配置</td>
+<td>第6章 交换机配置 15%<br>第7章 路由器配置 85&amp;</td>
+<td>42</td>
+</tr>
+<tr>
+<td>DHCP报文分析</td>
+<td>超纲</td>
+<td>43</td>
+</tr>
+<tr>
+<td>Sniff抓包分析</td>
+<td>超纲</td>
+<td>44</td>
+</tr>
+</tbody></table>
+<h2 id="应用题"><a href="#应用题" class="headerlink" title="应用题"></a>应用题</h2><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>分值</th>
+<th>题量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第3章（路由聚合）</td>
+<td>10-12</td>
+<td>5-6</td>
+</tr>
+<tr>
+<td>第3章（子网划分）</td>
+<td>4-9</td>
+<td>3-9</td>
+</tr>
+<tr>
+<td>第10-11章（网络安全和管理技术）</td>
+<td>2-4</td>
+<td>1-3</td>
+</tr>
+</tbody></table>
+<h1 id="网络系统结构与设计的基本原则"><a href="#网络系统结构与设计的基本原则" class="headerlink" title="网络系统结构与设计的基本原则"></a>网络系统结构与设计的基本原则</h1><h2 id="广域网技术"><a href="#广域网技术" class="headerlink" title="广域网技术"></a>广域网技术</h2><p>  <strong>信元是ATM交换和多路复用的基本单位</strong>，由信头和信息段组成，信头中装有控制信息，信息段中装入被分解成数据块的用户信息或其他管理信息。</p>
+<h2 id="城域网技术"><a href="#城域网技术" class="headerlink" title="城域网技术"></a>城域网技术</h2><p>核心交换层功能</p>
+<ul>
+<li>实现与主干网络的互联，提供城市和宽带IP数据出口</li>
+<li>提供宽带城域网的用户访问Internet所需的路由服务</li>
+<li>将多个汇聚层连接起来，为汇聚层的网络提供高速分组转发，为整个城域网提供一个高速、安全与具有QoS保障能力的数据传输环境</li>
+</ul>
+<p>汇聚层功能</p>
+<ul>
+<li>根据处理结果吧用户流量转发到核心交换层或在本地进行路由处理</li>
+<li>汇接接入层的用户流量，进行数据分组传输的汇聚、转发与交换</li>
+<li>根据接入层的用户流量，进行本地路由、过滤、流量均衡、QoS优先级管理，以及安全控制、IP地址转换、流量整形等处理</li>
+</ul>
+<p>接入层功能</p>
+<ul>
+<li>接入层解决的是“最后一公里”问题。</li>
+</ul>
+<p>宽带城域网以TCP/IP协议为基础。</p>
+<h2 id="宽带城域网的组建原则"><a href="#宽带城域网的组建原则" class="headerlink" title="宽带城域网的组建原则"></a>宽带城域网的组建原则</h2><ul>
+<li>宽带城域网的可管理性</li>
+<li>宽带城域网的可靠性</li>
+<li>宽带城域网的可盈利性</li>
+<li>宽带城域网的可拓展性</li>
+</ul>
+<h2 id="实训1：管理和运营宽带城域网的关键技术"><a href="#实训1：管理和运营宽带城域网的关键技术" class="headerlink" title="实训1：管理和运营宽带城域网的关键技术"></a>实训1：管理和运营宽带城域网的关键技术</h2><p>QoS（服务质量）指一个网络能够利用各种基础技术，为指定的网络通信提供更好的服务能力，是网络的一种安全机制，是用来解决网络延迟和阻塞等有问题的一种技术。目前宽带城域网保证QoS要求技术主要有：<strong>资源预留</strong>（RSVP）、<strong>服务区分</strong>（DiffServ）与<strong>多协议标签交换</strong>（MPLS）。</p>
+<p>光以太网技术特征：</p>
+<ul>
+<li>系统稳定、可靠</li>
+<li>可以使用不同带宽、传输质量的需求</li>
+<li>每个用户可占用独立的带宽，不会产生拥堵</li>
+</ul>
+<h2 id="实训2：构建宽带城域网的基本技术和方案"><a href="#实训2：构建宽带城域网的基本技术和方案" class="headerlink" title="实训2：构建宽带城域网的基本技术和方案"></a>实训2：构建宽带城域网的基本技术和方案</h2><p>RPR弹性分组环（802.17）是一种网络技术。RPR采用双环结构传输数据分组和控制分组。沿顺时针传输的光纤环叫做<strong>外环</strong>，沿逆时针传输的光纤环叫做<strong>内环</strong>。内环和外环都支持独立的<strong>SRP公平算法</strong>。采用自愈环的设计思想，能够在<strong>50ms</strong>的时间内，隔离出现故障的节点和光纤段，提供SDH级的快速保护和回复。</p>
+<p>EPON以太网无源光网络是基于以太网的PON技术。它采用点到多点结构、无源光纤传输，在以太网之上提供多种业务。</p>
+<p>PON无源光网络（无源的光接入网），其光配线网（ODN）上的器件全部由无源器件（光纤、无源光分路器、波分复用器等）组成，不包含任何有源节点。在PON上实现基于ATM信元的传输，即APON技术。</p>
+<p>SDH同步数字体系，根据ITU-T的建议定义，是不同速度的数位信号的<strong>传输</strong>提供相应等级的信息结构，包括复用方法和映射方法，以及相关的同步方法所组成的一个技术体制。</p>
+<p>HFC光纤同轴电缆混合网，是一种经济适用的总和数字服务宽带接入技术。HFC通常由光纤干线、同轴电缆支线和用户配线网络三部分组成，从有限电视台出来的节目信号先变成光信号在干线上传输；到用户区域后把光信号转换成电信号，经分配器分配后通过同轴电缆送到用户。HFC是一个双向传输系统。</p>
+<p>使用Cable Modem，利用频分复用（FDM）的方法将信道分为上行信道和下行信道。通过有线电视宽带接入Internet，数据传输速率可达10~36Mbps。</p>
+<p>密集型光波复用（DWDM）能组合一组光波长用一根光纤进行传送。</p>
+<p>频分复用（FDM）就是将用于传输信道的总带宽划分成若干个子频带（或子信道），每一个子信道传输一路信号。</p>
+<p>利用传统电信网进行的网络管理称为“带内”管理，利用IP协议进行的网络管理称为“带外”管理，带外管理使用的是SNMP协议，汇聚层以下采用带内管理。</p>
+<h2 id="实训3：网络接入技术与方法"><a href="#实训3：网络接入技术与方法" class="headerlink" title="实训3：网络接入技术与方法"></a>实训3：网络接入技术与方法</h2><p>IEEE 802.11标准系列对比</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>技术</th>
+<th>理论PHY性能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1997</td>
+<td>802.11</td>
+<td>2Mbps</td>
+</tr>
+<tr>
+<td><strong>1999</strong></td>
+<td><strong>802.11b</strong></td>
+<td><strong>11Mbps</strong></td>
+</tr>
+<tr>
+<td><strong>1999</strong></td>
+<td><strong>802.11a</strong></td>
+<td><strong>54Mbps</strong></td>
+</tr>
+<tr>
+<td>2003</td>
+<td>802.11g</td>
+<td>54Mpbps</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>802.11a/g</td>
+<td>54Mbps</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>802.11n</td>
+<td>450Mbps</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>802.11acWave1</td>
+<td>1.3Gbps</td>
+</tr>
+</tbody></table>
+<p>xDSL技术的上行和下行速率<br>| xDSL | 上/下行速率（距离5.5km） | 上/下行速率（距离3.6km） | 线对数（对） |<br>| —- | ———————— | ———————— | ———— |<br>| ADSL | 64kbps/1.5Mbps           | 640kbps/6Mbps            | 1            |<br>| HDSL | 1.544Mbps（对称）        | 1.544Mbps（对称）        | 2            |<br>| VDSL | 2.3kbps/51Mbps           | 2.3kbps/51Mbps           | 2            |<br>| RADSL | 64kbps/1.5Mbps           | 64kbps/1.5Mbps           | 1            |</p>
+<p>ADSL非对称数字用户线路，理论上可以在5km的范围内，在一对铜缆双绞线上提供最高1Mbps的上行速率和最高8Mbps的下行速率（带宽），能提供语音和数据业务。<br>ADSL能技术能充分利用现有PSTN（公共交换电话网），秩序在线路两端加装ADSL设备即可为用户提供高带宽服务，无需重新布线，极大地降低服务成本。同时ADSL用户独享带宽，线路专用，不受用户增加影响。</p>
+<p>1998年，IEEE802.15工作组成立，专门从事WPAN标准化工作。它的任务时开发一套适用于短程无限通信的标准，通常称之为无线个人局域网（WPANs）。Wi-Fi是一种允许电子设备连接到一个无线局域网（WLAN）的技术。</p>
+<p>IEEE802.16是为用户站点和核心网络（如：公共电话网和Internet）间提供通信路径而定义的无线服务。WiMAX（全球微波互联接入）是一项新兴的宽带无线接入技术，能提供面向互联网的高速连接，数据传输距离最远可达50km。</p>
+<p>ITU国际电信联盟的SG15研究组在G.983建议“基于无源光纤网的高速光纤接入系统”进行标准化：<br>OC-3就是3倍于51.84Mbps（OC-1）基本SONET信号传输率的SONET线路，即155.520Mbps。<br>OC-12就是12倍，即622.080Mbps</p>
+<p><strong>宽带接入技术</strong>包括xDSL、HFC、光纤接入、无线接入等。</p>
+<p>光纤传输系统的中继距离可达100km以上。</p>
+<p>Ad-Hoc（点对点）模式（如热点）和以前的直连双绞线都是P2P（个人对个人）的连接，无法与其他网络沟通。一般无线终端设备如PMP、PSP、DMA等用的就是Ad-Hoc模式。</p>
+<h1 id="中小型网络系统总体规划与设计"><a href="#中小型网络系统总体规划与设计" class="headerlink" title="中小型网络系统总体规划与设计"></a>中小型网络系统总体规划与设计</h1><h2 id="基于网络的信息系统基本结构"><a href="#基于网络的信息系统基本结构" class="headerlink" title="基于网络的信息系统基本结构"></a>基于网络的信息系统基本结构</h2><p>B/S结构（浏览器/服务器模式）是WEB兴起后的一种网络结构模式，WEB浏览器是客户端最主要的应用软件。这种模式统一了客户端，将系统功能实现的核心部分集中到服务器上，简化了系统的开发、维护和使用。客户机上只要安装一个浏览器，如Netscape Navigator或Interner Explorer，服务器安装SQL Server、Oracle、MYSQL等数据库。浏览器通过Web Server同数据库进行数据交互。B/S结构也是一种C/S结构，它可看作是一种由传统的二层模式C/S结构发展而来的三层模式C/S结构在Web上应用的特例。</p>
+<h2 id="实训2：网络总体设计基本方法"><a href="#实训2：网络总体设计基本方法" class="headerlink" title="实训2：网络总体设计基本方法"></a>实训2：网络总体设计基本方法</h2><p>核心层网络结构设计：服务器集群接入到核心路由器的两种设计方案</p>
+<p><img src="assets/markdown-img-paste-2020020403072780.png" alt=""></p>
+<p>直接接入核心路由器：链路冗余，直接利用核心路由器的带宽，占用端口较多，成本上升。</p>
+<p>通过专用交换机，同时采取链路冗余，优点是可以分担核心路由器的带宽，容易形成带宽瓶颈，存在单点故障的潜在危险。</p>
+<p>实际经验总结：层次之间的上联带宽与下一级带宽之比一般控制在1:20。</p>
+<h2 id="实训3：网络关键设备选型"><a href="#实训3：网络关键设备选型" class="headerlink" title="实训3：网络关键设备选型"></a>实训3：网络关键设备选型</h2><p>路由器主要技术指标：</p>
+<ul>
+<li><strong>吞吐量</strong></li>
+<li><strong>背板能力</strong></li>
+<li><strong>丢包率</strong></li>
+<li><strong>延时和延时抖动</strong></li>
+<li><strong>突发处理能力</strong></li>
+<li>服务质量</li>
+<li>路由表容量</li>
+<li><strong>可靠性和可用性</strong></li>
+<li>网管能力</li>
+</ul>
+<p>吞吐量是路由器的包转发能力。</p>
+<p>背板是路由器输出端与输入端的物理通道。传统路由器采用的是共享背板结构，高性能路由器一般采用的是交换式结构。背板能力决定了路由器的吞吐量。</p>
+<p>路由器的包转发能力与端口数量、端口速率、包长度和包类型有关。</p>
+<p>丢包率是衡量路由器超负荷工作能力的指标之一。</p>
+<p>延时抖动是延时的变化量。语音、视频业务对延时抖动要求较高。</p>
+<p>突发处理能力用以最小帧间隔发送数据包<strong>而不引起丢失</strong>的最大发送速率来衡量。</p>
+<p>路由器的服务质量主要表现在<strong>队列管理机制</strong>与<strong>支持的QoS协议类型</strong>上。</p>
+<p>典型的高端路由器的可靠性与可用性指标应达到：</p>
+<ul>
+<li>无故障连续工作时间（MTBF）大于10万小时。</li>
+<li>系统故障恢复时间小于30分钟。</li>
+<li>系统具有自动保护切换功能，主备用切换时间小于50ms。</li>
+<li>SDH与ATM接口自动保护切换功能，切换时间小于50ms。</li>
+<li>主处理器、主存储器、交换矩阵、电源、总线管理器与网络管理接口等主要部件需要有热拔插冗余备份，线卡要求有备份，并提供远程测试诊断能力。</li>
+<li>路由器系统内部不存在单故障点。</li>
+</ul>
+<p>交换机主要技术指标：</p>
+<p>全双工端口带宽的计算方法：端口数×端口速率×2。</p>
+<h2 id="实训4：网络服务器选型"><a href="#实训4：网络服务器选型" class="headerlink" title="实训4：网络服务器选型"></a>实训4：网络服务器选型</h2><p>热拔插技术是允许在不切断电源的情况下，更换存在故障的硬盘、板卡等部件，从而提高系统对突发事件的应对能力。在服务器里可实现热拔插的部件主要有硬盘、CPU、内存、电源、风扇、PCI适配器、网卡等。（<strong>不包括主背板</strong>）</p>
+<p>集群（Cluster）技术一般来讲有四个功能：冗余功能、负载均衡、协商处理。流量分发。其中冗余功能就是说在这个集群中的任何一台机器出现本机或网络故障时，整个网络仍不中断，对外的服务也不中断，网络有多个线路可以走，服务器也可以互相替代。</p>
+<p>高性能存储与智能I/O技术，存储能力是衡量服务器性能与选型的重要指标之一。主要指标是由存取I/O速度和磁盘容量。</p>
+<p>服务器操作系统通常采用UNIX。</p>
+<p>系统高可用性和不可用时间<br>| 可用性   | 年服务不可用时间 |<br>| ——– | —————- |<br>| 99%      | 3.65天           |<br>| 99.9%    | 8.76小时         |<br>| 99.99%   | 52.56分          |<br>| 99.999%  | 5.26分           |<br>| 99.9999% | 31.54秒          |</p>
+<h1 id="IP地址规划设计技术"><a href="#IP地址规划设计技术" class="headerlink" title="IP地址规划设计技术"></a>IP地址规划设计技术</h1><h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h2><ul>
+<li><p>子网掩码</p>
+</li>
+<li><p>IP地址聚合</p>
+</li>
+<li><p>NAT技术</p>
+</li>
+<li><p>IPv6</p>
+<p>子网划分</p>
+</li>
+</ul>
+<p>子网的地址结构：网络号+主机号或者网络号+子网号+主机号</p>
+<p>子网掩码：区分网络号和主机号（网络位全为1，主机位全为0））</p>
+<p> 无类域间路由技术</p>
+<p>无类域间路由技术将网络前缀相同的连续的IP地址组成一个“CIDR”地址块，包含块起始地址和块地址数。 如201.113.22.0/21表示前21位为网络位。</p>
+<p>专用IP地址与内部网络地址规划方法</p>
+<p><img src="assets/markdown-img-paste-20200204041540794.png" alt=""></p>
+<h2 id="实训1：规划IP地址"><a href="#实训1：规划IP地址" class="headerlink" title="实训1：规划IP地址"></a>实训1：规划IP地址</h2><h2 id="实训2：规划子网地址"><a href="#实训2：规划子网地址" class="headerlink" title="实训2：规划子网地址"></a>实训2：规划子网地址</h2><h2 id="实训3：规划可变长度子网掩码地址"><a href="#实训3：规划可变长度子网掩码地址" class="headerlink" title="实训3：规划可变长度子网掩码地址"></a>实训3：规划可变长度子网掩码地址</h2><h2 id="实训4：规划CIDR地址"><a href="#实训4：规划CIDR地址" class="headerlink" title="实训4：规划CIDR地址"></a>实训4：规划CIDR地址</h2><p>IP地址聚合</p>
+<h2 id="实训5：内部网络专用IP地址规划与网络地址转换"><a href="#实训5：内部网络专用IP地址规划与网络地址转换" class="headerlink" title="实训5：内部网络专用IP地址规划与网络地址转换"></a>实训5：内部网络专用IP地址规划与网络地址转换</h2><h2 id="实训6：规划IPv6地址"><a href="#实训6：规划IPv6地址" class="headerlink" title="实训6：规划IPv6地址"></a>实训6：规划IPv6地址</h2><p>在使用零压缩法时，不能把一个位段内部的有效0也压缩掉。</p>
+<p>双冒号在一个地址中只能出现一次。</p>
+<p>在得到一个IPv6地址时，经常会遇到如何确定双冒号之间被压缩0的位数的问题。</p>
+<p>IPv6不支持子网掩码，它只支持前缀长度表示法。</p>
+<h1 id="路由设计技术基础"><a href="#路由设计技术基础" class="headerlink" title="路由设计技术基础"></a>路由设计技术基础</h1><h2 id="实训1：自治系统（AS）与Internet的路由选择协议"><a href="#实训1：自治系统（AS）与Internet的路由选择协议" class="headerlink" title="实训1：自治系统（AS）与Internet的路由选择协议"></a>实训1：自治系统（AS）与Internet的路由选择协议</h2><p>内部网关协议（IGP）</p>
+<ul>
+<li><strong>路由信息协议</strong>（RIP）</li>
+<li><strong>开发最短路径优先协议</strong>（OSPE）</li>
+<li>中间系统到中间系统（IS-IS）</li>
+<li>内部网关路由协议（IGRP）</li>
+</ul>
+<p>外部网关协议（EGP）</p>
+<ul>
+<li><strong>边界网关协议</strong>（BGP）</li>
+</ul>
+<h2 id="实训2：RIP"><a href="#实训2：RIP" class="headerlink" title="实训2：RIP"></a>实训2：RIP</h2><p>RIP路由信息协议是一种内部网关协议，是一种动态路由选择协议，用于自治系统内的路由信息的传递。</p>
+<p>路由刷新报文主要内容由若干（V、D）组成的表。V表示向量，标识该路由器可以到达目的网络或目的的主机，D表示距离，指出该路由器到达目的网络或目的主机的距离。距离D对应该路由上的跳数。</p>
+<p>RIP是基于距离矢量算法的路由协议，利用跳数作为计量标准，按照以下规律更新路由表的信息：</p>
+<ul>
+<li>如果Router1的路由表没有这一项，Router1的路由表中增加该项，由于要经过Router2转发，因此距离D值加1。</li>
+<li>如果Router1的路由表中的一项纪录比Router2发送的一项纪录距离D值减1还要大，Router1在路由表中修改该项，距离D值根据Router2提供的值加1。</li>
+</ul>
+<h2 id="实训3：OSPF"><a href="#实训3：OSPF" class="headerlink" title="实训3：OSPF"></a>实训3：OSPF</h2><p>OSPF（开放式最短路径优先）是一个内部网关协议，用在单一自治系统内决策路由。每一个路由器用数据库描述分组好相邻路由器交换本数据库已有的链路状态摘要信息。经过与相邻路由器交换数据库描述分组后，路由器就使用链路状态请求分组，向对方请求发送自己所缺少的某些链路状态项目的详细信息。<strong>经过一系列这种分组交换，全网同步的链路数据库就建立了</strong>。</p>
+<p>在网络运行的过程中，只要一个路由器的链路状态发生变化，该路由器就要用链路状态更新分组，用洪泛法向全网更新链路状态。为了使用更大规模的网络，并使更新过程收敛更快，OSPF协议将一个自治系统再划分为若干个更小的范围，叫做区域。每一个区域OSPF拥有一个<strong>32位</strong>的区域标识符，在一个区域内的路由器数不超过<strong>200个</strong>。</p>
+<p>OSPF协议要求路由器发送的信息是本路由器与那些路由器向量，以及链路状态的度量。链路状态的度量主要指<strong>费用、距离、延时、带宽</strong>等。</p>
+<h2 id="实训4：BGP"><a href="#实训4：BGP" class="headerlink" title="实训4：BGP"></a>实训4：BGP</h2><p>在配置BGP（边界网关协议）时，每一个自治系统的管理员要至少一个路由器（一般是BGP边界路由器）作为自治系统的“BGP发言人”。一个BGP发言人与其他自制系统的BGP发言人要交换路由信息，就要先建立<strong>TCP</strong>连接，然后在此连接上交换BGP报文以建立BGP会话。</p>
+<p>BGP路由选择协议的执行过程中分四种分组：</p>
+<ul>
+<li>打开（open）分组：用来与相邻的另一个BGP发言人建立关系。</li>
+<li>保活（keepalive）保活分组用来确认打开报文，以及周期性地证实相邻边界路由器的存在。</li>
+<li>更新（update）分组：用来发送<strong>某一路由</strong>的信息，以及列出要撤销的<strong>多条路由</strong>。</li>
+<li>通知（notification）分组：用来发送检测到的差错。</li>
+</ul>
+<h1 id="局域网技术"><a href="#局域网技术" class="headerlink" title="局域网技术"></a>局域网技术</h1><h2 id="实训1：局域网互联设备"><a href="#实训1：局域网互联设备" class="headerlink" title="实训1：局域网互联设备"></a>实训1：局域网互联设备</h2><p>中继器可以用于连接物理层协议相同的局域网缆段。</p>
+<p>集线器的工作过程：节点发信号到线路，集线器接受该信号，因信号在电缆传输中有衰减，集线器接受信号后将衰减的信号整形放大，最后集线器将放大的信号广播转发给其他所有端口。连接到一个集线器的所有结点共享一个冲突域。通过在网络链路中串接一个集线器可以监听该链路中的数据包。连接到集线器的节点发送数据时，将执行CSMA/CD介质访问控制方法。</p>
+<p>不同VLAN通信需要单臂路由中继诊帧封装或者三层交换支持，两层交换单独情况下无法实现，三层交换机是具有路由功能的二层交换机。</p>
+<h2 id="实训2：以太网组网"><a href="#实训2：以太网组网" class="headerlink" title="实训2：以太网组网"></a>实训2：以太网组网</h2><p>标准以太网的物理层采用 x Type-y-Name命名规则。x表示数据传输速率，单位为Mbps；y表示网段的最大长度，单位为100m；Type表示传输方式是基带还是频带；Name表示局域网的名称。</p>
+<p>实训3：综合布线系统网络结构设计</p>
+<p>双绞线扭绞可以减少线间电磁干扰。</p>
+<p>STP比UTP抗电磁干扰能力好。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> article_txt </span>
+    </div>
+</article>
+
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '69419311f033b29ef0d4',
+            clientSecret: '180dfad4620a5a2774b1f9d6775a71d714fd2782',
+            repo: 'blogtalk',
+            owner: 'Xiaoyuan-xyz',
+            admin: ['Xiaoyuan-xyz'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">bottom_text</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
