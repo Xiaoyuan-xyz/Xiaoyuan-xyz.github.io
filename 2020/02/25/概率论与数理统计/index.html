@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="概率论与数理统计 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="线性空间与线性映射给定非空集合$V$和域$F$定义加法$\sigma:V\times V\rightarrow V,(v_1,v_2)\mapsto\sigma(v_1,v_2)$.  加法满足交换律,即$a+b&#x3D;b+a,\forall a,b\in V$ 加法满足结合律,即$(a+b)+c&#x3D;a+(b+c),\forall a,b,c\in V$ $\exists e\in V,e+v&#x3D;v,\fo">
+<meta name="description" content="度量空间 拓扑空间 邻域 导集,闭集,闭包,内部,边界 基 序列      度量空间设$X$为一集合,$\rho:X\times X\rightarrow R$若对$\forall x,y,z\in X$,有  $\rho(x,y)\ge0$ $\rho(x,y)&#x3D;0\Leftrightarrow x&#x3D;y$ $\rho(x,y)&#x3D;\rho(y,x)$ $\rho(x,z)\le\rho(x,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="矩阵论">
-<meta property="og:url" content="http://yoursite.com/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/index.html">
+<meta property="og:title" content="点集拓扑学">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/%E7%82%B9%E9%9B%86%E6%8B%93%E6%89%91%E5%AD%A6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="线性空间与线性映射给定非空集合$V$和域$F$定义加法$\sigma:V\times V\rightarrow V,(v_1,v_2)\mapsto\sigma(v_1,v_2)$.  加法满足交换律,即$a+b&#x3D;b+a,\forall a,b\in V$ 加法满足结合律,即$(a+b)+c&#x3D;a+(b+c),\forall a,b,c\in V$ $\exists e\in V,e+v&#x3D;v,\fo">
+<meta property="og:description" content="度量空间 拓扑空间 邻域 导集,闭集,闭包,内部,边界 基 序列      度量空间设$X$为一集合,$\rho:X\times X\rightarrow R$若对$\forall x,y,z\in X$,有  $\rho(x,y)\ge0$ $\rho(x,y)&#x3D;0\Leftrightarrow x&#x3D;y$ $\rho(x,y)&#x3D;\rho(y,x)$ $\rho(x,z)\le\rho(x,">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-29T19:21:33.071Z">
-<meta property="article:modified_time" content="2020-03-04T14:48:30.130Z">
+<meta property="article:published_time" content="2020-03-04T11:17:10.217Z">
+<meta property="article:modified_time" content="2020-03-04T11:15:56.874Z">
 <meta property="article:author" content="Xiaoyuan-xyz">
 <meta name="twitter:card" content="summary">
 
@@ -148,7 +148,7 @@
     <div><a class="about  site_url"  href="/about.html">原始</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="12">
-<input type="hidden" id="yelog_site_word_count" value="70.5k">
+<input type="hidden" id="yelog_site_word_count" value="71.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -325,12 +325,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-02 10:49:08'>2020-02-25 02:09</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-07 22:32:35'>2020-02-25 02:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.5k</span>
+        <span>字数:3.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -360,7 +360,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一讲-随机事件与概率"><span class="toc-text">第一讲 随机事件与概率</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#古典概型"><span class="toc-text">古典概型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几何概型"><span class="toc-text">几何概型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要公式求概率"><span class="toc-text">重要公式求概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用对立"><span class="toc-text">用对立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用互斥"><span class="toc-text">用互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用独立"><span class="toc-text">用独立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用条件"><span class="toc-text">用条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用不等式或包含"><span class="toc-text">用不等式或包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用最值"><span class="toc-text">用最值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件的独立性"><span class="toc-text">事件的独立性</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一讲-随机事件与概率"><span class="toc-text">第一讲 随机事件与概率</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#古典概型"><span class="toc-text">古典概型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几何概型"><span class="toc-text">几何概型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要公式求概率"><span class="toc-text">重要公式求概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用对立"><span class="toc-text">用对立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用互斥"><span class="toc-text">用互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用独立"><span class="toc-text">用独立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用条件"><span class="toc-text">用条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用不等式或包含"><span class="toc-text">用不等式或包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用最值"><span class="toc-text">用最值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件的独立性"><span class="toc-text">事件的独立性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一维随机变量及其分布"><span class="toc-text">一维随机变量及其分布</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#判分布"><span class="toc-text">判分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求分布"><span class="toc-text">求分布</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -415,12 +415,17 @@
 <li><a href="#事件的独立性">事件的独立性</a></li>
 </ul>
 </li>
+<li><a href="#一维随机变量及其分布">一维随机变量及其分布</a><ul>
+<li><a href="#判分布">判分布</a></li>
+<li><a href="#求分布">求分布</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 
 
 <h1 id="第一讲-随机事件与概率"><a href="#第一讲-随机事件与概率" class="headerlink" title="第一讲 随机事件与概率"></a>第一讲 随机事件与概率</h1><h2 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h2><p>古典概型:样本空间$\varOmega$中有<strong>有限个</strong>,<strong>等可能</strong>的样本点.</p>
-<p>$$P(A)=\dfrac{\mathbf{Card}(A)}{\mathbf{Card}(\varOmega)}$$</p>
+<p>$$P(A)=\dfrac{\mathrm{card}(A)}{\mathrm{card}(\varOmega)}$$</p>
 <ul>
 <li>随机分配:将$n$个质点随机分配到$N$个盒子中<ul>
 <li>每盒可容纳任意多质点:$N^n$</li>
@@ -583,19 +588,95 @@
 <blockquote>
 <p>例12 设$A,B$相互独立,$0&lt;P(A)&lt;1$,$P(C)=1$,则不相互独立的是</p>
 <blockquote>
-<p>(A) $A,B,A\cup C$<br>$P(A\cup C)=1$,故$A\cup C$与任何事件独立.</p>
+<p>(A) $A,B,A\cup C$<br>$P(A\cup C)=1$,故$A\cup C$与任何事件独立.<br>(B) $A,B,A-C$<br>$P(A-C)=P(A\bar C)\le P(\bar C)=0$,故$A-C$与任何事件独立.<br>(C) $A,B,AC$<br>$P(AAC)=P(AC)\neq P(A)P(AC)$<br>(D) $A,B,\bar A\bar C$<br>$P(\bar A\bar C)\le P(\bar C)=0$,故$\bar A\bar C$与任何事件独立.</p>
+</blockquote>
+</blockquote>
+<h1 id="一维随机变量及其分布"><a href="#一维随机变量及其分布" class="headerlink" title="一维随机变量及其分布"></a>一维随机变量及其分布</h1><ul>
+<li>判分布<ul>
+<li>分布函数</li>
+<li>概率分布</li>
+<li>概率密度</li>
+<li>反问题</li>
+</ul>
+</li>
+<li>求分布<ul>
+<li>离散型<ul>
+<li>0-1分布</li>
+<li>二项分布</li>
+<li>几何分布</li>
+<li>超几何分布</li>
+<li>泊松分布</li>
+</ul>
+</li>
+<li>连续型<ul>
+<li>均匀分布</li>
+<li>指数分布</li>
+<li>正态分布</li>
+</ul>
+</li>
+<li>混合型</li>
+</ul>
+</li>
+<li>用分布求概率<ul>
+<li>$x\sim F(x)$</li>
+<li>$x\sim p_i$</li>
+<li>$x\sim f(x)$</li>
+<li>反题</li>
+</ul>
+</li>
+<li>求函数分布<ul>
+<li>离散→离散</li>
+<li>连续→连续/混合</li>
+<li>连续→离散</li>
+</ul>
+</li>
+</ul>
+<h2 id="判分布"><a href="#判分布" class="headerlink" title="判分布"></a>判分布</h2><p>若$F(x)$是分布函数,有</p>
+<ul>
+<li>$F(x)$单调不减</li>
+<li>右连续</li>
+<li>$F(-\infty)=0,F(+\infty)=1$</li>
+</ul>
+<p>若$p_i$是概率分布,有</p>
+<ul>
+<li>$p_i\ge0$</li>
+<li>$\sum p_i=1$</li>
+</ul>
+<p>若$f(x)$是概率密度,则</p>
+<ul>
+<li>$f(x)\ge0$</li>
+<li>$\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=1$</li>
+</ul>
+<blockquote>
+<p>例1 设$F_1(x)$,$F_2(x)$是分布函数,又$a,b&gt;0,a+b=1$,证明$F(x)=aF_1(x)+bF_2(x)$是分布函数.<br>显然$F(x)$单调不减,右连续.<br>$F(-\infty)=0,$F(+\infty)=a+b=1$$.</p>
 </blockquote>
 <blockquote>
-<p>(B) $A,B,A-C$<br>$P(A-C)=P(A\bar C)\le P(\bar C)=0$,故$A-C$与任何事件独立.</p>
+<p>例3 设$F_1(x)$,$F_2(x)$是分布函数,$f_1(x),f_2(x)$是相应的概率密度,则以下必为概率密度的是</p>
+<blockquote>
+<p>(A) $f_1(x)f_2(x)$<br>(B) $2f_2(x)F_1(x)$<br>(C) $f_1(x)F_2(x)$<br>(D) $f_1(x)F_2(x)+F_1(x)f_2(x)$<br>$\int_{-\infty}^{+\infty}f_1(x)F_2(x)+F_1(x)f_2(x)\mathrm{d}x=\int_{-\infty}^{+\infty}\mathrm{d}[F_1(x)F_2(x)]=1$</p>
+</blockquote>
 </blockquote>
 <blockquote>
-<p>(C) $A,B,AC$<br>$P(AAC)=P(AC)\neq P(A)P(AC)$</p>
-</blockquote>
+<p>例4 $X\sim f(x)$为偶函数,$x~F(x)$,证明若$a&gt;0$</p>
 <blockquote>
-<p>(D) $A,B,\bar A\bar C$<br>$P(\bar A\bar C)\le P(\bar C)=0$,故$\bar A\bar C$与任何事件独立.</p>
+<p>$F(-a)=1-F(a)=\dfrac12-\int_0^af(x)\mathrm{d}x$<br>$p\lbrace|X|&lt;a\rbrace=2F(a)-1$<br>$p\lbrace|X|&gt;a\rbrace=2[1-F(a)]$</p>
 </blockquote>
 </blockquote>
-
+<h2 id="求分布"><a href="#求分布" class="headerlink" title="求分布"></a>求分布</h2><p>$X\sim p_i$,则$F(x)=\sum\limits_{x_i\le x}p_i$.</p>
+<blockquote>
+<p>例5 设$X\sim\begin{bmatrix}1 &amp; 2 &amp; 3 \ \theta^2 &amp; 2\theta(1-\theta) &amp; (1-\theta)^2 \end{bmatrix}$,且$P\lbrace X\ge2\rbrace=\dfrac34$,求$\theta$及$x~F(x)$.<br>有$P\lbrace X=1\rbrace=\dfrac14=\theta^2,\theta=\dfrac12$.<br>$X\sim\begin{bmatrix}1 &amp; 2 &amp; 3 \ \dfrac14 &amp; \dfrac12 &amp; \dfrac14 \end{bmatrix}$<br>则$F(x)=\begin{dcases}0, &amp;x&lt;1 \ \dfrac14, &amp; 1\le x&lt;2 \ \dfrac34, &amp; 2\le x&lt;3\1, &amp;x\ge3\end{dcases}$<br><span class="idea">由于右连续,等号应该跟着大于号</idea></p>
+</blockquote>
+<p><strong>0-1分布:一次伯努利实验</strong>$X\sim B(1,p)$</p>
+<p>$X\sim\begin{bmatrix}0 &amp; 1 \ 1-p &amp; p\end{bmatrix}$</p>
+<p><strong>二项分布:$n$次伯努利实验</strong>$X\sim B(n,p)$</p>
+<p>$P\lbrace X=k\rbrace=C_n^kp^k(1-p)^{n-k},k=0,1,2,\cdots,n$</p>
+<p><strong>几何分布:首中即停止的伯努利实验</strong></p>
+<p>$P\lbrace X=k\rbrace=p(1-p)^{k-1},k=1,2,3,\cdots$</p>
+<p><strong>超几何分布:$N$件产品$M$件次品任取$n$个</strong>$X\sim H(n,M,N)$</p>
+<p>$P\lbrace X=k\rbrace=\dfrac{C_M^kC_{N-M}^{n-k}}{C_N^n}$</p>
+<p><strong>泊松分布:一段时间内质点来的个数</strong>$X\sim P(\lambda)$</p>
+<p>$P\lbrace X=k\rbrace=\dfrac{\lambda^k}{k!}e^{-\lambda},k=0,1,2,3,\cdots$</p>
+<!-- 10 18:06  -->
       
        <hr><span style="font-style: italic;color: gray;"> article_txt </span>
     </div>
