@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="JS | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="网页统分为三大部分：结构（HTML）、表现（CSS）和行为（JavaScript）。 JavaScript  JavaScript JS代码的位置 输出 JavaScript基本语法 字面量和变量 数据类型 类型转换 运算符 运算符优先级 语句   面向对象 对象基本操作 对象字面量 函数对象 作用域 构造函数       一个完整的JavaScript实现应该由以下三个部分构成：ECMAScri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/JS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="网页统分为三大部分：结构（HTML）、表现（CSS）和行为（JavaScript）。 JavaScript  JavaScript JS代码的位置 输出 JavaScript基本语法 字面量和变量 数据类型 类型转换 运算符 运算符优先级 语句   面向对象 对象基本操作 对象字面量 函数对象 作用域 构造函数       一个完整的JavaScript实现应该由以下三个部分构成：ECMAScri">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-09T19:01:45.915Z">
+<meta property="article:modified_time" content="2020-03-09T19:03:35.023Z">
+<meta property="article:author" content="Xiaoyuan-xyz">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/mokou.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/mokou.jpg" />
+</a>
+<div class="author">
+    <span>Xiaoyuan-xyz</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/Xiaoyuan-xyz/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(13)</small></div></li>
+    
+        
+            
+            <li><div data-rel="计算机">计算机<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数学">数学<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="红石原理">红石原理<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  site_url"  href="/about.html">原始</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="13">
+<input type="hidden" id="yelog_site_word_count" value="76.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+    
+    <div id=" local-search-result">
+
+</div>
+
+<nav id="title-list-nav">
+    
+    <a  class="计算机
+        " href="/2020/02/24/HTML/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="HTML">HTML</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:34">2020/02/24</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/03/10/JS/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="JS">JS</span>
+        <span class="post-date"
+            title="2020-03-10 03:01:45">2020/03/10</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/02/25/CSS/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="CSS">CSS</span>
+        <span class="post-date"
+            title="2020-02-25 14:00:59">2020/02/25</span>
+    </a>
+    
+    <a  class="" href="/2020/02/24/hello-world/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+        <span class="post-date"
+            title="2020-02-24 12:43:49">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/01/%E6%8A%BD%E4%BB%A3%E9%80%9A%E5%AD%A6%E7%BB%8F%E8%B7%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="抽代通学经路">抽代通学经路</span>
+        <span class="post-date"
+            title="2020-03-01 03:21:19">2020/03/01</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/02/27/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="抽象代数">抽象代数</span>
+        <span class="post-date"
+            title="2020-02-27 04:17:26">2020/02/27</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="方块更新与延迟理论的拓展">方块更新与延迟理论的拓展</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/02/25/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="概率论与数理统计">概率论与数理统计</span>
+        <span class="post-date"
+            title="2020-02-25 02:09:13">2020/02/25</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="矩阵论">矩阵论</span>
+        <span class="post-date"
+            title="2020-03-01 03:21:33">2020/03/01</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E7%B2%98%E6%B6%B2%E5%9D%97%E5%8F%8A%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="粘液块及观察者技术">粘液块及观察者技术</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+    <a  class="计算机
+        " href="/2020/02/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="计算机三级网络技术">计算机三级网络技术</span>
+        <span class="post-date"
+            title="2020-02-25 02:09:05">2020/02/25</span>
+    </a>
+    
+    <a  class="数学
+        " href="/2020/03/04/%E7%82%B9%E9%9B%86%E6%8B%93%E6%89%91%E5%AD%A6/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="点集拓扑学">点集拓扑学</span>
+        <span class="post-date"
+            title="2020-03-04 19:17:10">2020/03/04</span>
+    </a>
+    
+    <a  class="红石原理
+        " href="/2020/02/24/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="铁轨及矿车系统">铁轨及矿车系统</span>
+        <span class="post-date"
+            title="2020-02-24 12:19:48">2020/02/24</span>
+    </a>
+    
+</nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-JS" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">JS</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="计算机">计算机</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-10 03:03:35'>2020-03-10 03:01</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript"><span class="toc-text">JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS代码的位置"><span class="toc-text">JS代码的位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript基本语法"><span class="toc-text">JavaScript基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字面量和变量"><span class="toc-text">字面量和变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型转换"><span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符优先级"><span class="toc-text">运算符优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语句"><span class="toc-text">语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象基本操作"><span class="toc-text">对象基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象字面量"><span class="toc-text">对象字面量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数对象"><span class="toc-text">函数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数"><span class="toc-text">构造函数</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网页统分为三大部分：结构（HTML）、表现（CSS）和行为（JavaScript）。</p>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><!-- TOC -->
+<ul>
+<li><a href="#javascript">JavaScript</a><ul>
+<li><a href="#js代码的位置">JS代码的位置</a></li>
+<li><a href="#输出">输出</a></li>
+<li><a href="#javascript基本语法">JavaScript基本语法</a><ul>
+<li><a href="#字面量和变量">字面量和变量</a></li>
+<li><a href="#数据类型">数据类型</a></li>
+<li><a href="#类型转换">类型转换</a></li>
+<li><a href="#运算符">运算符</a></li>
+<li><a href="#运算符优先级">运算符优先级</a></li>
+<li><a href="#语句">语句</a></li>
+</ul>
+</li>
+<li><a href="#面向对象">面向对象</a><ul>
+<li><a href="#对象基本操作">对象基本操作</a></li>
+<li><a href="#对象字面量">对象字面量</a></li>
+<li><a href="#函数对象">函数对象</a></li>
+<li><a href="#作用域">作用域</a></li>
+<li><a href="#构造函数">构造函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<p>一个完整的JavaScript实现应该由以下三个部分构成：ECMAScript、DOM、BOM。</p>
+<p>JavaScript是解释型语言，有着类似C和Java的语法结构，动态语言，基于原型的面向对象。</p>
+<h2 id="JS代码的位置"><a href="#JS代码的位置" class="headerlink" title="JS代码的位置"></a>JS代码的位置</h2><p>在HTML中，JS代码可以编写在<code>&lt;script&gt;</code>中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">"Hello world!"</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以内联到<code>&lt;button&gt;</code>标签的<code>onclick</code>属性中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert('Hello world!');"</span>&gt;</span>点我！<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>可以内联到<code>&lt;a&gt;</code>标签的<code>href</code>属性中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:alert('Hello world!');"</span>&gt;</span>点我！<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以使用专门的js文件，然后引入。此时<code>&lt;script&gt;</code>标签内部的代码被忽略。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./demo.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>弹出警告框。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert();</span><br></pre></td></tr></table></figure></p>
+<p>弹出带有文本框的提示框，函数返回用户输入的字符串。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> input = prompt(<span class="string">"请输入密码"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>文档输出，向<code>&lt;body&gt;</code>中写入内容。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write();</span><br></pre></td></tr></table></figure><br>控制台输出。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log();</span><br></pre></td></tr></table></figure></p>
+<h2 id="JavaScript基本语法"><a href="#JavaScript基本语法" class="headerlink" title="JavaScript基本语法"></a>JavaScript基本语法</h2><h3 id="字面量和变量"><a href="#字面量和变量" class="headerlink" title="字面量和变量"></a>字面量和变量</h3><p>字面量都是不可改变的值，如<code>1</code>，<code>2</code>，<code>&quot;Hello&quot;</code>。</p>
+<p>变量可以用来保存值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello = <span class="string">"Hello world!"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(hello);</span><br></pre></td></tr></table></figure></p>
+<p>标识符由字母、数字、下划线、美元符组成；不能以数字开头；不能是关键字或保留字；一般使用小驼峰规则。变量名可以使用中文，但不要使用。</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>数据类型指的是字面量的类型。</p>
+<ul>
+<li>String 字符串</li>
+<li>Number 数值</li>
+<li>Boolean 布尔值</li>
+<li>Null 空值</li>
+<li>Undefined 未定义</li>
+<li>Object 对象</li>
+</ul>
+<p>Object是引用数据类型。</p>
+<p><code>typeof</code>用于查看类型。</p>
+<p>字符串使用双引号或单引号，不能嵌套，可以使用<code>\</code>转义。Unicode使用<code>\u</code>转义。</p>
+<p>所有数值，包括整数和浮点数都使用Number。</p>
+<p>Number型的最大值<code>Number.MAX_VALUE</code>约为$1.79769\times 10^{308}$，超过后认为<code>Infinity</code>；最小值<code>Number.MIN_VALUE</code>约为$5\times10^{-324}$。</p>
+<p><code>NaN</code>表示不是数字，如字符串乘字符串。</p>
+<p>十六进制以<code>0x</code>开头，八进制以<code>0</code>开头，二进制以<code>0b</code>开头（兼容性不好）。</p>
+<p>布尔值只有<code>true</code>和<code>false</code>。</p>
+<p><code>Undefined</code>类型值只有<code>undefined</code>，表示未定义的变量。</p>
+<p><code>Null</code>类型值只有<code>null</code>，专门用来表示为空的对象，类型为<code>Object</code>。</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
+<li>转换为String：<ul>
+<li><code>.toString()</code>方法，不能转换<code>null</code>和<code>undefined</code>。</li>
+<li><code>String()</code>函数，底层实现是检测和调用<code>.toString()</code>方法。</li>
+<li><code>+&quot;&quot;</code>加空串会转换为字符串。</li>
+</ul>
+</li>
+<li>转换为Number：<ul>
+<li><code>Number()</code>函数<ul>
+<li>若不能转换给出<code>NaN</code>。</li>
+<li><code>undefined</code>转换为<code>NaN</code>。</li>
+<li>空串<code>&quot;&quot;</code>或空白串<code>&quot; &quot;</code>，<code>&quot;\t&quot;</code>转换为<code>0</code>。</li>
+<li><code>true</code>转换为<code>1</code>，<code>false</code>转换为<code>0</code>。</li>
+<li><code>null</code>转换为<code>0</code>。</li>
+</ul>
+</li>
+<li><code>parseInt()</code>和<code>parseFloat()</code>转换字符串<ul>
+<li>将有效字符串转换为Number，遇到非数字停止。</li>
+<li><code>parseFloat()</code>可以转换科学计数法。</li>
+<li>非有效返回<code>NaN</code>。</li>
+<li>其他数据类型先转换为String再转换，所以给出<code>NaN</code>。</li>
+<li><code>070</code>这种字符串可能转换错误，可以使用<code>parseInt(&quot;070&quot;,10)</code>表示以十进制转换。</li>
+</ul>
+</li>
+<li><code>-0</code>，<code>*1</code>，<code>/1</code>除了加号以外的算术运算符.</li>
+<li><code>+</code>正号</li>
+</ul>
+</li>
+<li>转换为Boolean<ul>
+<li><code>Boolean()</code>函数<ul>
+<li><code>0</code>和<code>NaN</code>为<code>false</code>，其余都为<code>true</code>。</li>
+<li>空串<code>&quot;&quot;</code>为<code>false</code>，其余都为<code>true</code>。</li>
+<li><code>null</code>和<code>undefined</code>为<code>false</code>，其余对象为<code>true</code>。</li>
+<li><code>!!</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
+<li><code>typeof</code>是运算符，可以获取数据类型，返回字符串。</li>
+<li><code>+</code>，<code>-</code>,<code>*</code>,<code>/</code>,<code>%</code><ul>
+<li>除了字符串拼接，非Number类型值会先转换为Number。</li>
+<li>任何值和<code>NaN</code>运算都是<code>NaN</code>。</li>
+<li>两个字符串相加视为拼接。</li>
+<li>任何值和字符串相加视为字符串拼接。</li>
+</ul>
+</li>
+<li><code>+</code>正号，<code>-</code>负号<ul>
+<li>对于非Number，先转换为Number。</li>
+</ul>
+</li>
+<li><code>++</code>自增，<code>--</code>自减<ul>
+<li>无论是前置<code>++</code>和后置<code>++</code>，都会让变量立即自增，但返回的值不同。</li>
+</ul>
+</li>
+<li><code>&amp;&amp;</code>与，<code>||</code>或，<code>!</code>非<ul>
+<li>与和或均为短路运算。</li>
+<li>非<code>Boolean</code>会先转换为<code>Boolean</code>，但会返回短路时的原值：与运算如果第一个值为<code>true</code>返回第二个值，如果第一个值为<code>false</code>返回第一个值；或运算如果第一个值为<code>false</code>返回第二个值，如果第一个值为<code>true</code>返回第二个值。</li>
+</ul>
+</li>
+<li><code>=</code>赋值，<code>+=</code>，<code>-=</code>，<code>*=</code>，<code>/=</code>，<code>%=</code></li>
+<li><code>&gt;</code>，<code>&lt;</code>，<code>&gt;=</code>，<code>&lt;=</code><ul>
+<li>除了字符串比较，非数值会先转换为数值。</li>
+<li>任何值和<code>NaN</code>比较总会得到<code>false</code>。</li>
+<li>两个字符串比较会进行字符串比较，使用Unicode。</li>
+</ul>
+</li>
+<li><code>==</code>，<code>!=</code><ul>
+<li>一般来讲会转换为Number进行相等比较。</li>
+<li><code>null == 0 // false</code></li>
+<li><code>undefined</code>衍生自<code>null</code>，<code>undefined == null //true</code></li>
+<li><code>NaN</code>的相等比较总会给出<code>false</code>。可以通过<code>isNaN()</code>判断是否为<code>NaN</code>。</li>
+<li><code>!=</code>取值为<code>==</code>取反。</li>
+</ul>
+</li>
+<li><code>===</code>全等，<code>!==</code>不全等<ul>
+<li>全等和不全等不会做类型转换。</li>
+</ul>
+</li>
+<li><code>?:</code>条件运算符</li>
+<li><code>,</code>逗号运算符</li>
+</ul>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><ul>
+<li><code>.</code>，<code>[]</code>，<code>new</code></li>
+<li><code>()</code></li>
+<li><code>++</code>，<code>--</code></li>
+<li><code>!</code>，<code>~</code>，<code>+</code>，<code>-</code>，<code>typeof</code>，<code>void</code>，<code>delete</code></li>
+<li><code>%</code>，<code>*</code>，<code>/</code></li>
+<li><code>+</code>，<code>-</code></li>
+<li><code>&lt;&lt;</code>，<code>&gt;&gt;</code>，<code>&gt;&gt;&gt;</code></li>
+<li><code>&lt;</code>，<code>&lt;=</code>，<code>&gt;</code>，<code>&gt;=</code></li>
+<li><code>==</code>，<code>!=</code>，<code>===</code></li>
+<li><code>&amp;</code></li>
+<li><code>|</code></li>
+<li><code>&amp;&amp;</code></li>
+<li><code>||</code></li>
+<li><code>?:</code></li>
+<li><code>=</code>，<code>+=</code>，<code>-=</code>，<code>*=</code>，<code>/=</code>，<code>%=</code>，<code>&lt;&lt;=</code>，<code>&gt;&gt;=</code>，<code>&gt;&gt;&gt;=</code>，<code>&amp;=</code>，<code>^=</code>，<code>|=</code></li>
+<li><code>,</code></li>
+</ul>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(exp)&#123;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span>(exp)&#123;<span class="comment">//switch 使用的是===</span></span><br><span class="line">    <span class="keyword">case</span> val:<span class="comment">//case中允许表达式</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>()&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">&#125;<span class="keyword">while</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(;;)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
+<li>内建对象由ES标准定义，如Math，String，Number，Boolean，Function，Object等。</li>
+<li>宿主对象由JS的运行环境提供，如BOM，DOM等。console和document就是宿主对象。</li>
+<li>自建对象由开发人员创建。</li>
+</ul>
+<h3 id="对象基本操作"><a href="#对象基本操作" class="headerlink" title="对象基本操作"></a>对象基本操作</h3><p>对象通过<code>new</code>创建，对象属性用<code>.</code>创建，用<code>delete</code>删除。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//创建对象</span></span><br><span class="line">obj.age = <span class="number">100</span>;<span class="comment">//向对象中添加属性</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.age)<span class="comment">//读取对象的属性，如果没有属性给出undefined</span></span><br><span class="line"><span class="keyword">delete</span> obj.age;<span class="comment">//删除对象属性</span></span><br></pre></td></tr></table></figure><br>对象的属性的本质是键值对，键为字符串，可以用<code>[]</code>控制。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//属性名可以用任意字符串，但特殊的字符串需要使用[]，此时甚至可以传入变量</span></span><br><span class="line">obj[<span class="string">"123"</span>] = <span class="number">456</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"age"</span>;</span><br><span class="line">obj[str] = <span class="number">110</span>;</span><br></pre></td></tr></table></figure><br>可以通过in运算符检查对象是否拥有指定的属性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">"age"</span> <span class="keyword">in</span> obj)&#123; &#125;</span><br></pre></td></tr></table></figure><br>可以使用<code>foreach</code>来枚举对象的全部属性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> n <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(n+<span class="string">":"</span>+obj[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对象是引用数据类型，<code>==</code>比较的是是否为同一对象。</p>
+<h3 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h3><p><code>{}</code>为对象字面量，可以在创建对象的同时添加属性，属性名可以加引号。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obk = &#123; <span class="attr">name</span>: <span class="string">"Steve"</span>, <span class="attr">age</span>: <span class="number">11</span> &#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h3><p>函数也是对象，具有普通对象的功能，函数中可以封装代码，在需要时执行功能。</p>
+<p>可以在构造函数时将代码以字符串的形式传递给构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('Hello world');"</span>);</span><br></pre></td></tr></table></figure><br>一般使用函数声明来创建函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Hello world!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>也可以使用函数表达式创建函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Hello world!"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>可以在函数中使用参数。调用时多余参数会被忽略，不足的参数为<code>undefined</code>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>可以立即执行声明的匿名函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="string">"Hello world!"</span>;) &#125;)();</span><br></pre></td></tr></table></figure><br>对象的属性也可以是函数，此时称为方法。</p>
+<p>函数在调用时总会传递<code>this</code>，即调用函数的对象。</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>JS中的作用域分为全局作用域和函数作用域。</p>
+<p>全局作用域：</p>
+<ul>
+<li>编写在<code>&lt;script&gt;</code>中的变量拥有全局作用域，在页面打开时创建，在页面关闭时销毁。</li>
+<li>在全局作用域中有一个全局对象<code>window</code>，代表浏览器的窗口。全局作用域中的所有变量都作为<code>window</code>的属性储存，所有函数都作为<code>window</code>的方法储存。</li>
+<li><code>var</code>关键字声明的变量，会在所有的代码执行之前被声明。</li>
+<li>使用<code>function</code>声明的函数，会在所有的代码执行之前被声明及定义。</li>
+</ul>
+<p>函数作用域</p>
+<ul>
+<li>调用函数时创建函数作用域，函数执行完毕后作用域销毁。</li>
+<li>函数作用域中可以访问全局作用域。</li>
+<li>函数作用域中的重名变量就近使用。</li>
+<li><code>var</code>关键字声明的变量，会在函数中所有的代码执行之前被声明。</li>
+<li>定义的形参相当于在函数作用域中定义的变量。</li>
+<li>不用<code>var</code>关键字声明的变量，都会是全局变量。</li>
+<li>使用<code>function</code>声明的函数，会在函数中所有的代码执行之前被声明及定义。</li>
+</ul>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>使用工厂方法来统一创建对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObj</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.name = name;</span><br><span class="line">  obj.age = age;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以声明构造函数。调用构造函数时会立刻创建新的对象，将新建的对象设置为函数中的<code>this</code>，执行函数中的代码，并把对象作为返回值返回。使用同一个构造函数创建的对象称为同一类对象，将构造函数称为一个类。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><code>instanceof</code>运算符</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> article_txt </span>
+    </div>
+</article>
+
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '69419311f033b29ef0d4',
+            clientSecret: '180dfad4620a5a2774b1f9d6775a71d714fd2782',
+            repo: 'blogtalk',
+            owner: 'Xiaoyuan-xyz',
+            admin: ['Xiaoyuan-xyz'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">bottom_text</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("https://i.loli.net/2020/03/07/2MQXpPDfqyT8ERo.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
