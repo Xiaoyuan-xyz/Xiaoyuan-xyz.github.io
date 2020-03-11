@@ -6,17 +6,73 @@
   <meta name="keywords" content="">
   <meta name="description" content="方块更新与延迟理论的拓展 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="网页统分为三大部分：结构（HTML）、表现（CSS）和行为（JavaScript）。 JavaScript  JavaScript JS代码的位置 输出 JavaScript基本语法 字面量和变量 数据类型 类型转换 运算符 运算符优先级 语句   面向对象 对象基本操作 对象字面量 函数对象 作用域 构造函数       一个完整的JavaScript实现应该由以下三个部分构成：ECMAScri">
+<meta name="description" content="在基础红石原理中，我们将方块的亚稳态称为BUD态，能够更新处于BUD态的方块的信号称为方块更新信号，能够检测方块更新信号的装置称为BUD。但事实上，其他的一些装置如TEUD，观察者等似乎可以对其他信号做出相应，这意味着游戏存在更多类型的方块更新信号。对更多更新信号的研究对启动更新理论进行了拓展。 TEUD是一种BUD，但不同于常规BUD，它检测的内容不止是方块更新，本质上与BUD“检测方块更新”这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript">
-<meta property="og:url" content="http://yoursite.com/2020/03/10/JavaScript/index.html">
+<meta property="og:title" content="方块更新与延迟理论的拓展">
+<meta property="og:url" content="http://yoursite.com/2020/03/11/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="网页统分为三大部分：结构（HTML）、表现（CSS）和行为（JavaScript）。 JavaScript  JavaScript JS代码的位置 输出 JavaScript基本语法 字面量和变量 数据类型 类型转换 运算符 运算符优先级 语句   面向对象 对象基本操作 对象字面量 函数对象 作用域 构造函数       一个完整的JavaScript实现应该由以下三个部分构成：ECMAScri">
+<meta property="og:description" content="在基础红石原理中，我们将方块的亚稳态称为BUD态，能够更新处于BUD态的方块的信号称为方块更新信号，能够检测方块更新信号的装置称为BUD。但事实上，其他的一些装置如TEUD，观察者等似乎可以对其他信号做出相应，这意味着游戏存在更多类型的方块更新信号。对更多更新信号的研究对启动更新理论进行了拓展。 TEUD是一种BUD，但不同于常规BUD，它检测的内容不止是方块更新，本质上与BUD“检测方块更新”这">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-09T19:01:45.915Z">
-<meta property="article:modified_time" content="2020-03-09T19:03:35.023Z">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-880a3460.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-2e508404.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f85f8547.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-a2d9feec.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f1de4f0a.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f8955afc.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c3f44a3d.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f2c2be17.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-eb1ef670.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-1e2721d3.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-1.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-2.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-3.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-4.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-5.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/paint1.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-7.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/paint2.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-9.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-10.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-11.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-12.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-13.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-14.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/%E7%B2%98%E6%B6%B2%E5%9D%97%E5%8F%8A%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF-ee5f1bdd.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E7%B2%98%E6%B6%B2%E5%9D%97%E4%B8%8E%E8%A7%82%E5%AF%9F%E8%80%85%E6%8A%80%E6%9C%AF/1-3-15.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-d2ab6124.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-5a572430.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-d7119261.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-6911cbcf.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-15797f39.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-b0dac3f9.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-e31cf0cf.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-36edd094.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-7c0a0eb0.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c7777872.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c71e1370.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-cbb27eda.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-3af5cef5.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-2d1b5bbc.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-002411ca.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-406d1ed2.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-e320c52d.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f1c22351.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-47a04b76.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-b0a72c33.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-752f76cf.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-f3559190.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-94305299.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-669d9885.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-c8bff7aa.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-33de880b.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-b630f9e5.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-d218f51b.png">
+<meta property="og:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-03284ef1.png">
+<meta property="article:published_time" content="2020-03-11T14:25:44.692Z">
+<meta property="article:modified_time" content="2020-03-11T14:33:29.098Z">
 <meta property="article:author" content="Xiaoyuan-xyz">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95-880a3460.png">
 
 
 <link rel="icon" href="/img/mokou.jpg">
@@ -148,7 +204,7 @@
     <div><a class="about  site_url"  href="/about.html">原始</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="13">
-<input type="hidden" id="yelog_site_word_count" value="80.1k">
+<input type="hidden" id="yelog_site_word_count" value="83.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -233,12 +289,12 @@
     </a>
     
     <a  class="红石原理
-        " href="/2020/02/24/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/"
+        " href="/2020/03/11/%E6%96%B9%E5%9D%97%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%BB%B6%E8%BF%9F%E7%90%86%E8%AE%BA%E7%9A%84%E6%8B%93%E5%B1%95/"
         data-tag=""
         data-author="" >
             <span class="post-title" title="方块更新与延迟理论的拓展">方块更新与延迟理论的拓展</span>
         <span class="post-date"
-            title="2020-02-24 12:19:48">2020/02/24</span>
+            title="2020-03-11 22:25:44">2020/03/11</span>
     </a>
     
     <a  class="数学
@@ -334,12 +390,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-25 16:10:27'>2020-02-24 12:19</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-11 22:33:29'>2020-03-11 22:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:10.8k</span>
+        <span>字数:14.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -369,7 +425,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一节-TEUD"><span class="toc-text">第一节 TEUD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的简介"><span class="toc-text">TEUD的简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的制作"><span class="toc-text">TEUD的制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的功能"><span class="toc-text">TEUD的功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二节-观察者"><span class="toc-text">第二节 观察者</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者的输出特性"><span class="toc-text">观察者的输出特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者的输入特性"><span class="toc-text">观察者的输入特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三节-方块更新信号"><span class="toc-text">第三节 方块更新信号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方块更新信号与方块变化的辩证关系"><span class="toc-text">方块更新信号与方块变化的辩证关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NC更新与PP更新（还没写）"><span class="toc-text">NC更新与PP更新（还没写）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新抑制（还没写）"><span class="toc-text">更新抑制（还没写）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第四节-漏斗理论"><span class="toc-text">第四节 漏斗理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#漏斗概述"><span class="toc-text">漏斗概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#即时更新理论对漏斗的修正"><span class="toc-text">即时更新理论对漏斗的修正</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#漏斗理论"><span class="toc-text">漏斗理论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五节-0t脉冲"><span class="toc-text">第五节 0t脉冲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0t脉冲的细化"><span class="toc-text">0t脉冲的细化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#活塞更新深度"><span class="toc-text">活塞更新深度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超频时钟"><span class="toc-text">超频时钟</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一节-TEUD"><span class="toc-text">第一节 TEUD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的简介"><span class="toc-text">TEUD的简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的制作"><span class="toc-text">TEUD的制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TEUD的功能"><span class="toc-text">TEUD的功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二节-观察者"><span class="toc-text">第二节 观察者</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者的输出特性"><span class="toc-text">观察者的输出特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者的输入特性"><span class="toc-text">观察者的输入特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三节-方块更新信号"><span class="toc-text">第三节 方块更新信号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方块更新信号与方块变化的辩证关系"><span class="toc-text">方块更新信号与方块变化的辩证关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红石线更新顺序"><span class="toc-text">红石线更新顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#空间稳定性"><span class="toc-text">空间稳定性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方块更新顺序"><span class="toc-text">方块更新顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#红石线与哈希算法"><span class="toc-text">红石线与哈希算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#97-规律"><span class="toc-text">97%规律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线路稳定性（还没写）"><span class="toc-text">线路稳定性（还没写）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NC更新与PP更新（还没写）"><span class="toc-text">NC更新与PP更新（还没写）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新抑制（还没写）"><span class="toc-text">更新抑制（还没写）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第四节-漏斗理论"><span class="toc-text">第四节 漏斗理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#漏斗概述"><span class="toc-text">漏斗概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#即时更新理论对漏斗的修正"><span class="toc-text">即时更新理论对漏斗的修正</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#漏斗理论"><span class="toc-text">漏斗理论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五节-0t脉冲"><span class="toc-text">第五节 0t脉冲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0t脉冲的细化"><span class="toc-text">0t脉冲的细化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#活塞更新深度"><span class="toc-text">活塞更新深度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超频时钟"><span class="toc-text">超频时钟</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -403,6 +459,14 @@
 </li>
 <li><a href="#第三节-方块更新信号">第三节 方块更新信号</a><ul>
 <li><a href="#方块更新信号与方块变化的辩证关系">方块更新信号与方块变化的辩证关系</a></li>
+<li><a href="#红石线更新顺序">红石线更新顺序</a><ul>
+<li><a href="#空间稳定性">空间稳定性</a></li>
+<li><a href="#方块更新顺序">方块更新顺序</a></li>
+<li><a href="#红石线与哈希算法">红石线与哈希算法</a></li>
+<li><a href="#97规律">97%规律</a></li>
+<li><a href="#线路稳定性还没写">线路稳定性（还没写）</a></li>
+</ul>
+</li>
 <li><a href="#nc更新与pp更新还没写">NC更新与PP更新（还没写）</a></li>
 <li><a href="#更新抑制还没写">更新抑制（还没写）</a></li>
 </ul>
@@ -515,6 +579,156 @@
 <p>那么，什么样的方块变化能够引起一类BUD的相应呢？很不幸，这两者之间没有绝对的关系。</p>
 <p>举例来说，红石元器件所产生方块更新信号范围都较大因而产生BUD覆盖，例如红石线的强度变化，TEUD和常规BUD会有相同的响应。漏斗传输物品并不会产生方块更新，因此能被TEUD分离，而且漏斗内部的物品变更，本身就是一个方块变化，因此可以被观察者检测。投掷器的撤销激活不会产生任何方块更新或附加值更新信号，其内部的物品甚至没有变化，但是我们曾在投掷器的激活判定一节中提到：投掷器被激活后会变为激活的投掷器，撤销激活会变回。这显然是一个变化，可以用观察者检测。而中继器充能方块激活红石线的过程，实质上是中继器借助了实体方块而激活红石线，我们只把这种充能看做玩家对电路的分析方式，实体方块本身并没有什么变化，因此不会被观察者响应。</p>
 <p>通常来说，常规BUD、TEUD、以及观察者的检测范围都是不一样的，需要根据不同的需求采取不同的检测方式。而观察者也带来了超出方块更新体系的一面，观察者作为可移动的信号方式，并且有着奇特的激活方式。这样说来，观察者是1.11加入的新方块，其具有的特殊价值，以及新的利用方式还有待玩家积极开发，观察者有着非常大的应用前景。</p>
+<h2 id="红石线更新顺序"><a href="#红石线更新顺序" class="headerlink" title="红石线更新顺序"></a>红石线更新顺序</h2><h3 id="空间稳定性"><a href="#空间稳定性" class="headerlink" title="空间稳定性"></a>空间稳定性</h3><p>一个很无奈的事实是，如下的装置具有空间随机性，玩家无法预测装置的行为。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-d2ab6124.png" alt=""></p>
+<p>即便如此，玩家依然尝试寻找该装置背后的规律，尤其是在活塞被引入游戏的若干年后。最简单的想法就是将上图的装置在各处测试，以期发现装置运行和位置、方向以及其他一些相关因素之间的规律。即使这样的实验很多人都做过，即便他们将控制变量法运用到精细到可怕的程度，但得到的无非是一些诸如“红石线熄灭时，大致是由远至近更新的”这样模棱两可的规律。事实是，许多人都追求理论的完整、精细甚至是复杂，但真正令人遗憾的是他们都忘记了研究应当经历一个从简单到复杂，从具体到普适的过程。在这一“竞争”现象被发现的两三年内，没有人提出应当从单个点状红石开始实验，研究方块更新产生的顺序。</p>
+<p>然而，几个与稳定性有关的名词却伴随实验逐渐映入玩家们的眼帘，并成为了如今玩家所熟识的常识。</p>
+<ul>
+<li><strong>空间稳定性</strong>：如果一个装置具有空间稳定性，则意味着装置不会随位置的改变而产生不同的运行结果。大多数方块更新理论和延迟理论都是在空间稳定性的前提下进行研究的。如果某一现象不遵循空间稳定性，玩家会尝试修改装置使之成为空间稳定的装置。空间稳定性包括平移稳定性，后者指某一装置不会因平移而改变行为。除此之外，有不少装置具有方向性，即不能在旋转下保持行为不变（没有旋转稳定性）。还有一些装置会在区块的边缘运行失败。</li>
+<li><strong>时间稳定性</strong>：如果一个装置具有时间稳定性，则意味着相同的装置在相同的位置运行，无论运行多少次，总会得到相同的结果。除了刻意被设计为具有随机性的元件（如投掷器、发射器）外，其他元件、装置、理论、Java版整体都具有时间稳定性。这是Java版和基岩版红石电路最大的不同之处——基岩版不具有时间稳定性。</li>
+<li><strong>版本稳定性</strong>：游戏具有版本稳定性，这意味着即使是不具有空间稳定性的装置，在相同版本（包括游戏版本和Java版本）也会具有相同的表现。这说明理论对于不同计算机是普适的，因为在相同版本之下，游戏的内容和运行环境是相同的。</li>
+</ul>
+<h3 id="方块更新顺序"><a href="#方块更新顺序" class="headerlink" title="方块更新顺序"></a>方块更新顺序</h3><p>下面考察单个点状红石对其毗邻进行方块更新时的顺序。为了保持版本稳定性，我们使用1.15.2（至少包括1.13-1.15.2，可能包括1.5-1.15.2）和Java8。</p>
+<p>在如下的装置中，拉下拉杆，红石线激活，开始更新活塞，而活塞激活的顺序就可以反映出红石线进行方块更新的顺序。实验证明，该装置具有平移稳定性，且在不同朝向上的运行有规律可循。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-5a572430.png" alt=""></p>
+<p>事实上，所有方块更新（1.13后，NC更新）对毗邻进行更新的顺序都是相同的，即：<strong>西、东、下、上、北、南</strong>，或 <strong>-X、+X、-Y、+Y、-Z、+Z</strong>。因而如果上图面朝北方的话，总会是右手侧，即东侧活塞伸出，因为+X要优先于-Z更新。这也是放置方块和破坏方块产生方块更新的顺序。</p>
+<p>对于其它方向，我们可以采用处于BUD态的活塞配合命令方块来进行实验。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-d7119261.png" alt=""></p>
+<p>红石元件通常具有较为特殊的更新范围，如下是《基础红石原理》中曾出现的一道例题，其证明中继器激活时只以指向为中心更新一阶毗邻。现在指出，这种更新也遵循上述更新顺序规律，只是唯独不更新信号的来源方向，也就是中继器本身。遗憾的是目前没有实验可以证明这一点。如果下述中继器指向东侧，那么更新顺序就是：东、下、上、北、南。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-6911cbcf.png" alt=""></p>
+<p>红石线的更新就要复杂得多，这是因为点状红石在激活时会更新二阶毗邻，具体实现过程为将本身及一阶毗邻七个位置作为更新源，每一个更新源都遵循如上的方块更新顺序，但七个更新源之间的先后顺序是随机的，这也是“红石线瞎更新”真正“瞎”的地方。</p>
+<p><em>例 面朝北方，拉下拉杆尝试分析如下装置的运行结果。</em></p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-15797f39.png" alt=""></p>
+<p><em>在如上的电路中，两个活塞都不处于点状红石的一阶毗邻，故我们必须考虑点状红石的七个更新源，在这里，东侧更新源可能更新到右方活塞，而北侧更新源可能更新到前方活塞。如果东侧更新源先更新，毫无疑问右方活塞先伸出；如果北侧更新源先更新，根据方块更新顺序，+X将优于-Z，也会是右方活塞先伸出。综上所述，右方活塞先伸出</em></p>
+<p><em>有的读者可能会有疑惑：“东侧更新源不是空气吗，难道红石信号可以穿过空气传给活塞吗”？这里必须注意，充能理论是玩家用于分析电路所提出的理论，实体方块并不存在充能态和非充能态。拉下拉杆后，不存在一个时刻之后实体方块就被充能了，而是如果活塞收到更新，其会检测自己是否应该伸出，而方块更新信号并不区分实体方块或非实体方块。在这里，无论哪个更新源先更新，都是北侧实体方传递红石信号。</em></p>
+<p>上述装置几乎具有空间稳定性，在面朝北方或南方，装置总会使右右方活塞先伸出；而东方或西方也几乎是这样，只有极为特殊的几个点，会使得前方活塞先伸出。下图左侧就是一例。这暗示我们，红石线的更新源顺序还有更深层的规律可寻。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-b0dac3f9.png" alt=""></p>
+<p>最后，实验证明，<strong>某点处红石线更新源顺序仅与该红石线所在的绝对坐标有关</strong>。</p>
+<h3 id="红石线与哈希算法"><a href="#红石线与哈希算法" class="headerlink" title="红石线与哈希算法"></a>红石线与哈希算法</h3><p>sharir1701在2015年发表了《红石更新顺序》（[Explanation] Redstone Update Order (The Elusive HashSet) - Very Advanced/Niche Redstone Mechanics），指出红石线存在随机性的原因是其使用了数据结构中的HashSet，并尝试以此解释某些红石线的更新现象。</p>
+<p>HashSet是一种哈希表（hash table），最底层是一个数组，对象可以存入其中，就像标了序号的许多格子。序号的计算需要通过散列函数，也就是通常所说的<strong>哈希函数</strong>，其可以为根据对象计算得出尽可能随机的哈希值，随后依据哈希值对数组长度取余，将对象存储在哈希表中。读者只需知道，这有利于对这些对象进行查找、插入和删除。</p>
+<p>哈希值的对象仅取决于对象本身，相同的对象总会得到相同的哈希值。不同的对象也可能拥有相同的哈希值，这被称为冲突，但一般情况下这种事情发生的概率较小，在HashSet中，如果对象拥有相同序号，会被存到同一个格子中挂成一串，新加入的对象被挂在末尾。</p>
+<p>HashSet的数组默认长度为16，当存储的对象过多时便会考虑扩列，但在存储红石线的更新源是一件模式固定且简单的事，不会扩列，本被设定为无序的HashSet也呈现出一定的规律。</p>
+<hr>
+<p>在红石线更新源中，一个坐标的哈希值的计算公式由游戏决定，应用如下公式计算：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h = x + <span class="number">31</span> * (y + <span class="number">31</span> * z)</span><br></pre></td></tr></table></figure>
+<p>通过哈希值计算坐标在数组中存储序号的公式由Java决定，应用如下公式计算：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hash = h ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">n = (length - <span class="number">1</span>) &amp; hash</span><br></pre></td></tr></table></figure>
+<p>关于上述公式，有以下几点需要解释和注意：</p>
+<ul>
+<li>Java在运行时，所有数字都以二进制存储，因而有一个取值范围，也就是32个二进制位所能表示的数字。在这里可以认为取值范围是 $[0,2^{32})$ ,即0~4294967295，超出这个范围的会取余数，例如-1便会被存储为4294967295，表示为二进制就是<code>1111 1111 1111 1111 1111 1111 1111 1111</code>。</li>
+<li>哈希值的计算仅与坐标有关，且更新源顺序仅与哈希值有关，因此<strong>某点处红石线更新源顺序仅与该红石线所在位置的哈希值有关</strong>。例如(0,64,0)处的红石线应当与(31,63,0)处的红石线有相同的表现，因为二者的哈希值相同，都是 $64\times31=1984$。</li>
+<li>关于Java中从哈希值计算序号的具体方式将放在最后，这里只通过例子介绍序号的计算方式。如果要求的坐标为(100,64,2000)。<ul>
+<li>首先计算哈希值，$h=100+31\times(64+31\times2000)=1924084$。</li>
+<li>将哈希值除以65536，再求16的余数，即 $1924084=29\times65536+23540, 29=1\times16+13$，最后我们需要的就是这个13。</li>
+<li>将哈希值对16取余数，即 $1924084=120255\times16+4$，这次需要的是4。</li>
+<li>将刚才计算得出的两个数表示为二进制，即1101和0100，再做一次异或操作，即对应位如果相同则取0，不同则取1，最后得到1001，也就是9，这个坐标的序号就是9。</li>
+</ul>
+</li>
+</ul>
+<p><em>如果需要对理解代码的实现方式，可以阅读本条目。不要求一般的读者掌握。</em></p>
+<p><em><code>h &gt;&gt;&gt; 16</code>是Java中的无符号右移16位的意思，可以理解为取高的16位，如<code>1010 1010 1010 1010 1100 1100 1100 1100</code>无符号右移16位得到的结果就是<code>0000 0000 0000 0000 1010 1010 1010 1010</code>，换句话说是这个数字除以65536所得到的商。</em></p>
+<p><em><code>^</code>是按位异或，在这里表示将哈希值和哈希值的高16位进行异或。这一操作的目的是让结果更加散列。</em></p>
+<p><em>如前所说，存储红石线更新源是一个十分简单的模式，不会扩列，这里<code>length = 16</code>，因此<code>length - 1 = 15</code>，即二进制的<code>0000 0000 0000 0000 0000 0000 0000 1111</code>。<code>&amp;</code>是按位与，由于是对15进行按位与，也就相当于取最后四位，结果就是对16的余数。这里使用按位与运算是因为比起除法和求余数，按位与要快得多。</em></p>
+<p>当红石线开始更新后，游戏会将其本身放入HashSet中，再把六个毗邻放入，顺序依据游戏对方向所指定的默认顺序，即：<strong>下、上、北、南、西、东</strong>。分别计算这7个位置的哈希值，就可以得到他们在数组中的存储序号。以(100,64,2000)为例，在这里分别是</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>位置</th>
+<th>序号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原点</td>
+<td>O</td>
+<td>9</td>
+</tr>
+<tr>
+<td>下</td>
+<td>-Y</td>
+<td>8</td>
+</tr>
+<tr>
+<td>上</td>
+<td>+Y</td>
+<td>14</td>
+</tr>
+<tr>
+<td>北</td>
+<td>-Z</td>
+<td>14</td>
+</tr>
+<tr>
+<td>南</td>
+<td>+Z</td>
+<td>8</td>
+</tr>
+<tr>
+<td>西</td>
+<td>-X</td>
+<td>14</td>
+</tr>
+<tr>
+<td>东</td>
+<td>+X</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>接着，便是游戏从HashSet中取出这些位置，依次对它们的毗邻产生方块更新。取出的顺序以序号较小为优先，相同序号这以先加入者为优先（因为后加入这被挂在了同一格子的末尾）。以(100,64,2000)为例，更新顺序就是：下、南、东、原点、上、北、西。</p>
+<h3 id="97-规律"><a href="#97-规律" class="headerlink" title="97%规律"></a>97%规律</h3><p>读者可能注意到了，在如上所举的例子中，虽然序号给出了16个格子，但七个坐标却仅放在了序号为8、9、14三个格子中。而这还不是个别现象。97%的情况下，7个坐标仅会被存在3个格子之中。</p>
+<p>一个点的哈希值仅由一个点的坐标确定，而一个点毗邻的六个点，坐标不过是在x，y，z三个分量上 $\pm1$罢了。体现在哈希值上，就是哈希值 $\pm1,\pm31,\pm961$罢了。更有可能的是，这7个数值拥有完全相同的高16位！这意味着在进行得出序号的异或操作时，它们很有可能是在和相同的数进行异或运算，而我们知道 $x+31(y+31z)\equiv x-(y+31z)\equiv x-y+z(\text{mod}\quad16)$，这就意味着具有相同$x-y+z$值的坐标很有可能就被存储在同一个格子之中！</p>
+<p>sharir1701注意到了这一点，其后Earthcomputer在2018年发布了《红石粉更新顺序》（Redstone Dust Update Order），其与WARBEN和KaptainWutax指出，将七个坐标分为具有相同$x-y+z$值的三组是可行的，原点独自成组，-Y、+Z、+X一组，而+Y、-Z、-X一组。组间的顺序难以捉摸，但组内总存在先后顺序，这一顺序是由坐标加入HashSet的顺序决定的。</p>
+<p>Earthcomputer还指出，这一规律成立的概率大约是97%，这一数字可以这样估算：如果异或时高16位不同，最有可能是+961和-961除以65536得到的商不同，这意味着在这1922的跨度里横跨了65536的边缘。考虑到哈希值计算的散列性，这一现象发生的概率大致是 $\dfrac{1922}{65536}\approx2.9\%$，那么规律生效的概率大约为 $97\%$ 了。</p>
+<p>此外，也容易得出，如果一个点是规律失效点<del>特异点</del>，那么其南北两格之外就不可能是失效点了，但东西方向可能有几百格甚至上千格都是规律失效点。规律失效点的分布并不均匀。</p>
+<p>下图面朝西方，第四列的红石全部处于特异点。</p>
+<p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/方块更新与延迟理论的拓展/方块更新与延迟理论的拓展-e31cf0cf.png" alt=""></p>
+<p>KaptainWutax随后穷举了哈希值的取值范围，给出了如下的表格（部分）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>更新源顺序</th>
+<th>概率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-Y, +Z, +X, O, +Y, -Z, -X</td>
+<td>24.267%</td>
+</tr>
+<tr>
+<td>+Y, -Z, -X, O, -Y, +Z, +X</td>
+<td>24.267%</td>
+</tr>
+<tr>
+<td>O, -Y, +Z, +X, +Y, -Z, -X</td>
+<td>12.133%</td>
+</tr>
+<tr>
+<td>O, +Y, -Z, -X, -Y, +Z, +X</td>
+<td>12.133%</td>
+</tr>
+<tr>
+<td>-Y, +Z, +X, +Y, -Z, -X, O</td>
+<td>12.133%</td>
+</tr>
+<tr>
+<td>+Y, -Z, -X, -Y, +Z, +X, O</td>
+<td>12.133%</td>
+</tr>
+<tr>
+<td>其余每项</td>
+<td>&lt; 0.2%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>附加结论是，Y坐标先更新的概率高达72.8%，而X坐标不可能最先更新。</p>
+<h3 id="线路稳定性（还没写）"><a href="#线路稳定性（还没写）" class="headerlink" title="线路稳定性（还没写）"></a>线路稳定性（还没写）</h3><p>接下来，Earthcomputer尝试根据如上得到的结论，解决空间随机性的问题。</p>
 <h2 id="NC更新与PP更新（还没写）"><a href="#NC更新与PP更新（还没写）" class="headerlink" title="NC更新与PP更新（还没写）"></a>NC更新与PP更新（还没写）</h2><p>[&gt;_&lt;]:<br>在1.13后，游戏使用NeighborChanged（邻位更新）和PostPlacement（放置后更新）两种更新信号。</p>
 <h2 id="更新抑制（还没写）"><a href="#更新抑制（还没写）" class="headerlink" title="更新抑制（还没写）"></a>更新抑制（还没写）</h2><h1 id="第四节-漏斗理论"><a href="#第四节-漏斗理论" class="headerlink" title="第四节 漏斗理论"></a>第四节 漏斗理论</h1><h2 id="漏斗概述"><a href="#漏斗概述" class="headerlink" title="漏斗概述"></a>漏斗概述</h2><p>漏斗是于1.5版本中加入的红石输出元件，其具有5格的存储空间。漏斗的主要功能被称为漏斗的输出特性，简述如下：</p>
 <ul>
