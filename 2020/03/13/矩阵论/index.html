@@ -211,7 +211,7 @@
     <div><a class="about  site_url"  href="/about.html">原始</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="13">
-<input type="hidden" id="yelog_site_word_count" value="87.3k">
+<input type="hidden" id="yelog_site_word_count" value="91.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -261,12 +261,12 @@
     </a>
     
     <a  class="计算机
-        " href="/2020/03/10/JavaScript/"
+        " href="/2020/03/15/JavaScript/"
         data-tag=""
         data-author="" >
             <span class="post-title" title="JavaScript">JavaScript</span>
         <span class="post-date"
-            title="2020-03-10 03:01:45">2020/03/10</span>
+            title="2020-03-15 04:34:48">2020/03/15</span>
     </a>
     
     <a  class="" href="/2020/02/24/hello-world/"
@@ -311,15 +311,6 @@
             <span class="post-title" title="概率论与数理统计">概率论与数理统计</span>
         <span class="post-date"
             title="2020-02-25 02:09:13">2020/02/25</span>
-    </a>
-    
-    <a  class="数学
-        " href="/2020/03/01/%E7%9F%A9%E9%98%B5%E8%AE%BA/"
-        data-tag=""
-        data-author="" >
-            <span class="post-title" title="矩阵论">矩阵论</span>
-        <span class="post-date"
-            title="2020-03-01 03:21:33">2020/03/01</span>
     </a>
     
     <a  class="计算机
@@ -367,6 +358,15 @@
             title="2020-03-04 19:17:10">2020/03/04</span>
     </a>
     
+    <a  class="数学
+        " href="/2020/03/13/%E7%9F%A9%E9%98%B5%E8%AE%BA/"
+        data-tag=""
+        data-author="" >
+            <span class="post-title" title="矩阵论">矩阵论</span>
+        <span class="post-date"
+            title="2020-03-13 22:35:04">2020/03/13</span>
+    </a>
+    
 </nav>
 </div>
     </div>
@@ -397,7 +397,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-04 22:48:30'>2020-03-01 03:21</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-13 22:44:45'>2020-03-13 22:35</time>
         
     </div>
     <div class="article-meta">
@@ -460,7 +460,7 @@
 </ul>
 <p>由此构成线性空间.</p>
 <p>称向量组$\alpha_1,\alpha_2,\cdots,\alpha_n$线性无关,如果存在不全为0的系数$k_1,k_2,\cdots,k_n\in K$,满足$k_1\alpha_1+k_2\alpha_2+\cdots+k_n\alpha_n=0$.</p>
-<p>称向量$\beta$可由向量组$\alpha_1,\alpha_2,\cdots,\alpha_n$线性表示,如果$\exists k_1,k_2,\cdots k_n\in K,\beta=k_1\alpha_1+k_2\alpha_2+\cdots+k_n\alpha_n$,即$$\begin{bmatrix}\alpha_1\quad\alpha_2\quad\cdots\quad\alpha_n\end{bmatrix}\begin{bmatrix}k_1\\\k_2\\\\\vdots\\\k_n\end{bmatrix}=\beta$$</p>
+<p>称向量$\beta$可由向量组$\alpha_1,\alpha_2,\cdots,\alpha_n$线性表示,如果$\exists k_1,k_2,\cdots k_n\in K,\beta=k_1\alpha_1+k_2\alpha_2+\cdots+k_n\alpha_n$,即<script type="math/tex">\begin{bmatrix}\alpha_1\quad\alpha_2\quad\cdots\quad\alpha_n\end{bmatrix}\begin{bmatrix}k_1\\k_2\\\vdots\\k_n\end{bmatrix}=\beta</script></p>
 <p>称某一子组为向量组的极大线性无关组,如果该子组线性无关,且任何真包含该子组的子组线性相关.</p>
 <p>定理:向量组的任意极大线性无关组中的向量个数相同,称为秩.</p>
 <p>若有集合$V$和数域$F$,$V$中任意向量都可以由极大无关组$\alpha_1,\alpha_2,\cdots,\alpha_n$线性表示,则称$V$为$n$维线性空间,极大无关组为一组基,表示系数$k_1,k_2,\cdots k_n$称为坐标.$V$中的任意向量都与$K^n$中的坐标一一对应.</p>
@@ -473,10 +473,9 @@
 <p>设$\mathscr{A}$表示$F^m$到$F^n$之间的全部线性映射,则$\mathscr{A}$与$F^{m\times n}$同构.</p>
 <p>称$A,B\in F^{m\times n}$等价,如果存在可逆矩阵$P\in F^{n\times n},Q\in F^{m\times m}$,使得$A=PBQ$.</p>
 <p>任何矩阵$A\in F^{m\times n}$总和如下的矩阵等价,其中$r$是$A$的秩.</p>
-<p>$$\begin{bmatrix}I_r&amp;O\\\O&amp;O\end{bmatrix}$$</p>
-<p>称$A,B\in F^{n\times n}$相似,如果存在可逆矩阵$P\in F^{n\times n}$,使得$P^{-1}AP=B$.</p>
+<script type="math/tex; mode=display">\begin{bmatrix}I_r&O\\O&O\end{bmatrix}</script><p>称$A,B\in F^{n\times n}$相似,如果存在可逆矩阵$P\in F^{n\times n}$,使得$P^{-1}AP=B$.</p>
 <p>$A\in F^{n\times n}$,子空间$W\subseteq F^{n}$,如果$A(W)\subseteq W$,称$W$是$A$的不变子空间.</p>
-<p>$A,B\in F^{n\times n}$相似,$AP=PB$,$P=\begin{bmatrix}P_1&amp;P_2\end{bmatrix}$,$B=\begin{bmatrix}B_{11}&amp;B_{12}\\\B_{21}&amp;B_{22}\end{bmatrix}$,则:</p>
+<p>$A,B\in F^{n\times n}$相似,$AP=PB$,$P=\begin{bmatrix}P<em>1&amp;P_2\end{bmatrix}$,$B=\begin{bmatrix}B</em>{11}&amp;B<em>{12}\B</em>{21}&amp;B_{22}\end{bmatrix}$,则:</p>
 <ul>
 <li>$B_{21}=0\Leftrightarrow \mathbf{Im}P_1$是$A$的不变子空间</li>
 <li>$B_{12}=0\Leftrightarrow \mathbf{Im}P_2$是$A$的不变子空间</li>
@@ -487,11 +486,11 @@
 <p>$\lambda$矩阵的秩定义为不为零多项式的子式的最大阶数.$\lambda$矩阵的秩大于等于将$\lambda$取一定数时矩阵的秩.</p>
 <p>称$A(\lambda)\in F^{n\times n}(\lambda)$为幺模矩阵,如果$A(\lambda)$的逆矩阵也是$\lambda$矩阵.$A(\lambda)$是幺模矩阵当且仅当$A(\lambda)$的模是非零常数多项式.</p>
 <p>$A(\lambda)\in F^{m\times n}(\lambda)$的所有$k$阶子式的最高公因式称为$k$阶行列式因子$D_k(\lambda)$.初等行变换不改变行列式因子.</p>
-<p>在初等行变换下,$\lambda$矩阵等价于它的Smith标准型,即$A(\lambda)\sim\begin{bmatrix}\varDelta(\lambda) &amp; O \\ O &amp; O \end{bmatrix}$,其中$\varDelta(\lambda)=\begin{bmatrix}d_1(\lambda) &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; d_r(\lambda)\end{bmatrix}$,$r$为$A(\lambda)$的秩,$d_i(\lambda)$称为不变因子,且有:$$d_1(\lambda)=D_1(\lambda)$$$$d_i(\lambda)=D_i(\lambda)/D_{i-1}(\lambda)$$</p>
+<p>在初等行变换下,$\lambda$矩阵等价于它的Smith标准型,即$A(\lambda)\sim\begin{bmatrix}\varDelta(\lambda) &amp; O \ O &amp; O \end{bmatrix}$,其中$\varDelta(\lambda)=\begin{bmatrix}d<em>1(\lambda) &amp; &amp; \ &amp; \ddots &amp; \ &amp; &amp; d_r(\lambda)\end{bmatrix}$,$r$为$A(\lambda)$的秩,$d_i(\lambda)$称为不变因子,且有:$$d_1(\lambda)=D_1(\lambda)$$$$d_i(\lambda)=D_i(\lambda)/D</em>{i-1}(\lambda)$$</p>
 <p>单位模阵的Smith型为单位矩阵,对$\lambda$作初等行变化相当于乘单位模阵.</p>
 <p>给定$A\in F^{n\times n}$,称多项式矩阵$\lambda I-A$为$A$的特征矩阵.</p>
-<p>特征矩阵的秩为$n$,Smith标准型为$\begin{bmatrix}d_1(\lambda) &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; d_n(\lambda)\end{bmatrix}$,且$D_n(\lambda)=|\lambda I-A|$,不变因子的次数和为$n$.</p>
-<p>这个Smith标准型也可以写为$\begin{bmatrix}H_1(\lambda) &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; H_p(\lambda)\end{bmatrix}$,其中$H_i(\lambda)=\begin{bmatrix}1 &amp; &amp; &amp; \\ &amp; \ddots &amp; &amp; \\ &amp; &amp; 1 &amp; \\ &amp; &amp; &amp; h_{n_i}(\lambda)\end{bmatrix}$,$h_{n_i}$的次数为$n_i$.</p>
+<p>特征矩阵的秩为$n$,Smith标准型为$\begin{bmatrix}d_1(\lambda) &amp; &amp; \ &amp; \ddots &amp; \ &amp; &amp; d_n(\lambda)\end{bmatrix}$,且$D_n(\lambda)=|\lambda I-A|$,不变因子的次数和为$n$.</p>
+<p>这个Smith标准型也可以写为$\begin{bmatrix}H<em>1(\lambda)&amp;&amp;\&amp;\ddots&amp;\&amp;&amp;H_p(\lambda)\end{bmatrix}$,其中$H_i(\lambda)=\begin{bmatrix}1 &amp; &amp; &amp; \ &amp; \ddots &amp; &amp; \ &amp; &amp; 1 &amp; \ &amp; &amp; &amp; h</em>{n<em>i}(\lambda)\end{bmatrix}$,$h</em>{n_i}$的次数为$n_i$.</p>
 <p>将不变因子$h_i(\lambda)$在$F[\lambda]$中作质因式分解时得到的各次方幂称为初等因子组.初等因子组和不变因子互相唯一确定.</p>
 <p>矩阵相似,当且仅当特征矩阵等价,当且仅当特征矩阵有相同的Smith型,当且仅当特征矩阵有相同的不变因子,当且仅当特征矩阵有相同的行列式因子,当且仅当特征矩阵有相同的初等因子组.</p>
 
