@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>抽代千叶抄</title>
+      <link href="/2020/03/17/%E6%8A%BD%E4%BB%A3%E5%8D%83%E5%8F%B6%E6%8A%84/"/>
+      <url>/2020/03/17/%E6%8A%BD%E4%BB%A3%E5%8D%83%E5%8F%B6%E6%8A%84/</url>
+      
+        <content type="html"><![CDATA[<style>.qed{    float: right;}.qed:before{    content: "■";}</style><h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><blockquote><p>[1] 设$\varphi$是集合$A$到$B$的一个映射,$C$和$D$分别为$A$和$B$的非空子集.证明:<br>a) $\varphi^{-1}(\varphi(C))\supseteq C$,且当$\varphi$为单射时等号成立;<br>b) $\varphi(\varphi^{-1}(D))\subseteq D$,且当$\varphi$为满射时等号成立.</p></blockquote><p>a) 任取$x\in C$,$\varphi(x)\in\varphi(C)$,<br>$x\in\varphi^{-1}(\varphi(C))$,$\varphi^{-1}(\varphi(C))\supseteq S$.<br>若$\varphi$为单射,<br>任取$y\in\varphi^{-1}(\varphi(C))$,$\varphi(y)\in\varphi(C)$<br>故有$x\in C$,$\varphi(x)=\varphi(y)$.<br>由于$\varphi$是单射,<br>$x=y\in S$,<br>$\varphi^{-1}(\varphi(C))=C$<i class="qed"></i></p><p>b) 任取$y\in\varphi(\varphi^{-1}(D))$,<br>存在$x\in\varphi^{-1}(D)$,$\varphi(x)=y$,<br>同时$\varphi(x)\in D$,$y\in D$,<br>$\varphi(\varphi^{-1}(D))\subseteq D$<br>若$\varphi$为满射,<br>$\forall z\in D$,$\exists w\in\varphi^{-1}(D),\varphi(w)=z$,<br>$\varphi(w)\in\varphi(\varphi^{-1}(D))$,<br>$\varphi(\varphi^{-1}(D))=D$<i class="qed"></i></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript</title>
       <link href="/2020/03/15/JavaScript/"/>
       <url>/2020/03/15/JavaScript/</url>

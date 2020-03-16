@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>抽象代数 | Hexo</title>
+  <title>抽代千叶抄 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="抽象代数 | Hexo">
+  <meta name="description" content="抽代千叶抄 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="网页统分为三大部分：结构（HTML）、表现（CSS）和行为（JavaScript）。 JavaScript   JavaScript JavaScript简介 代码的位置 输出   JavaScript基本语法 字面量和变量 数据类型 类型转换 运算符 运算符优先级 语句   面向对象 对象基本操作 对象字面量 函数对象 作用域 闭包 构造函数 原型对象 JSON   内建对象 Array Dat">
 <meta property="og:type" content="article">
@@ -325,9 +325,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-抽象代数" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-抽代千叶抄" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">抽象代数</h1>
+        <h1 class="article-title">抽代千叶抄</h1>
     
     <div class="article-meta">
         
@@ -343,12 +343,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-04 20:18:57'>2020-02-27 04:17</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-17 01:01:58'>2020-03-17 01:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.7k</span>
+        <span>字数:203</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -378,7 +378,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#群论"><span class="toc-text">群论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#群的定义"><span class="toc-text">群的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变换群和置换群"><span class="toc-text">变换群和置换群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环群"><span class="toc-text">循环群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子群与陪集"><span class="toc-text">子群与陪集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#群同态"><span class="toc-text">群同态</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#群论"><span class="toc-text">群论</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -394,105 +394,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- TOC -->
+        <style>
 
-<ul>
-<li><a href="#群论">群论</a><ul>
-<li><a href="#群的定义">群的定义</a></li>
-<li><a href="#变换群和置换群">变换群和置换群</a></li>
-<li><a href="#循环群">循环群</a></li>
-<li><a href="#子群与陪集">子群与陪集</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
+.qed{
+    float: right;
 
-<h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><h2 id="群的定义"><a href="#群的定义" class="headerlink" title="群的定义"></a>群的定义</h2><p>在非空集合$G$中定义运算”$\cdot$”,若满足:</p>
-<ul>
-<li>(I) 运算封闭,即$\forall a,v\in G, ab\in G$</li>
-<li>(II) 运算结合律,即$\forall a,b,c\in G, (ab)c=a(bc)$</li>
-<li>(III) $\forall a,b\in G,ax=b,ya=b$均有解.</li>
-</ul>
-<p>则称$G$为群.</p>
-<p>若$G$为群,则$G$总有左单位元,即:</p>
-<ul>
-<li>(IV) $\exists e\in G$, $\forall a\in G, ea=a$</li>
-</ul>
-<p>若$G$为群,则$G$中任意元素都有左逆,即:</p>
-<ul>
-<li>(V) $\forall a\in G,\exists a^{-1}\in G, a^{-1}a=e$</li>
-</ul>
-<p>可以证明,左单位元也是右单位元,左逆元也是又逆元,单位元和逆元唯一.</p>
-<p>给出群$G$第二定义:(I),(II),(III)$\Leftrightarrow$(I),(II),(IV),(V)</p>
-<p>群满足左右消去律:</p>
-<ul>
-<li>(III’) $\forall a\in G,ax=ax’\Rightarrow x=x’,ya=y’a\Rightarrow y=y’$</li>
-</ul>
-<p>若$G$为有限群,给出第二定义:(I),(II),(III)$\Leftrightarrow$(I),(II),(III’).</p>
-<p>在群$G$中,使得$a^n=e$的最小正整数$n$称为$a$的阶.若$n$不存在,称$a$的阶为无穷.</p>
-<h2 id="变换群和置换群"><a href="#变换群和置换群" class="headerlink" title="变换群和置换群"></a>变换群和置换群</h2><p>设有$A$上的一个变换$\tau$,即$\tau:a\rightarrow\tau(a)$,记作$a^\tau$.</p>
-<p>设$|A|=n$,则$A$上的变换共有$n^n$个变换,$n!$个一一变换.</p>
-<p>记$S=${$A$的所有一一变换}.在$S$上定义乘法,有$\tau_1\tau_2:a\rightarrow(a^{\tau_1})^{\tau_2}$,则$S$作成群.</p>
-<p>反之,如果某集合上的变换作成群,则变换一定是一一的.</p>
-<p>Cayley定理:任何群都与变换群同构.</p>
-<blockquote>
-<p>设有群$G$,定义$\forall x\in G,\tau_x: g\rightarrow gx$,容易验证$\tau_x$为$G\rightarrow G$的一一变换.记$\bar G={\tau_x,x\in G}$<br>规定$\bar G$的乘法,$\tau_x\tau_y=\tau_{xy}$,容易证明$\bar G$为群.<br>定义$\varphi:G\rightarrow\bar G:x\rightarrow\tau_x$,可以证明$\tau$是同构映射.</p>
+}
+.qed:before{
+    content: "■";
+}
+
+</style>
+
+<h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><blockquote>
+<p>[1] 设$\varphi$是集合$A$到$B$的一个映射,$C$和$D$分别为$A$和$B$的非空子集.证明:<br>a) $\varphi^{-1}(\varphi(C))\supseteq C$,且当$\varphi$为单射时等号成立;<br>b) $\varphi(\varphi^{-1}(D))\subseteq D$,且当$\varphi$为满射时等号成立.</p>
 </blockquote>
-<p>有限集合上一一变换称为置换,变换群称为置换群.</p>
-<p>$n$个元素的集合共有$n!$种置换,所有置换构成的群称为$n$次对称群.</p>
-<p>任何一个置换都可以写成若干循环置换的乘积.</p>
-<h2 id="循环群"><a href="#循环群" class="headerlink" title="循环群"></a>循环群</h2><p>若群$G$中存在某一元素$a$,任意$G$中的元素都可以表示为$a$的乘方,则称$G$为循环群,$a$为生成元,记为$G=(a)$.</p>
-<blockquote>
-<p>取$G$为所有模$n$剩余类,$G={[0],[1],\cdots[n-1]}$,定义乘法$[a]+[b]=[a+b]$.$G$作成模$n$剩余类加群$\mathbb{Z}_n$.</p>
-</blockquote>
-<p>定理:设$G$为$a$生成的循环群,则$G$的构造由$a$的阶决定:若$a$的阶为无穷,则$G$与整数加群同构;若$a$的阶为$n$,则$G$与模$n$剩余类加群同构.</p>
-<h2 id="子群与陪集"><a href="#子群与陪集" class="headerlink" title="子群与陪集"></a>子群与陪集</h2><ul>
-<li>(i) $a,b\in H \Rightarrow ab\in H$</li>
-<li>(ii) $a\in H\Rightarrow a^{-1}\in H$</li>
-<li>(iii) $a,b\in H\Rightarrow ab^{-1}\in H$    </li>
-</ul>
-<p>若$G$为群,$H$为$G$的子集,若$H$为群,称为子群.作成子群的条件:(i),(ii)$\Leftrightarrow$(iii).</p>
-<p>若$H$有限,作成有限子群的条件:(i).</p>
-<p>对群$G$,子群$H$,规定等价关系$a\sim b\Leftrightarrow ab^{-1}\in H$.有等价关系确定群的一个分类$Ha={ha|h\in H}$为$H$的含$a$的右陪集.</p>
-<p>对群$G$,子群$H$,规定等价关系$a\sim b\Leftrightarrow b^{-1}a\in H$.有等价关系确定群的一个分类$aH={ah|h\in H}$为$H$的含$a$的左陪集.</p>
-<blockquote>
-<p>记$H=n\mathbb{Z}$，其为整数群$G=\mathbb{Z}$的子群,规定等价关系$a\sim b\Leftrightarrow a-b\in H$,即$a-b=kn,k\in\mathbb{Z}$.右陪集$Ha={h+a|h\in H}={b|a\equiv b(\mathbf{mod}\ n),b\in\mathbb{Z}}$.</p>
-</blockquote>
-<p>陪集具有以下结论:</p>
-<ul>
-<li>每个陪集中元素个数相同,等于子群$H$中元素个数</li>
-<li>陪集个数$n=[G:H]=\dfrac{|G|}{|H|}$</li>
-<li>左右陪集可能不相同,但左右陪集存在双射$Ha\leftrightarrow a^{-1}H$</li>
-<li>任何元素的阶能整除$G$的阶</li>
-<li>素数阶群必定只由一个元素生成(循环群)</li>
-</ul>
-<blockquote>
-<p>$S_3={(1),(1,2),(1,3),(2,3),(1,2,3),(1,3,2)}$的子群$H={(1),(1,2,3),(1,3,2)}$有<br>$H(1)=H(1,2,3)=H(1,3,2)=H$,<br>$H(1,2)=H(2,3)=H(1,3)={(1,2),(2,3),(1,3)}$,<br>$(1)H=(1,2,3)H=(1,3,2)H=H$,<br>$(1,2)H=(2,3)H=(1,3)H={(1,2),(2,3),(1,3)}$.</p>
-</blockquote>
-<p>群$G$的不变子群$N$,如果$\forall a\in G,Na=aN$,记作$N\triangleleft G$.</p>
-<ul>
-<li>交换群的子群都是不变子群</li>
-<li>记集合为中心$N={n|an=na,\forall a\in G}$,则$N$是$G$的不变子群</li>
-<li>子群$N$为不变子群$\Leftrightarrow aNa^{-1}=N,\forall a\in G$</li>
-<li>子群$N$为不变子群$\Leftrightarrow ana^{-1}\in N,\forall a\in G,\forall n\in N$</li>
-</ul>
-<p>$N$为群$G$的不变子群,陪集的集合${aN,bN,\dots},a,b,c\dots\in G$在乘法$(aN)(bN)=(ab)N$作成群,称为商群$G/N$,其阶$|G/N|=\dfrac{|G|}{|N|}$</p>
-<blockquote>
-<p>$N=n\mathbb{Z}$，其为不变子群,在所有分类(陪集)的集合${[0],[1],\dots,[n-1]}$上,加法$[a]+[b]=[a+b]$做成群$\mathbb{Z}_n$.</p>
-</blockquote>
-<h2 id="群同态"><a href="#群同态" class="headerlink" title="群同态"></a>群同态</h2><p>设有集合$G$,$\bar G$,分别在其上定义了乘法.若$G$为群,且$G$到$\bar G$关于它们的乘法同态,则$\bar G$也是群.若$G$到$\bar G$关于它们的乘法同构,且$\bar G$为群,则$G$也是群.</p>
-<p>设$G$是群,$N\triangleleft G$,则从$G$到$G/H$的映射$\varphi$是同态,称为自然同态.有$\mathrm{ker}\varphi=N$.</p>
-<p>群的同态基本定理:设$\varphi$是$G$到$\bar G$的群同态,则$G/\mathrm{ker}\varphi\cong\bar G$</p>
-<p>设$\varphi$是$G$到$\bar G$的群同态,则同态像$\varphi(G)$同构于商群$G/\mathrm{ker}\varphi$.</p>
-<p>对应定理:设$\varphi$是$G$到$\bar G$的群同态,则</p>
-<ul>
-<li>若$H$是$G$的子群,则$\varphi(H)$是$\bar G$的子群.</li>
-<li>若$K$是$\bar G$的子群,则$\varphi^{-1}(K)$是$G$的子群,且$\mathrm{ker}\varphi\subset\varphi^{-1}(K)$</li>
-<li>映射$H\rightarrow\varphi(H)$定义了$G$的包含$\mathrm{ker}\varphi$的子群族与$\bar G$的子群族间的一一对应,在这个对应下,$H$是$G$的正规子群当且仅当$\varphi(H)$是$\bar G$的正规子群,此时还有$G/H\cong\bar G/\varphi(H)$.</li>
-</ul>
-<p>第一同构定理:设$H,N$是群$G$的正规子群,$H\subset N$,则$(G/H)/(N/H)\cong G/N$.</p>
-<p>第二同构定理:设$N$是群$G$的正规子群,$K$是$G$的子群,则$N\cap K$是$K$的正规子群,且$KH/H\cong K/N\cap K$.</p>
-<p>群$G$到自身的同构称为自同构,全体自同构在映射的复合下构成自同构群$\mathrm{Aut}G$.对$g\in G$自同构$\varphi(x)=gxg^{-1}$称为内自同构,全体内自同构构成内自同构群,记作$\mathrm{Inn}G$,有$\mathrm{Inn}G\triangleleft\mathrm{Aut}G$,且$\mathrm{Inn}G\cong G/C$,其中$C$是$G$的中心.</p>
+<p>a) 任取$x\in C$,$\varphi(x)\in\varphi(C)$,<br>$x\in\varphi^{-1}(\varphi(C))$,$\varphi^{-1}(\varphi(C))\supseteq S$.<br>若$\varphi$为单射,<br>任取$y\in\varphi^{-1}(\varphi(C))$,$\varphi(y)\in\varphi(C)$<br>故有$x\in C$,$\varphi(x)=\varphi(y)$.<br>由于$\varphi$是单射,<br>$x=y\in S$,<br>$\varphi^{-1}(\varphi(C))=C$<i class="qed"></i></p>
+<p>b) 任取$y\in\varphi(\varphi^{-1}(D))$,<br>存在$x\in\varphi^{-1}(D)$,$\varphi(x)=y$,<br>同时$\varphi(x)\in D$,$y\in D$,<br>$\varphi(\varphi^{-1}(D))\subseteq D$<br>若$\varphi$为满射,<br>$\forall z\in D$,$\exists w\in\varphi^{-1}(D),\varphi(w)=z$,<br>$\varphi(w)\in\varphi(\varphi^{-1}(D))$,<br>$\varphi(\varphi^{-1}(D))=D$<i class="qed"></i></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> article_txt </span>
