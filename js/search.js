@@ -47,6 +47,7 @@ var searchFunc = function (path, search_id, content_id) {
       var $resultContent = document.getElementById(content_id);
 
       searchAll = function (val) {
+        console.log("小渊:进入搜索函数了");
         var str = '<ul class=\"search-result-list\">';
         var keywords = val.trim().toLowerCase().trim().split(/[\s\-]+/);
         $resultContent.innerHTML = "";

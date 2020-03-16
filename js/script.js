@@ -280,22 +280,29 @@ $(".nav-right form .search").on("change", function (e) {
 var searchContent;
 /*根据搜索条件，过滤文章列表*/
 function inputChange(e) {
+    console.log("小渊:输入变化了");
     var val = $(e.currentTarget).val().trim();
     if (val == searchContent) {
         return;
     }
+    console.log("小渊:准备搜索了"+val);
     searchContent = val;
     $(".nav-right form .cross").css("display", val == "" ? "none" : "block");
+    console.log("小渊:length="+$('#local-search-result').length);
     if ($('#local-search-result').length>0) {
+        console.log("小渊:进到第一个if了");
         if (val.length>3 && (val.substr(0,3).toLowerCase() == 'in:' || val.substr(0,3).toLowerCase()=='in：')) {
+            console.log("小渊:准备全文搜索了");
             $('#title-list-nav').hide();
             $('#local-search-result').show();
             searchAll(val.substr(3))
         } else {
+            console.log("小渊:准备非全文搜索了");
             $('#title-list-nav').show();
             $('#local-search-result').hide();
         }
     }
+    console.log("小渊:出了第一个if了");
 
     if (val == "") {
         $(".nav-right nav a").css("display", "block");
