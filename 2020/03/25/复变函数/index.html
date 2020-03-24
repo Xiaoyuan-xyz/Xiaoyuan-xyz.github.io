@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
+  <title>复变函数 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <meta name="description" content="复变函数 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="拓扑空间拓扑空间与同胚设$X$是一非空集合,$\mathscr{T}$是$X$d的一个子集族,若满足  $X,\varnothing\in\mathscr{T}$ 若$A,B\in\mathscr{T}$,则$A\cap B\in\mathscr{T}$ 若$\mathscr{T_1}\subset\mathscr{T}$,则$\bigcup_{A\in\mathscr{T}}A\in\maths">
 <meta property="og:type" content="article">
@@ -52,7 +52,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/mokou.jpg" />
@@ -341,12 +341,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-复变函数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#欢迎来到小渊的博客"><span class="toc-text">欢迎来到小渊的博客</span></a></li></ol>
+        <h1 class="article-title">复变函数</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="数学">数学</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-25 00:33:25'>2020-03-25 00:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:639</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#复数与复变函数"><span class="toc-text">复数与复变函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#复数的定义"><span class="toc-text">复数的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复数的几何表示"><span class="toc-text">复数的几何表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩充复平面"><span class="toc-text">扩充复平面</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -359,22 +409,113 @@
     }
 </style>
 </div>
-            <h1 id="欢迎来到小渊的博客"><a href="#欢迎来到小渊的博客" class="headerlink" title="欢迎来到小渊的博客"></a>欢迎来到小渊的博客</h1><p>左侧列举了发布在博客上的共<code class="article_number"> </code>篇文章，总计<code class="site_word_count"></code>字。点击相应的内容就可以在这个使用了<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 的<a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 主题上预览那些Markdown文件了。右侧的选项可以设置全屏和目录跳转，还挺方便。</p>
-<p>博客中有关《中级红石原理》的若干文章是从<a href="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits" target="_blank" rel="noopener">《中级红石原理》的GitHub仓库</a>搬来的，作为教程还是可以的。如果有哪里需要完善的地方还请多多指教。</p>
-<p>部分页面对LaTeX的支持不是很好，不过简单的LaTex语句还是能正常而优雅地显示的。此外本人还未学过JavaScript，对于这个大家伙还不太用的起来。左下角的“原始”是我自己写的比（fei）较（chang）简陋的页面，没有侧边栏目录什么的，不过对于一些复杂的LaTeX也能跑得起来。</p>
-<blockquote>
-<p>2020/3/1 将大部分LaTeX向KaTeX做了兼容，所以可以直接看博客里的内容而不需要看“原始”版本了，如果还有某些地方显示有误可能是我没有发现，欢迎随时指出，我在之后的更新里也会慢慢修复。不过“CSS”这个博客里由于设置的CSS与网页本身的CSS冲突，所以如果要看的话还是到“原始”页面去看吧，至少在那里得到的观感和我在编写时的预览效果是完全相同的。如果发现一些博客写到一半就断了，说明还在继续更新中。</p>
-</blockquote>
-<blockquote>
-<p>2020/3/2 “CSS”这个博客由于样式和博客的样式冲突，观感极差，现在只推荐<a href="https://xiaoyuan-xyz.github.io/xyz-html/JavaWeb/CSS.html" target="_blank" rel="noopener">这里</a>观看原版。建议使用Chrome浏览器。</p>
-</blockquote>
-<p>之后会继续努力的。</p>
-<p>访问人数：<code class="site_uv"></code></p>
-<p>访问量：<code class="site_pv"></code></p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <style>
+    /* "神来一笔"的注释 */
+    .wow{
+        color:red;
+        font-style:italic;
+    }
 
-        </article>
-        
-        
+    /* 解题思路 */
+    .th,
+    .df{
+        color:brown;
+    }
+    .wow::before,
+    .th::before,
+    .df::before{
+        content:'('
+    }
+    .wow::after,
+    .th::after,
+    .df::after{
+        content:')'
+    }
+
+</style>
+
+<h1 id="复数与复变函数"><a href="#复数与复变函数" class="headerlink" title="复数与复变函数"></a>复数与复变函数</h1><h2 id="复数的定义"><a href="#复数的定义" class="headerlink" title="复数的定义"></a>复数的定义</h2><p><strong>域</strong>是在集合$F$上定义的代数结构,在其上定义了加法和乘法,如果:</p>
+<ul>
+<li>$F$上加法构成交换群；</li>
+<li>$F-\lbrace0\rbrace$上乘法构成交换群;</li>
+<li>$F$中加法和乘法满足分配律,即$a(b+c)=ab+ac,\forall a,b,c\in F$.</li>
+</ul>
+<p>在$\mathbb{R}^2$中,定义</p>
+<ul>
+<li>$(a,b)+(c,d)=(a+c,b+d)$;</li>
+<li>$(a,b)(c,d)=(ac-bd,ad+bc)$</li>
+</ul>
+<p>可以得到一个域,称为<strong>复数域</strong>,记作$\mathbb{C}$.</p>
+<p>$\lbrace (a,0)|a\in\mathbb{R}\rbrace$作为$\mathbb{C}$的子域与$\mathbb{R}$同构.将$(0,1)$记为$i$,$(a,b)$记为$a+bi$.</p>
+<ul>
+<li>$(a+bi)+(c+di)=(a+c)+(b+d)i$</li>
+<li>$(a+bi)-(c+di)=(a-c)+(b-d)i$</li>
+<li>$(a+bi)(c+di)=(ac-bd)+(ad+bc)i$</li>
+<li>$\dfrac{a+bi}{c+di}=\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i$</li>
+</ul>
+<p>复数域不是有序域.</p>
+<p>设$z=a+bi$</p>
+<ul>
+<li>$\bar{z}=a-bi$</li>
+<li>$|z|=\sqrt{a^2+b^2}=\sqrt{z\bar{z}}$</li>
+<li>$\mathrm{Re}z=a=\dfrac12(z+\bar{Z})$</li>
+<li>$\mathrm{Im}z=b=\dfrac12(z-\bar{Z})$</li>
+</ul>
+<p>设$z,w$是复数</p>
+<ul>
+<li>$\overline{z\pm w}=\bar{z}\pm\bar{w}$</li>
+<li>$\overline{zw}=\bar{z}\bar{w}$</li>
+<li>$\overline{\dfrac{z}{w}}=\dfrac{\bar{z}}{\bar{w}}$</li>
+<li>$|z|=|\bar{z}|$</li>
+<li>$|zw|=|z||w|$</li>
+<li>$|\dfrac{z}{w}|=\dfrac{|z|}{|w|}$</li>
+<li>$|z\pm w|^2=|z|^2\pm2\mathrm{Re}(z\bar{w})+|w|^2$</li>
+<li>$|z+w|\le|z|+|w|$</li>
+<li>$|z-w|\ge||z|-|w||$</li>
+</ul>
+<h2 id="复数的几何表示"><a href="#复数的几何表示" class="headerlink" title="复数的几何表示"></a>复数的几何表示</h2><p>$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$</p>
+<p>其中:</p>
+<ul>
+<li>$r=|z|$</li>
+<li>$\theta=\mathrm{Arg}z$</li>
+<li>$\mathrm{Arg}z=\mathrm{arg}z+2k\pi,k\in\mathbb{Z},-\pi&lt;\mathrm{arg}z\le\pi$.</li>
+</ul>
+<p>0的辐角没有意义.</p>
+<p>$z_1z_2=r_1r_2(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2))=r_1r_2e^{i(\theta_1+\theta_2)}$<br>$\dfrac{z_1}{z_2}=\dfrac{r_1}{r_2}(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2))=\dfrac{r_1}{r_2}e^{i(\theta_1-\theta_2)}$</p>
+<p>从而</p>
+<ul>
+<li>$|z_1z_2|=|z_1||z_2|$</li>
+<li>$\mathrm{Arg}(z_1z_2)=\mathrm{Arg}z_1+\mathrm{Arg}z_2$</li>
+<li>$|\dfrac{z_1}{z_2}|=\dfrac{|z_1|}{|z_2|}$</li>
+<li>$\mathrm{Arg}(\dfrac{z_1}{z_2})=\mathrm{Arg}z_1-\mathrm{Arg}z_2$</li>
+<li>$\mathrm{Arg}\bar{z}=-\mathrm{Arg}z$</li>
+</ul>
+<p>若$z_1$与$z_2$平行,充分必要条件是$\mathrm{Im}(z_1\bar{z_2})=0$<br>若$z_1$与$z_2$垂直,充分必要条件是$\mathrm{Re}(z_1\bar{z_2})=0$</p>
+<p>$|\dfrac{z-z_1}{z-z_2}|=\lambda,z_1\neq z_2,0\le\lambda\neq1$被称为Apollonius圆,圆心为$\dfrac{z_1-\lambda^2z_2}{1-\lambda^2}$,半径为$\dfrac{\lambda|z_1-z_2|}{|1-\lambda^2|}$</p>
+<h2 id="扩充复平面"><a href="#扩充复平面" class="headerlink" title="扩充复平面"></a>扩充复平面</h2><p>在$\mathbb{C}$中用$\infty$一点紧化,规定</p>
+<ul>
+<li>$z\pm\infty=\infty(z\neq\infty)$</li>
+<li>$z\cdot\infty(z\neq0)$</li>
+<li>$\dfrac{z}{\infty}=0(z\neq\infty)$</li>
+<li>$\dfrac{z}{0}=\infty(z\neq0)$</li>
+</ul>
+<p>记作$\mathbb{C}_\infty$,称为<strong>扩充复平面</strong>.</p>
+<p>复平面上一点与单位球的北极$(0,0,1)$相连,与单位球的交点称为<strong>复数的球面表示</strong>,而$\infty$与北极对应.</p>
+<!-- 8 19:29 -->
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> article_txt </span>
+    </div>
+</article>
+
+
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -394,6 +535,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>
