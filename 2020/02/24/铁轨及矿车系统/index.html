@@ -148,7 +148,7 @@
     <div><a class="about  site_url"  href="/about.html">原始</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="16">
-<input type="hidden" id="yelog_site_word_count" value="102.3k">
+<input type="hidden" id="yelog_site_word_count" value="107.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -361,7 +361,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-31 16:36:56'>2020-02-24 12:19</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-01 13:19:01'>2020-02-24 12:19</time>
         
     </div>
     <div class="article-meta">
@@ -546,9 +546,9 @@
 <li>质量因子（下述），单位为1。</li>
 <li>阻尼乘数、阻尼因子（下述），单位为1。</li>
 </ul>
-<h2 id="水平加速作用"><a href="#水平加速作用" class="headerlink" title="水平加速作用"></a>水平加速作用</h2><p>首先我们介绍矿车实体如何存储自身的位置及速度。</p>
+<h2 id="水平加速作用"><a href="#水平加速作用" class="headerlink" title="水平加速作用"></a>水平加速作用</h2><p>首先我们介绍矿车实体如何存储自身的位置及速度，以及矿车在铁路上运行的基本规律。</p>
 <p>矿车的实体数据中包含Pos和Motion两项，分别表示矿车的位置和速度，其x、y、z三个分量对应位置矢量和速度矢量的三个分量，其在计算机中使用double类型存储。</p>
-<p>首先对动力铁轨的加速作用进行分析。必须注意到以下的一个事实：动力铁轨对普通矿车的加速存在上限，这个速度称为饱和速度。例如在如下的对比实验中，两辆矿车同时出发，其中一辆不断受到动力铁轨的加速，另一辆只接受4个动力铁轨的加速。事实是，在第二辆矿车离开动力铁轨的一段时间内，其和第一辆矿车保持同速。</p>
+<p>首先对动力铁轨的加速作用进行分析。必须注意到以下的一个事实：<strong>动力铁轨对普通矿车的加速存在上限</strong>，这个速度称为<strong>饱和速度</strong>。例如在如下的对比实验中，两辆矿车同时出发，其中一辆不断受到动力铁轨的加速，另一辆只接受4个动力铁轨的加速。事实是，在第二辆矿车离开动力铁轨的一段时间内，其和第一辆矿车保持同速。</p>
 <p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F-5debd37a.png" alt=""></p>
 <p>换句话说，更多动力铁轨的加速不会使矿车获得更高的速度，但却可以使矿车移动更长的距离。</p>
 <p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F-ccbad9b7.png" alt=""></p>
@@ -890,7 +890,7 @@
 
 <p>现在可以明显地看出：</p>
 <ul>
-<li>矿车存在<strong>饱和速度</strong>$v_\mathbb{max}$，对动力矿车来说，这个值是0.2，对其他矿车来说，这个值是0.4。因而动力矿车在所有矿车中移动得最慢。</li>
+<li>矿车存在<strong>饱和速度</strong>$v_\mathbb{max}$，对动力矿车来说，这个值是0.2，对其他矿车来说，这个值是0.4。因而动力矿车在所有矿车中移动得最慢。饱和速度是游戏对矿车实际运行速度上限的硬性规定。</li>
 <li>动力矿车在5游戏刻后达到速度饱和，此时动力矿车尚未离开第一格动力铁轨；其他矿车在第10游戏刻后均达到速度饱和，此时这些矿车均离开第一格动力铁轨，但均未离开第二格动力铁轨。</li>
 <li>矿车达到饱和速度所用的时间称为饱和时间，期间驶过的位移称为饱和位移，分别用$t_v$和$x_v$表示。</li>
 <li>对非运矿车、货运矿车和动力矿车来说，在达到饱和速度前，$v=M$，而客运矿车却有$v=0.75M$。这里我们把系数0.75称为<strong>质量因子</strong>，记作$m$。对客运矿车来说有$m=0.75$，对其他矿车来说有$m=1$，可以得出：</li>
@@ -1061,7 +1061,7 @@
     </tr>
 </table>
 
-<p>预测结果与实际值高度吻合，且阻尼乘数仅与矿车类型有关，与铁轨类型无关。对动力矿车，有$0.9408=0.98\times 0.96$。</p>
+<p>预测结果与实际值高度吻合，且<strong>阻尼乘数仅与矿车类型有关，与铁轨类型无关</strong>。对动力矿车，有$0.9408=0.98\times 0.96$。</p>
 <p>以此预期，矿车的隐速度也会存在饱和现象，即在足够长（大于400格）的动力铁轨加速下，可以认为动力铁轨的加速作用和动力铁轨的阻尼减速作用带来的结果相同。此时称这个速度为<strong>饱和隐速度</strong>或<strong>终端速度</strong>，或称为饱和运动量，记为$M_\mathbb{max}$。应当有$M_\mathbb{max}=dM_\mathbb{max}+a$，即</p>
 <p>$$M_\mathbb{max}=\dfrac{a}{1-d}=\dfrac{a}{k}$$</p>
 <p>其中$k$称为<strong>阻尼因子</strong>，有$k=1-d$。</p>
