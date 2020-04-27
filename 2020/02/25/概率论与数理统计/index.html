@@ -148,7 +148,7 @@
     <div><a class="about  site_url"  href="/about.html">原始</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="16">
-<input type="hidden" id="yelog_site_word_count" value="111.4k">
+<input type="hidden" id="yelog_site_word_count" value="107.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -361,12 +361,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-17 17:32:34'>2020-02-25 02:09</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-28 01:03:56'>2020-02-25 02:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:5.6k</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -396,7 +396,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一讲-随机事件与概率"><span class="toc-text">第一讲 随机事件与概率</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#古典概型"><span class="toc-text">古典概型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几何概型"><span class="toc-text">几何概型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要公式求概率"><span class="toc-text">重要公式求概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用对立"><span class="toc-text">用对立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用互斥"><span class="toc-text">用互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用独立"><span class="toc-text">用独立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用条件"><span class="toc-text">用条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用不等式或包含"><span class="toc-text">用不等式或包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用最值"><span class="toc-text">用最值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件的独立性"><span class="toc-text">事件的独立性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一维随机变量及其分布"><span class="toc-text">一维随机变量及其分布</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#判分布"><span class="toc-text">判分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求分布"><span class="toc-text">求分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用分布"><span class="toc-text">用分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求函数分布"><span class="toc-text">求函数分布</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -412,29 +412,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <style>
-    /* "神来一笔"的注释 */
-    .wow{
-        color:red;
-        font-style:italic;
-    }
-
-    /* 解题思路 */
-    .idea{
-        color:brown;
-    }
-    .wow::before,
-    .idea::before{
-        content:'('
-    }
-    .wow::after,
-    .idea::after{
-        content:')'
-    }
-
-</style>
-<!-- TOC -->
-
+        <p><style><br>    /<em> “神来一笔”的注释 </em>/<br>    .wow{<br>        color:red;<br>        font-style:italic;<br>    }</p>
+<pre><code>/* 解题思路 */
+.idea{
+    color:brown;
+}
+.wow::before,
+.idea::before{
+    content:&#39;(&#39;
+}
+.wow::after,
+.idea::after{
+    content:&#39;)&#39;
+}
+</code></pre><p>&lt;/style&gt;<br><!-- TOC --></p>
 <ul>
 <li><a href="#第一讲-随机事件与概率">第一讲 随机事件与概率</a><ul>
 <li><a href="#古典概型">古典概型</a></li>
@@ -458,13 +449,46 @@
 <li><a href="#求函数分布">求函数分布</a></li>
 </ul>
 </li>
+<li><a href="#多维随机变量及其分布">多维随机变量及其分布</a><ul>
+<li><a href="#判分布-1">判分布</a></li>
+<li><a href="#求分布-1">求分布</a><ul>
+<li><a href="#求联合">求联合</a><ul>
+<li><a href="#求fxy">求$F(x,y)$</a></li>
+<li><a href="#求p_ij">求$p_{ij}$.</a></li>
+<li><a href="#求fxy">求$f(x,y)$</a></li>
+</ul>
+</li>
+<li><a href="#求边缘">求边缘</a><ul>
+<li><a href="#求f_xx和f_yy">求$F_X(x)$和$F_Y(y)$</a></li>
+<li><a href="#求p_i\cdot和p_\cdot-j">求$p<em>{i\cdot}$和$p</em>{\cdot j}$</a></li>
+<li><a href="#求f_xx和f_yy">求$f_X(x)$和$f_Y(y)$</a></li>
+</ul>
+</li>
+<li><a href="#求条件">求条件</a></li>
+<li><a href="#判独立">判独立</a></li>
+</ul>
+</li>
+<li><a href="#用分布-1">用分布</a></li>
+<li><a href="#求函数分布-1">求函数分布</a><ul>
+<li><a href="#多维到一维">多维到一维</a><ul>
+<li><a href="#离散离散到离散">(离散,离散)到离散</a></li>
+<li><a href="#连续连续到连续">(连续,连续)到连续</a></li>
+<li><a href="#离散连续到连续">(离散,连续)到连续</a></li>
+</ul>
+</li>
+<li><a href="#到多维">到多维</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#数字特征">数字特征</a><ul>
+<li><a href="#期望">期望</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
-
-
 <h1 id="第一讲-随机事件与概率"><a href="#第一讲-随机事件与概率" class="headerlink" title="第一讲 随机事件与概率"></a>第一讲 随机事件与概率</h1><h2 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h2><p>古典概型:样本空间$\varOmega$中有<strong>有限个</strong>,<strong>等可能</strong>的样本点.</p>
-<p>$$P(A)=\dfrac{\mathrm{card}(A)}{\mathrm{card}(\varOmega)}$$</p>
-<ul>
+<script type="math/tex; mode=display">P(A)=\dfrac{\mathrm{card}(A)}{\mathrm{card}(\varOmega)}</script><ul>
 <li>随机分配:将$n$个质点随机分配到$N$个盒子中<ul>
 <li>每盒可容纳任意多质点:$N^n$</li>
 <li>每盒可容纳至多一个质点:$N(N-1)\cdots(N-n+1)=P_N^n$</li>
@@ -475,11 +499,7 @@
 <p>例1 将$n$个球随机放入$N(n\le N)$个盒子中,每盒可放任意多个球,求概率.</p>
 <blockquote>
 <p>$A=${某指定$n$个盒子中各有一球}<br> $P(A)=\dfrac{n!}{N^n}$</p>
-</blockquote>
-<blockquote>
 <p>$B=${恰有$n$个盒子中各有一球}<br> $P(B)=\dfrac{C_N^nn!}{N^n}$</p>
-</blockquote>
-<blockquote>
 <p>$C=${指定$k(k\le n)$个盒子中各有一球}<br> $P(C)=\dfrac{C_n^kk!(N-k)^{n-k}}{N^n}$</p>
 </blockquote>
 </blockquote>
@@ -495,33 +515,21 @@
 <p>例2 袋中有5个球,三白两黑,求至少一个白球的概率.<span class="idea">这里求对立事件比较方便</span></p>
 <blockquote>
 <p>先后有放回取两个球<br> $P=1-\dfrac{2^2}{5^2}=\dfrac{21}{25}$</p>
-</blockquote>
-<blockquote>
 <p>先后无放回取两个球<br>$P=1-\dfrac{2\cdot1}{5\cdot4}=\dfrac{9}{10}$</p>
-</blockquote>
-<blockquote>
 <p>任取两个球<br> $P=1-\dfrac{C_2^2}{C_5^2}=\dfrac{9}{10}$</p>
 </blockquote>
 <p><span class="idea">所以说,”任取”和”先后无放回”可以相互替换</span></p>
-</blockquote>
-<blockquote>
 <p>例3 袋中有100个球,40白60黑.</p>
 <blockquote>
-<p>先后有放回取20个,求15白5黑的概率.<br>$P=\dfrac{C_{20}^{15}\cdot40^{15}\cdot60^{5}}{100^{20}}=C_{20}^{15}\cdot0.4^{15}\cdot0.6^5$<br><span class="wow">二项分布</span></p>
-</blockquote>
-<blockquote>
-<p>先后无放回取20个,求15白5黑的概率.<br> $P=\dfrac{C_{40}^{15}C_{60}^{5}}{C_{100}^{20}}$<br><span class="wow">超几何分布</span></p>
-</blockquote>
-<blockquote>
+<p>先后有放回取20个,求15白5黑的概率.<br>$P=\dfrac{C<em>{20}^{15}\cdot40^{15}\cdot60^{5}}{100^{20}}=C</em>{20}^{15}\cdot0.4^{15}\cdot0.6^5$<br><span class="wow">二项分布</span></p>
+<p>先后无放回取20个,求15白5黑的概率.<br> $P=\dfrac{C<em>{40}^{15}C</em>{60}^{5}}{C_{100}^{20}}$<br><span class="wow">超几何分布</span></p>
 <p>先后有放回取20个,求第20次取白的概率.<br>$P=0.4$</p>
-</blockquote>
-<blockquote>
 <p>先后无放回取20个,求第20次取白的概率.<br><span class="idea">可以这样理解,将100个球分给到100次取球,然后看第20次取球是否为白球</span><br>$P=\dfrac{C_{40}^1\cdot99!}{100!}=0.4$</p>
 </blockquote>
 <p><span class="idea">所以抓阄是公平的,每次取球取到的都是一个带着概率的球.</span></p>
 </blockquote>
-<h2 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h2><p>若$\varOmega$是一个可度量的几何区域,样本点落入$\varOmega$的某可度量子区域$A$的可能性与$A$的几何度量成正比,与$A$的位置及形状无关,称为几何概型.<br>$$P(A)=\dfrac{m(A)}{m(\varOmega)}$$</p>
-<blockquote>
+<h2 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h2><p>若$\varOmega$是一个可度量的几何区域,样本点落入$\varOmega$的某可度量子区域$A$的可能性与$A$的几何度量成正比,与$A$的位置及形状无关,称为几何概型.</p>
+<script type="math/tex; mode=display">P(A)=\dfrac{m(A)}{m(\varOmega)}</script><blockquote>
 <p>例4 在(0,1)中随机取两数,则两数之差的绝对值小于0.5的概率.<br>$P=\dfrac34$</p>
 </blockquote>
 <svg>
@@ -552,8 +560,8 @@
 <li>$P(A|B)=\dfrac{P(AB)}{P(B)}\quad P(B)&gt;0$</li>
 <li>$\begin{aligned}P(AB)&amp;=P(B)P(A|B)\&amp;=P(A)P(A|B)\&amp;=P(A)+P(B)-P(A+B)\&amp;=P(A)-P(A\overline B)\end{aligned}$</li>
 <li>$P(A_1A_2A_3)=P(A_1)P(A_2|A_1)P(A_3|A_1A_2)$</li>
-<li><span class="wow">全概率公式</span>设$A_1,A_2,\cdots,A_n$为完备事件组,$P(A_i)&gt;0$,则$P(B)=\sum P(B|A_i)P(A_i)$<br><span class="idea">已知原因,求结果的概率</idea></li>
-<li><span class="wow">贝叶斯公式</span>当$B$发生时,$P(A_j|B)=\dfrac{P(A_jB)}{P(B)}=\dfrac{P(A_j)P(B|A_j)}{\sum P(B|A_i)P(A_i)}$<span class="idea">已知结果,求原因的概率</idea></li>
+<li><span class="wow">全概率公式</span>设$A_1,A_2,\cdots,A_n$为完备事件组,$P(A_i)&gt;0$,则$P(B)=\sum P(B|A_i)P(A_i)$<br><span class="idea">已知原因,求结果的概率&lt;/idea&gt;</li>
+<li><span class="wow">贝叶斯公式</span>当$B$发生时,$P(A_j|B)=\dfrac{P(A_jB)}{P(B)}=\dfrac{P(A_j)P(B|A_j)}{\sum P(B|A_i)P(A_i)}$<span class="idea">已知结果,求原因的概率&lt;/idea&gt;</li>
 </ul>
 <h3 id="用不等式或包含"><a href="#用不等式或包含" class="headerlink" title="用不等式或包含"></a>用不等式或包含</h3><ul>
 <li>$0\le P(A)\le1$</li>
@@ -569,62 +577,45 @@
 </ul>
 <blockquote>
 <p>例5 $P(A)=0.4,P(\overline A\cup B)=0.8$,求$P(\overline B|A)$.<br>法一: $P(\overline B|A)=\dfrac{P(A\overline B)}{P(A)}=\dfrac{P(A)-P(AB)}{P(A)}=\dfrac{P(A)-(P(\overline A\cup B)-P(\overline A))}{P(A)}=\dfrac12$<br>法二: $P(\overline A\cup B)=1-P(A\cap\overline B)=1-P(A\overline B)$</p>
-</blockquote>
-<blockquote>
 <p>例6 结论错误的是</p>
 <blockquote>
 <p>(A) $P(AB)+P(AC)+P(BC)\ge P(A)+P(B)+P(C)-1$<br>由$P(A+B+C)=P(A)+P(B)+P(C)-P(AB)-P(BC)-P(AC)+P(ABC)$<br>$P(AB)+P(BC)+P(AC)=P(A)+P(B)+P(C)+P(ABC)-P(A+B+C)\ge P(A)+P(B)+P(C)-1$</p>
-</blockquote>
-<blockquote>
-<p>(B) 若$P(A|B)&gt;P(A|\overline B)$则$P(B|A)&gt;P(B|\overline A)$<br>$\dfrac{P(AB)}{P(B)}&gt;\dfrac{P(A\overline B)}{P(\overline B)}=\dfrac{P(A)-P(AB)}{1-P(B)}$<br>$\dfrac{P(AB)}{P(B)}&gt;\dfrac{P(A)}1$<br>$P(AB)&gt;P(A)P(B)$<br>$P(B|A)&gt;P(B|\overline A)$<br><span class="idea">如果抽烟的比不抽烟的容易得肺癌,那么得肺癌的里抽烟的一定比不抽烟的多</idea></p>
-</blockquote>
-<blockquote>
-<p>(C) $P(A_1A_2\cdots A_n)\ge P(A_1)P(A_2)\cdots P(A_n)-(n-1)$<br>数学归纳法,$P(A+B)=P(A)+P(B)-P(AB)\le1$<br>$P(AB)\ge P(A)+P(B)-1$<br>当$n-1$时成立,则$n$时:<br>$P(A_1A_2\cdots A_n)\ge P(A_1A_2\cdots A_{n-1})+P(A_n)-1\ge P(A_1)P(A_2)\cdots P(A_{n-1})-(n-2)+P(A_n)-1=P(A_1)P(A_2)\cdots P(A_n)-(n-1)$</p>
-</blockquote>
-<blockquote>
+<p>(B) 若$P(A|B)&gt;P(A|\overline B)$则$P(B|A)&gt;P(B|\overline A)$<br>$\dfrac{P(AB)}{P(B)}&gt;\dfrac{P(A\overline B)}{P(\overline B)}=\dfrac{P(A)-P(AB)}{1-P(B)}$<br>$\dfrac{P(AB)}{P(B)}&gt;\dfrac{P(A)}1$<br>$P(AB)&gt;P(A)P(B)$<br>$P(B|A)&gt;P(B|\overline A)$<br><span class="idea">如果抽烟的比不抽烟的容易得肺癌,那么得肺癌的里抽烟的一定比没得肺癌的多&lt;/idea&gt;</p>
+<p>(C) $P(A<em>1A_2\cdots A_n)\ge P(A_1)P(A_2)\cdots P(A_n)-(n-1)$<br>数学归纳法,$P(A+B)=P(A)+P(B)-P(AB)\le1$<br>$P(AB)\ge P(A)+P(B)-1$<br>当$n-1$时成立,则$n$时:<br>$P(A_1A_2\cdots A_n)\ge P(A_1A_2\cdots A</em>{n-1})+P(A<em>n)-1\ge P(A_1)P(A_2)\cdots P(A</em>{n-1})-(n-2)+P(A_n)-1=P(A_1)P(A_2)\cdots P(A_n)-(n-1)$</p>
 <p>$|P(AB)-P(A)P(B)|&gt;\dfrac14$<br>不妨设$P(A)\ge P(B)$<br>$P(AB)-P(A)P(B)\le P(A)-P(A)P(A)\le \dfrac14$<br>另有$P(A)P(B)-P(AB)=P(A)(P(AB)+P(\overline AB))-P(AB)=(P(A)-1)P(AB)+P(A)P(\overline AB)\le P(A)P(\overline A)\le\dfrac14$</p>
 </blockquote>
-</blockquote>
-<blockquote>
-<p>例7 $P\lbrace X\ge0,Y\ge0\rbrace =\dfrac37$,$P\lbrace X\ge0\rbrace =P\lbrace Y\ge0\rbrace =\dfrac47$,求<br>$A=\lbrace \mathbf{max}\lbrace X,Y\rbrace \ge0\rbrace $<br>$B=\lbrace \mathbf{max}\lbrace X,Y\rbrace &lt;0,\mathbf{min}\lbrace X,Y\rbrace &lt;0\rbrace $<br>$C=\lbrace \mathbf{max}\lbrace X,Y\rbrace \ge0,\mathbf{min}\lbrace X,Y\rbrace &lt;0\rbrace $<br>$P(A)=P(\lbrace X\ge0\rbrace \cup\lbrace Y\ge0\rbrace )=P(\lbrace X\ge0\rbrace )+P(\lbrace Y\ge0\rbrace )-P(\lbrace X\ge0\rbrace ,\lbrace Y\ge0\rbrace )=\dfrac57$<br>$P(B)=P(\mathbf{max}\lbrace X,Y\rbrace &lt;0)=1-P(A)=\dfrac27$<br>$P(C)=P(A)-P(\mathbf{max}\lbrace X,Y\rbrace \ge0,\mathbf{min}\lbrace X,Y\rbrace \ge0)=P(A)-P(\mathbf{min}\lbrace X,Y\rbrace \ge0)=\dfrac57-\dfrac37=\dfrac27$<br><span class="idea">全集分解思想</span></p>
-</blockquote>
-<blockquote>
+<p>例7 $P\lbrace X\ge0,Y\ge0\rbrace =\dfrac37$,$P\lbrace X\ge0\rbrace =P\lbrace Y\ge0\rbrace =\dfrac47$,求<br>$A=\lbrace \mathbf{max}\lbrace X,Y\rbrace \ge0\rbrace $<br>$B=\lbrace \mathbf{max}\lbrace X,Y\rbrace <0,\mathbf{min}\lbrace X,Y\rbrace <0\rbrace $
+$C=\lbrace \mathbf{max}\lbrace X,Y\rbrace \ge0,\mathbf{min}\lbrace X,Y\rbrace <0\rbrace $
+$P(A)=P(\lbrace X\ge0\rbrace \cup\lbrace Y\ge0\rbrace )=P(\lbrace X\ge0\rbrace )+P(\lbrace Y\ge0\rbrace )-P(\lbrace X\ge0\rbrace ,\lbrace Y\ge0\rbrace )=\dfrac57$
+$P(B)=P(\mathbf{max}\lbrace X,Y\rbrace <0)=1-P(A)=\dfrac27$
+$P(C)=P(A)-P(\mathbf{max}\lbrace X,Y\rbrace \ge0,\mathbf{min}\lbrace X,Y\rbrace \ge0)=P(A)-P(\mathbf{min}\lbrace X,Y\rbrace \ge0)=\dfrac57-\dfrac37=\dfrac27$
+<span class="idea">全集分解思想&lt;/span&gt;</p>
 <p>例8 有3女7男,无放回取,求概率</p>
 <blockquote>
 <p>第三次取到女的概率<br>设$A_i=${第i次取到女}<br>$P(A_3)=\dfrac3{10}$</p>
-</blockquote>
-<blockquote>
 <p>第三次才取到女的概率<br>$P(\overline A_1\overline A_2 A_3)=P(\overline A_1)P(\overline A_2|\overline A_1)P(A_3|\overline A_1\overline A_2)=\dfrac7{10}\dfrac69\dfrac38=\dfrac7{40}$</p>
-</blockquote>
-<blockquote>
 <p>已知前两次没有取到女,求第三次取到女的概率<br>$P(A_3|\overline A_1\overline A_2)=\dfrac38$</p>
 </blockquote>
-</blockquote>
-<blockquote>
 <p>例9 甲命中目标概率为0.6,乙命中目标的概率为0.5</p>
 <blockquote>
 <p>任选一人,若命中,求是甲的概率.<br>设$A_1=${选中甲},$A_2=${选中乙},$B=${目标被命中}<br>$P(A_1|B)=\dfrac{P(A_1B)}{P(B)}=\dfrac{P(A_1)P(B|A_1)}{P(A_1)P(B|A_1)+P(A_2)P(B|A_2)}=\dfrac6{11}$</p>
-</blockquote>
-<blockquote>
 <p>甲乙两人独立射击,若命中,是甲命中的概率<br>记$A_1=${甲命中},$A_2=${乙命中},$B=${目标被命中},$B=A_1\cup A_2$<br>$P(A_1|B)=\dfrac{P(A_1B)}{P(B)}=\dfrac{P(A_1)}{P(A_1)+P(A_2)-P(A_1)P(A_2)}=\dfrac34$</p>
 </blockquote>
-</blockquote>
-<blockquote>
-<p>例10 某批产品优等率为$80%$,检验员将优等品判为优等品的概率为$97%$,将非优等品判为优等品的概率为$2%$.由三个独立的检验员组成小组,至少两人判优认定为优等品.求已经认定为优等品的条件下,确实为优等品的概率.<br>记$A=\lbrace$产品为优等品$\rbrace$,$B=\lbrace$产品判为优等品$\rbrace$,求$P(A|B)$.<br>$P(A|B)=\dfrac{P(AB)}{P(B)}=\dfrac{P(A)P(B|A)}{P(A)P(B|A)+P(\bar A)P(B|\bar A)}$.<br>其中$P(A)=0.8,P(\bar A)=0.2$<br>记$X=$小组将优等品判为优等品的人数,$X\sim B(3,0.97)$,<br>记$Y=$小组将非优等品判为优等品的人数,$Y\sim B(3,0.02)$.<br>$P(B|A)=P\lbrace X\ge2\rbrace=C_3^2\cdot0.97^2\cdot0.03^1+C_3^3\cdot0.97^3=0.997354$,<br>$P(B|\bar A)=P\lbrace Y\ge2\rbrace=C_3^2\cdot0.2^2\cdot0.98^1+C_3^3\cdot0.02^3=0.001184$.<br>$P(A|B)=0.9997$</p>
+<p>例10 某批产品优等率为$80\%$,检验员将优等品判为优等品的概率为$97\%$,将非优等品判为优等品的概率为$2\%$.由三个独立的检验员组成小组,至少两人判优认定为优等品.求已经认定为优等品的条件下,确实为优等品的概率.<br>记$A=\lbrace$产品为优等品$\rbrace$,$B=\lbrace$产品判为优等品$\rbrace$,求$P(A|B)$.<br>$P(A|B)=\dfrac{P(AB)}{P(B)}=\dfrac{P(A)P(B|A)}{P(A)P(B|A)+P(\bar A)P(B|\bar A)}$.<br>其中$P(A)=0.8,P(\bar A)=0.2$<br>记$X=$小组将优等品判为优等品的人数,$X\sim B(3,0.97)$,<br>记$Y=$小组将非优等品判为优等品的人数,$Y\sim B(3,0.02)$.<br>$P(B|A)=P\lbrace X\ge2\rbrace=C_3^2\cdot0.97^2\cdot0.03^1+C_3^3\cdot0.97^3=0.997354$,<br>$P(B|\bar A)=P\lbrace Y\ge2\rbrace=C_3^2\cdot0.2^2\cdot0.98^1+C_3^3\cdot0.02^3=0.001184$.<br>$P(A|B)=0.9997$</p>
 </blockquote>
 <h2 id="事件的独立性"><a href="#事件的独立性" class="headerlink" title="事件的独立性"></a>事件的独立性</h2><p>若$P(AB)=P(A)P(B)$,称事件$A,B$独立,即$P(B|A)=P(B),P(A)&gt;0$.</p>
-<p>称$A_1,A_2,\cdots A_n(n\ge2)$相互独立,如果其中任意有限个事件$A_{i_1},A_{i_2},\cdots,A_{i_k}$,有$P(A_{i_1}A_{i_2}\cdots A_{i_k})=P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k})$,相互独立一定两两独立.</p>
+<p>称$A<em>1,A_2,\cdots A_n(n\ge2)$相互独立,如果其中任意有限个事件$A</em>{i<em>1},A</em>{i<em>2},\cdots,A</em>{i<em>k}$,有$P(A</em>{i<em>1}A</em>{i<em>2}\cdots A</em>{i<em>k})=P(A</em>{i<em>1})P(A</em>{i<em>2})\cdots P(A</em>{i_k})$,相互独立一定两两独立.</p>
 <blockquote>
 <p>例11 将一枚硬币独立得掷两次,$A_1=${掷一次为正面},$A_2=${第二次为正面},$A_3=${正反面各一次},$A_4=${正面出现两次},则<br>(A)$A_1,A_2,A_3$相互独立<br>(B)$A_2,A_3,A_4$相互独立<br>(C)$A_1,A_2,A_3$两两独立<br>(D)$A_2,A_3,A_4$两两独立<br>概率空间为(正,正),(正,反),(反,正),(反,反),<br>$P(A_1)=\dfrac12$,$P(A_2)=\dfrac12$,$P(A_3)=\dfrac12$,$P(A_4)=\dfrac14$,$P(A_1A_2)=\dfrac14$,$P(A_2A_3)=\dfrac14$,$P(A_1A_3)=\dfrac14$,$P(A_1A_2A_3)=0$,$P(A_3A_4)=0$.</p>
 </blockquote>
 <ul>
-<li>若$A,B$独立$\Leftrightarrow$$A,\bar B$独立$\Leftrightarrow$$\bar A, B$独立$\Leftrightarrow$$\bar A, \bar B$独立.</li>
+<li>若$A,B$独立$\Leftrightarrow<script type="math/tex">A,\bar B$独立$\Leftrightarrow</script>\bar A, B$独立$\Leftrightarrow$$\bar A, \bar B$独立.</li>
 <li>相互独立的事件组,把其中若干事件换为其对立事件,得到的事件组依然相互独立.</li>
 <li>相互独立的事件组,从中取出若干事件做任意运算,只要不包含相同的事件,任意运算结果都相互独立.</li>
 <li>若$P(A)&gt;0$,则$A,B$独立$\Leftrightarrow$$P(B|A)=P(B)$.</li>
-<li>若$0&lt;P(A)&lt;1$,则$A,B$独立$\Leftrightarrow$$P(B|A)=P(B|\bar A)$$\Leftrightarrow$$P(B|A)+P(\bar B|\bar A)=1$.</li>
+<li>若$0&lt;P(A)&lt;1$,则$A,B$独立$\Leftrightarrow<script type="math/tex">P(B|A)=P(B|\bar A)</script>\Leftrightarrow$$P(B|A)+P(\bar B|\bar A)=1$.</li>
 <li>若$P(A)=0$或$P(A)=1$,则$A$与任何事件独立.</li>
-<li>若$0&lt;P(A)&lt;1$,$0&lt;P(A)&lt;1$.$A,B$互斥$\Rightarrow$$A,B$不独立.$A,B$存在包含关系$\Rightarrow$$A,B$不独立.</li>
+<li>若$0&lt;P(A)&lt;1$,$0&lt;P(A)&lt;1$.$A,B$互斥$\Rightarrow<script type="math/tex">A,B$不独立.$A,B$存在包含关系$\Rightarrow</script>A,B$不独立.</li>
 </ul>
 <blockquote>
 <p>例12 设$A,B$相互独立,$0&lt;P(A)&lt;1$,$P(C)=1$,则不相互独立的是</p>
@@ -650,40 +641,37 @@
 </ul>
 <blockquote>
 <p>例1 设$F_1(x)$,$F_2(x)$是分布函数,又$a,b&gt;0,a+b=1$,证明$F(x)=aF_1(x)+bF_2(x)$是分布函数.<br>显然$F(x)$单调不减,右连续.<br>$F(-\infty)=0,$F(+\infty)=a+b=1$$.</p>
-</blockquote>
-<blockquote>
 <p>例3 设$F_1(x)$,$F_2(x)$是分布函数,$f_1(x),f_2(x)$是相应的概率密度,则以下必为概率密度的是</p>
 <blockquote>
-<p>(A) $f_1(x)f_2(x)$<br>(B) $2f_2(x)F_1(x)$<br>(C) $f_1(x)F_2(x)$<br>(D) $f_1(x)F_2(x)+F_1(x)f_2(x)$<br>$\int_{-\infty}^{+\infty}f_1(x)F_2(x)+F_1(x)f_2(x)\mathrm{d}x=\int_{-\infty}^{+\infty}\mathrm{d}[F_1(x)F_2(x)]=1$</p>
+<p>(A) $f<em>1(x)f_2(x)$<br>(B) $2f_2(x)F_1(x)$<br>(C) $f_1(x)F_2(x)$<br>(D) $f_1(x)F_2(x)+F_1(x)f_2(x)$<br>$\int</em>{-\infty}^{+\infty}f<em>1(x)F_2(x)+F_1(x)f_2(x)\mathrm{d}x=\int</em>{-\infty}^{+\infty}\mathrm{d}[F_1(x)F_2(x)]=1$</p>
 </blockquote>
-</blockquote>
-<blockquote>
 <p>例4 $X\sim f(x)$为偶函数,$x~F(x)$,证明若$a&gt;0$</p>
 <blockquote>
-<p>$F(-a)=1-F(a)=\dfrac12-\int_0^af(x)\mathrm{d}x$<br>$p\lbrace|X|&lt;a\rbrace=2F(a)-1$<br>$p\lbrace|X|&gt;a\rbrace=2[1-F(a)]$</p>
+<p>$F(-a)=1-F(a)=\dfrac12-\int_0^af(x)\mathrm{d}x$<br>$p\lbrace|X|<a\rbrace=2F(a)-1$
+$p\lbrace|X|>a\rbrace=2[1-F(a)]$</p>
 </blockquote>
 </blockquote>
-<h2 id="求分布"><a href="#求分布" class="headerlink" title="求分布"></a>求分布</h2><p>$X\sim p_i$,则$F(x)=\sum\limits_{x_i\le x}p_i$.</p>
+<h2 id="求分布"><a href="#求分布" class="headerlink" title="求分布"></a>求分布</h2><p>$X\sim p<em>i$,则$F(x)=\sum\limits</em>{x_i\le x}p_i$.</p>
 <blockquote>
-<p>例5 设$X\sim\begin{bmatrix}1 &amp; 2 &amp; 3 \\ \theta^2 &amp; 2\theta(1-\theta) &amp; (1-\theta)^2 \end{bmatrix}$,且$P\lbrace X\ge2\rbrace=\dfrac34$,求$\theta$及$x~F(x)$.<br>有$P\lbrace X=1\rbrace=\dfrac14=\theta^2,\theta=\dfrac12$.<br>$X\sim\begin{bmatrix}1 &amp; 2 &amp; 3 \\ \dfrac14 &amp; \dfrac12 &amp; \dfrac14 \end{bmatrix}$<br>则$F(x)=\begin{dcases}0, &amp;x&lt;1 \\ \dfrac14, &amp; 1\le x&lt;2 \\ \dfrac34, &amp; 2\le x&lt;3\\1, &amp;x\ge3\end{dcases}$<br><span class="idea">由于右连续,等号应该跟着大于号</idea></p>
+<p>例5 设$X\sim\begin{bmatrix}1 &amp; 2 &amp; 3 \ \theta^2 &amp; 2\theta(1-\theta) &amp; (1-\theta)^2 \end{bmatrix}$,且$P\lbrace X\ge2\rbrace=\dfrac34$,求$\theta$及$x~F(x)$.<br>有$P\lbrace X=1\rbrace=\dfrac14=\theta^2,\theta=\dfrac12$.<br>$X\sim\begin{bmatrix}1 &amp; 2 &amp; 3 \ \dfrac14 &amp; \dfrac12 &amp; \dfrac14 \end{bmatrix}$<br>则$F(x)=\begin{dcases}0, &amp;x\le 1 \ \dfrac14, &amp; 1\le x\le 2 \ \dfrac34, &amp; 2\le x\le 3\1, &amp;x\ge3\end{dcases}$<br><span class="idea">由于右连续,等号应该跟着大于号&lt;/idea&gt;</p>
 </blockquote>
 <p><strong>0-1分布:一次伯努利实验</strong>$X\sim B(1,p)$</p>
-<p>$X\sim\begin{bmatrix}0 &amp; 1 \\ 1-p &amp; p\end{bmatrix}$</p>
+<p>$X\sim\begin{bmatrix}0 &amp; 1 \ 1-p &amp; p\end{bmatrix}$</p>
 <p><strong>二项分布:$n$次伯努利实验</strong>$X\sim B(n,p)$</p>
 <p>$P\lbrace X=k\rbrace=C_n^kp^k(1-p)^{n-k},k=0,1,2,\cdots,n$</p>
 <p><strong>几何分布:首中即停止的伯努利实验</strong></p>
 <p>$P\lbrace X=k\rbrace=p(1-p)^{k-1},k=1,2,3,\cdots$</p>
 <p><strong>超几何分布:$N$件产品$M$件次品任取$n$个</strong>$X\sim H(n,M,N)$</p>
-<p>$P\lbrace X=k\rbrace=\dfrac{C_M^kC_{N-M}^{n-k}}{C_N^n}$</p>
+<p>$P\lbrace X=k\rbrace=\dfrac{C<em>M^kC</em>{N-M}^{n-k}}{C_N^n}$</p>
 <p><strong>泊松分布:一段时间内质点来的个数</strong>$X\sim P(\lambda)$</p>
 <p>$P\lbrace X=k\rbrace=\dfrac{\lambda^k}{k!}e^{-\lambda},k=0,1,2,3,\cdots$</p>
 <blockquote>
-<p>例6 请确定下列随机变量概率密度函数中变量$a$的值,并求出概率分布.<br>$f(x)=\begin{dcases}ae^x, &amp;x&lt;0 \\ \dfrac14, &amp; 0\le x&lt;2 \\ 0, &amp; x\ge2\end{dcases}$<br>$1=\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=\int_{-\infty}^0ae^x\mathrm{d}x+\int_0^2\dfrac14\mathrm{d}x$,$a=\dfrac12$<br>$F(x)=\begin{dcases}\dfrac12e^x, &amp;x&lt;0 \\ \dfrac12+\dfrac14x, &amp; 0\le x&lt;2 \\ 1, &amp; x\ge2\end{dcases}$</p>
+<p>例6 请确定下列随机变量概率密度函数中变量$a$的值,并求出概率分布.<br>$f(x)=\begin{dcases}ae^x, &amp;x&lt;0 \ \dfrac14, &amp; 0\le x&lt;2 \ 0, &amp; x\ge2\end{dcases}$<br>$1=\int<em>{-\infty}^{+\infty}f(x)\mathrm{d}x=\int</em>{-\infty}^0ae^x\mathrm{d}x+\int_0^2\dfrac14\mathrm{d}x$,$a=\dfrac12$<br>$F(x)=\begin{dcases}\dfrac12e^x, &amp;x&lt;0 \ \dfrac12+\dfrac14x, &amp; 0\le x&lt;2 \ 1, &amp; x\ge2\end{dcases}$</p>
 </blockquote>
 <p><strong>均匀分布:落入子区间的概率与子区间长度成正比</strong>$X\sim U(a,b)$</p>
-<p>$x\sim f(x)=\begin{dcases}\dfrac1{b-a}, &amp;a&lt;x&lt;b \\ 0, &amp; \text{other.}\end{dcases}$<br>$x\sim F(x)=\begin{dcases}0, &amp; x&lt;a \\ \dfrac{x-a}{b-a}, &amp;a\le x&lt;b \\ 1, &amp; x\ge b \end{dcases}$</p>
+<p>$x\sim f(x)=\begin{dcases}\dfrac1{b-a}, &amp;a\le x\le b \ 0, &amp; \text{other.}\end{dcases}$<br>$x\sim F(x)=\begin{dcases}0, &amp; x\le a \ \dfrac{x-a}{b-a}, &amp;a\le x\le b \ 1, &amp; x\ge b \end{dcases}$</p>
 <p><strong>指数分布:连续的几何分布</strong>$X\sim E(\lambda)$</p>
-<p>$x\sim f(x)=\begin{dcases}\lambda e^{-\lambda x}, &amp;x&gt;0 \\ 0, &amp; \text{other.}\end{dcases}$<br>$x\sim F(x)=\begin{dcases}0, &amp; x&lt;0 \\ 1-e^{-\lambda x}, &amp;x\ge 0 \end{dcases}$<br>指数分布具有无记忆性,$P\lbrace X\ge t+s|X\ge t\rbrace=P\lbrace X\ge s\rbrace$</p>
+<p>$x\sim f(x)=\begin{dcases}\lambda e^{-\lambda x}, &amp;x&gt;0 \ 0, &amp; \text{other.}\end{dcases}$<br>$x\sim F(x)=\begin{dcases}0, &amp; x&lt;0 \ 1-e^{-\lambda x}, &amp;x\ge 0 \end{dcases}$<br>指数分布具有无记忆性,$P\lbrace X\ge t+s|X\ge t\rbrace=P\lbrace X\ge s\rbrace$</p>
 <p><strong>正态分布</strong>$X\sim N(\mu,\sigma^2)$</p>
 <p>$x\sim f(x)=\dfrac1{\sqrt{2\pi}\sigma}e^{-\dfrac{(x-\mu)^2}{2\sigma^2}}$</p>
 <p>标准正态分布$x\sim\varphi(x)=\dfrac1{\sqrt{2\pi}}e^{-\dfrac{x^2}2}$</p>
@@ -702,25 +690,15 @@
 <li>$P(|X|&gt;a)=2[1-\varPhi(a)]$</li>
 </ul>
 <blockquote>
-<p>例7 一条生产线连续生产$n$件产品不出故障的概率为$\dfrac{e^{-1}}{n!},n=0,1,2,\cdots$.设产品优质率为$p(0&lt;p&lt;1)$,各产品独立.求在两次故障间共生产$k$件优质品的概率.<br>设$B_k=\lbrace$两次故障间共生产$k$件优质品$\rbrace$,<br>$B_n=\lbrace$两次故障间共生产$n$件产品$\rbrace$,<br>$P(A_n)=\dfrac{e^{-1}}{n!}$<br>$P(B_k|A_n)=C_n^kp^k(1-p)^{n-k},k\ge n$<br>$P(B_k)=\sum\limits_{n=k}^{\infty}p(A_n)P(B_k|A_n)=\dfrac{e^{-1}}{n!}C_n^kp^k(1-p)^{n-k}=\dfrac{e^{-1}p^k}{k!}\sum\limits_{n=k}^{\infty}\dfrac{(1-p)^{n-k}}{(n-k)!}=\dfrac{e^{-1}p^k}{k!}e^{1-p}=\dfrac{p^k}{k!}e^{-p}$</p>
-</blockquote>
-<blockquote>
-<p>例8 设$X~U(2,5)$,对$X$进行3次独立观测,求至少有2次观测值大于3的概率.<br>$p=P\lbrace X&gt;3\rbrace=\dfrac23$,<br>记$Y=\lbrace$ 3次独立观测中$X$的观测值大于3的次数$\rbrace$,$Y\sim B(3,\dfrac23)$.<br>$P\lbrace Y\ge2\rbrace=\dfrac{20}{27}$.</p>
-</blockquote>
-<blockquote>
+<p>例7 一条生产线连续生产$n$件产品不出故障的概率为$\dfrac{e^{-1}}{n!},n=0,1,2,\cdots$.设产品优质率为$p(0&lt;p&lt;1)$,各产品独立.求在两次故障间共生产$k$件优质品的概率.<br>设$B<em>k=\lbrace$两次故障间共生产$k$件优质品$\rbrace$,<br>$B_n=\lbrace$两次故障间共生产$n$件产品$\rbrace$,<br>$P(A_n)=\dfrac{e^{-1}}{n!}$<br>$P(B_k|A_n)=C_n^kp^k(1-p)^{n-k},k\ge n$<br>$P(B_k)=\sum\limits</em>{n=k}^{\infty}p(A<em>n)P(B_k|A_n)=\dfrac{e^{-1}}{n!}C_n^kp^k(1-p)^{n-k}=\dfrac{e^{-1}p^k}{k!}\sum\limits</em>{n=k}^{\infty}\dfrac{(1-p)^{n-k}}{(n-k)!}=\dfrac{e^{-1}p^k}{k!}e^{1-p}=\dfrac{p^k}{k!}e^{-p}$</p>
+<p>例8 设$X\sim U(2,5)$,对$X$进行3次独立观测,求至少有2次观测值大于3的概率.<br>$p=P\lbrace X&gt;3\rbrace=\dfrac23$,<br>记$Y=\lbrace$ 3次独立观测中$X$的观测值大于3的次数$\rbrace$,$Y\sim B(3,\dfrac23)$.<br>$P\lbrace Y\ge2\rbrace=\dfrac{20}{27}$.</p>
 <p>例9 设某设备在任何时间长度$t$内发生故障的次数$N(t)$服从参数为$\lambda t$的泊松分布.</p>
 <blockquote>
 <p>求相继出现两次故障之间的时间间隔$T$的分布.<br>$T\sim F_T(t)=P\lbrace T\le t\rbrace=1-P\lbrace T&gt;t\rbrace=1-P\lbrace N(t)=0\rbrace=1-e^{-\lambda t},t\ge0$<br>求设备已经无故障工作8小时的情况下,再无故障工作16小时的概率.<br>$P\lbrace T\ge16+8|T\ge8\rbrace=\dfrac{P\lbrace T\ge24\rbrace}{P\lbrace T\ge8\rbrace}=\dfrac{1-P\lbrace T\le24\rbrace}{1-P\lbrace T\le8\rbrace}=\dfrac{e^{-24\lambda}}{e^{-e\lambda}}=e^{-16\lambda}$</p>
 </blockquote>
-</blockquote>
-<blockquote>
-<p>例10 $X\sim N(0,1)$,给定$0&lt;\alpha&lt;1$,数$\mu_\alpha$满足$P\lbrace X&gt;\mu_\alpha\rbrace=\alpha$.若$P\lbrace|X|&lt;x\rbrace=\alpha$,求$x$.<br>$P\lbrace|X|&lt;x\rbrace=2\varPhi(i)-1$,$1-\varPhi(i)=\dfrac{1-\alpha}2$,$x=\mu_{\frac{1-\alpha}2}$</p>
-</blockquote>
-<blockquote>
-<p>例12 $|X|\le1$,$P\lbrace X=-1\rbrace=\dfrac18$,$P\lbrace X=-1\rbrace=\dfrac14$,在$\lbrace-1&lt;X&lt;1\rbrace$的条件下,$X$在$(-1,1)$内任一子区间上取值的条件概率与该子区间长度成正比.求$X~F(X)$.<br>$F(x)=P\lbrace X\le x\rbrace$,<br>记$A=\lbrace-1&lt;X&lt;1\rbrace$,$P(A)=\dfrac58$,<br>$f_X(x|A)=\begin{dcases}\dfrac12, &amp; -1&lt;x&lt;1 \\0, &amp; \text{other}\end{dcases}$<br>在$A$上,$F(x)=\dfrac18+P\lbrace-1&lt;X\le x\rbrace=\dfrac18+P\lbrace-1&lt;X\le x,\Omega\rbrace=\dfrac18+P\lbrace-1&lt;X\le x,A\cup\bar A\rbrace=\dfrac18+P\lbrace-1&lt;X\le x,A\rbrace=\dfrac18+P(A)P\lbrace-1&lt;X\le x|A\rbrace=\dfrac18+\dfrac58\dfrac{x+1}2$<br>$x\sim F(x)=\begin{dcases}0, &amp; x&lt;-1 \\ \dfrac{5x+7}{16}, &amp; -1\le x&lt;1 \\ 1, &amp;x\ge1 \end{dcases}$</p>
-</blockquote>
-<blockquote>
-<p>例13 $X\sim\begin{bmatrix}0 &amp; 1 \\ \dfrac12 &amp; \dfrac12 \end{bmatrix}$,在$X=i$的条件下,$Y\sim U(0,i),i=1,2$.求$Y\sim F_Y(y)$.<br>$F_Y(y)=P\lbrace Y\le y \rbrace$<br>若$y&lt;0$,$F_Y(y)=0$,若$y\ge2$,$F_Y(y)=1$.<br>若$0\le x&lt;1$,$F_Y(y)=P\lbrace Y\le y,\Omega\rbrace=P\lbrace Y\le y,(X=1)\cup(X=2)\rbrace=P(X=1)P\lbrace Y\le y|X=1\rbrace+P(X=2)P\lbrace Y\le y|X=2\rbrace=\dfrac12y+\dfrac12\dfrac{y}2=\dfrac34y$<br>若$1\le x&lt;2$,$F_Y(y)=P\lbrace Y\le y,\Omega\rbrace=P(X=1)P\lbrace Y\le y|X=1\rbrace+P(X=2)P\lbrace Y\le y|X=2\rbrace=\dfrac12+\dfrac12\dfrac{y}2=\dfrac{y+2}4$</p>
+<p>例10 $X\sim N(0,1)$,给定$0&lt;\alpha<1$,数$\mu_\alpha$满足$P\lbrace X>\mu<em>\alpha\rbrace=\alpha$.若$P\lbrace|X|&lt;x\rbrace=\alpha$,求$x$.<br>$P\lbrace|X|&lt;x\rbrace=2\varPhi(i)-1$,$1-\varPhi(i)=\dfrac{1-\alpha}2$,$x=\mu</em>{\frac{1-\alpha}2}$</p>
+<p>例12 $|X|\le1$,$P\lbrace X=-1\rbrace=\dfrac18$,$P\lbrace X=-1\rbrace=\dfrac14$,在$\lbrace-1&lt;X&lt;1\rbrace$的条件下,$X$在$(-1,1)$内任一子区间上取值的条件概率与该子区间长度成正比.求$X~F(X)$.<br>$F(x)=P\lbrace X\le x\rbrace$,<br>记$A=\lbrace-1&lt;X&lt;1\rbrace$,$P(A)=\dfrac58$,<br>$f_X(x|A)=\begin{dcases}\dfrac12, &amp; -1&lt; x&lt;1 \0, &amp; \text{other}\end{dcases}$<br>在$A$上,$F(x)=\dfrac18+P\lbrace-1&lt;X\le x\rbrace=\dfrac18+P\lbrace-1&lt; X\le x,\Omega\rbrace=\dfrac18+P\lbrace-1&lt;X\le x,A\cup\bar A\rbrace=\dfrac18+P\lbrace-1&lt;X\le x,A\rbrace=\dfrac18+P(A)P\lbrace-1&lt;X\le x|A\rbrace=\dfrac18+\dfrac58\dfrac{x+1}2$<br>$x\sim F(x)=\begin{dcases}0, &amp; x-1 \ \dfrac{5x+7}{16}, &amp; -1\le x&lt;1 \ 1, &amp;x\ge1 \end{dcases}$</p>
+<p>例13 $X\sim\begin{bmatrix}0 &amp; 1 \ \dfrac12 &amp; \dfrac12 \end{bmatrix}$,在$X=i$的条件下,$Y\sim U(0,i),i=1,2$.求$Y\sim F_Y(y)$.<br>$F_Y(y)=P\lbrace Y\le y \rbrace$<br>若$y&lt;0$,$F_Y(y)=0$,若$y\ge2$,$F_Y(y)=1$.<br>若$0\le x&lt;1$,$F_Y(y)=P\lbrace Y\le y,\Omega\rbrace=P\lbrace Y\le y,(X=1)\cup(X=2)\rbrace=P(X=1)P\lbrace Y\le y|X=1\rbrace+P(X=2)P\lbrace Y\le y|X=2\rbrace=\dfrac12y+\dfrac12\dfrac{y}2=\dfrac34y$<br>若$1\le x&lt;2$,$F_Y(y)=P\lbrace Y\le y,\Omega\rbrace=P(X=1)P\lbrace Y\le y|X=1\rbrace+P(X=2)P\lbrace Y\le y|X=2\rbrace=\dfrac12+\dfrac12\dfrac{y}2=\dfrac{y+2}4$</p>
 </blockquote>
 <h2 id="用分布"><a href="#用分布" class="headerlink" title="用分布"></a>用分布</h2><p>设$X\sim F(x)$,则</p>
 <ul>
@@ -731,32 +709,160 @@
 <li>$P(a\le x\le b)=P(x\le b)-P(x&lt;a)=F(b)-F(a-0)$</li>
 </ul>
 <blockquote>
-<p>例14 设$X\sim F(x)=\begin{dcases}0, &amp; x&lt;0 \\ \dfrac12, &amp; 0\le x&lt;1 \\ 1-e^{-x}, &amp;x\ge1 \end{dcases}$,求$P(0\le X\le1)$,$P(0&lt;X&lt;1)$.<br>$P(0\le X\le1)=F(1)-F(0-0)=1-e^{-1}$,<br>$P(0&lt;X&lt;1)=F(1-0)-F(0)=\dfrac{12}-\dfrac{12}=0$,</p>
+<p>例14 设$X\sim F(x)=\begin{dcases}0, &amp; x&lt;0 \ \dfrac12, &amp; 0\le x&lt;1 \ 1-e^{-x}, &amp;x\ge1 \end{dcases}$,求$P(0\le X\le1)$,$P(0&lt; X&lt;1)$.<br>$P(0\le X\le1)=F(1)-F(0-0)=1-e^{-1}$,<br>$P(0&lt;X&lt;1)=F(1-0)-F(0)=\dfrac{12}-\dfrac{12}=0$,</p>
 </blockquote>
-<p>设$X\sim p_i$,则$P(x\in I)=\sum\limits_{x_i\in I}p_i$.</p>
+<p>设$X\sim p<em>i$,则$P(x\in I)=\sum\limits</em>{x_i\in I}p_i$.</p>
 <p>设$X\sim f(x)$,则$P(x\in I)=\int_If(x)\mathrm{d}x$.</p>
 <blockquote>
-<p>例15 设$X\sim f(x)=\begin{dcases}Ax, &amp; 1&lt;x&lt;2 \\ B, &amp; 2\le x&lt;3 \\ 0, &amp; \text{other} \end{dcases}$,$P(1&lt;x&lt;2)=P(2&lt;x&lt;3)$求$A,B$.<br>1=$\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=\int_1^2Ax\mathrm{d}x+\int_2^3B\mathrm{d}x=\dfrac32A+B$,<br>$\int_1^2Ax\mathrm{d}x+\int_2^3B\mathrm{d}x$,$\dfrac32A=B$.<br>$A=\dfrac13,B=\dfrac12$</p>
-</blockquote>
-<blockquote>
+<p>例15 设$X\sim f(x)=\begin{dcases}Ax, &amp; 1&lt; x&lt;2 \ B, &amp; 2\le x&lt;3 \ 0, &amp; \text{other} \end{dcases}$,$P(1&lt;x&lt;2)=P(2&lt;x&lt;3)$求$A,B$.<br>1=$\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=\int_1^2Ax\mathrm{d}x+\int_2^3B\mathrm{d}x=\dfrac32A+B$,<br>$\int_1^2Ax\mathrm{d}x+\int_2^3B\mathrm{d}x$,$\dfrac32A=B$.<br>$A=\dfrac13,B=\dfrac12$</p>
 <p>例16</p>
 <blockquote>
-<p>$X\sim f(x)=Ae^{-\left(\dfrac{x+1}2\right)^2}$,且$aX+b\sim N(0,1),a&gt;0$,求$A,a,b$.<br>$f(x)=\dfrac1{\sqrt{2\pi}\sigma}e^{-\dfrac{(x-\mu)^2}{2\sigma^2}}$,$\mu=-1,\sigma=\sqrt2,A=\dfrac1{2\sqrt\pi}$.<br>$\dfrac{X-(-1)}{\sqrt2}=aX+b$,$a=b=\dfrac1{\sqrt2}$<br>$X\sim f(x)=\begin{dcases}\dfrac13, &amp; 0\le x\le1 \\ \dfrac29, &amp; 3\le xle6 \\ 0, &amp; \text{other} \end{dcases}$,$P(X\ge k)=\dfrac23$,求$k$的取值范围.<br>$1\le k\le3$</p>
+<p>$X\sim f(x)=Ae^{-\left(\dfrac{x+1}2\right)^2}$,且$aX+b\sim N(0,1),a&gt;0$,求$A,a,b$.<br>$f(x)=\dfrac1{\sqrt{2\pi}\sigma}e^{-\dfrac{(x-\mu)^2}{2\sigma^2}}$,$\mu=-1,\sigma=\sqrt2,A=\dfrac1{2\sqrt\pi}$.<br>$\dfrac{X-(-1)}{\sqrt2}=aX+b$,$a=b=\dfrac1{\sqrt2}$<br>$X\sim f(x)=\begin{dcases}\dfrac13, &amp; 0\le x\le1 \ \dfrac29, &amp; 3\le xle6 \ 0, &amp; \text{other} \end{dcases}$,$P(X\ge k)=\dfrac23$,求$k$的取值范围.<br>$1\le k\le3$</p>
 </blockquote>
 </blockquote>
-<h2 id="求函数分布"><a href="#求函数分布" class="headerlink" title="求函数分布"></a>求函数分布</h2><p>$X\sim\begin{bmatrix}x_1 &amp; x_2 &amp; \cdots \\ p_1 &amp; p_2 &amp; \cdots \end{bmatrix}$,$Y=g(X)$,则$Y\sim\begin{bmatrix}g(x_1) &amp; g(x_2) &amp; \cdots \\ p_1 &amp; p_2 &amp; \cdots \end{bmatrix}$</p>
+<h2 id="求函数分布"><a href="#求函数分布" class="headerlink" title="求函数分布"></a>求函数分布</h2><p>$X\sim\begin{bmatrix}x_1 &amp; x_2 &amp; \cdots \ p_1 &amp; p_2 &amp; \cdots \end{bmatrix}$,$Y=g(X)$,则$Y\sim\begin{bmatrix}g(x_1) &amp; g(x_2) &amp; \cdots \ p_1 &amp; p_2 &amp; \cdots \end{bmatrix}$</p>
 <blockquote>
-<p>例17 $X\sim\begin{bmatrix}-2 &amp; -1 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\ 0.05 &amp; 0.15 &amp; 0.20 &amp; 0.25 &amp; 0.20 &amp; 0.15 \end{bmatrix}$,$Y=2X+1$,$Z=X^2$,求$Y,Z$的概率分布<br>$Y\sim\begin{bmatrix}-3 &amp; -1 &amp; 1 &amp; 3 &amp; 5 &amp; 7 \\ 0.05 &amp; 0.15 &amp; 0.20 &amp; 0.25 &amp; 0.20 &amp; 0.15 \end{bmatrix}$<br>$Z\sim\begin{bmatrix}0 &amp; 1 &amp; 4 &amp; 9 \\ 0.20 &amp; 0.40 &amp; 0.25 &amp; 0.15 \end{bmatrix}$</p>
+<p>例17 $X\sim\begin{bmatrix}-2 &amp; -1 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \ 0.05 &amp; 0.15 &amp; 0.20 &amp; 0.25 &amp; 0.20 &amp; 0.15 \end{bmatrix}$,$Y=2X+1$,$Z=X^2$,求$Y,Z$的概率分布<br>$Y\sim\begin{bmatrix}-3 &amp; -1 &amp; 1 &amp; 3 &amp; 5 &amp; 7 \ 0.05 &amp; 0.15 &amp; 0.20 &amp; 0.25 &amp; 0.20 &amp; 0.15 \end{bmatrix}$<br>$Z\sim\begin{bmatrix}0 &amp; 1 &amp; 4 &amp; 9 \ 0.20 &amp; 0.40 &amp; 0.25 &amp; 0.15 \end{bmatrix}$</p>
 </blockquote>
-<p>设$X\sim F_X(x)$,$Y=g(X)$,<br>则$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace g(X)\le y\rbrace=\int_{g(x)\le y}f_X(x)\mathrm{d}x$</p>
+<p>设$X\sim F<em>X(x)$,$Y=g(X)$,<br>则$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace g(X)\le y\rbrace=\int</em>{g(x)\le y}f_X(x)\mathrm{d}x$</p>
 <blockquote>
-<p>例20 $X\sim f(x)=\begin{dcases}\dfrac12, &amp; -1&lt;x&lt;0 \\ \dfrac14, &amp; 0\le x&lt;2 \\ 0, &amp; \text{other} \end{dcases}$,$Y=X^2$,求$Y\sim f_Y(y)$.<br>则$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace X^2\le y\rbrace=\int_{g(x)\le y}f_X(x)\mathrm{d}x$<br><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="312" viewBox="0 0 360 234"><defs><symbol overflow="visible" id="a"><path d="M5.29-2.191H.55v-.82h4.74zm0 0"/></symbol><symbol overflow="visible" id="b"><path d="M3.727 0h-.88v-5.602c-.21.204-.488.407-.831.61a5.526 5.526 0 01-.926.453v-.852c.492-.23.922-.507 1.289-.84.367-.324.625-.644.781-.957h.567zm0 0"/></symbol><symbol overflow="visible" id="c"><path d="M.906 0v-1H1.91v1zm0 0"/></symbol><symbol overflow="visible" id="d"><path d="M.414-3.531C.41-4.375.496-5.055.676-5.574c.172-.512.433-.91.777-1.192.344-.277.774-.418 1.297-.421.379.003.715.082 1.008.234.289.156.531.379.719.668.187.293.335.648.445 1.062.105.422.156.985.16 1.692-.004.844-.09 1.523-.258 2.035-.176.52-.433.918-.773 1.195-.348.281-.781.418-1.301.422-.695-.004-1.234-.25-1.625-.742-.477-.594-.715-1.563-.71-2.91zm.906 0c-.004 1.18.133 1.96.41 2.347.274.391.614.586 1.02.582.398.004.738-.191 1.016-.586.273-.386.41-1.167.414-2.343-.004-1.176-.14-1.957-.414-2.348-.278-.383-.621-.578-1.028-.582a1.133 1.133 0 00-.965.516c-.304.437-.457 1.242-.453 2.414zm0 0"/></symbol><symbol overflow="visible" id="e"><path d="M.414-1.875l.922-.078c.07.453.226.789.476 1.012.247.23.547.343.903.34.422.003.781-.157 1.074-.477.29-.32.434-.742.438-1.27-.004-.5-.145-.894-.422-1.187-.285-.285-.653-.43-1.106-.434a1.6 1.6 0 00-.765.192 1.5 1.5 0 00-.536.5L.57-3.383l.696-3.68h3.558v.844H1.97l-.387 1.922c.43-.297.879-.45 1.352-.45.62 0 1.148.22 1.582.653.425.434.64.989.644 1.668-.004.649-.191 1.211-.566 1.68-.461.578-1.09.863-1.88.867C2.06.117 1.528-.062 1.122-.426.707-.789.473-1.273.414-1.875zm0 0"/></symbol><symbol overflow="visible" id="f"><path d="M5.035-.844V0H.305C.297-.21.328-.414.406-.61c.117-.32.313-.636.578-.953.266-.308.649-.671 1.149-1.085.777-.633 1.3-1.137 1.578-1.512.27-.375.406-.727.41-1.059a1.21 1.21 0 00-.375-.883c-.25-.234-.574-.355-.973-.359-.425.004-.761.133-1.015.383-.258.258-.387.61-.387 1.055L.47-5.117c.062-.672.293-1.188.699-1.54.398-.35.941-.527 1.625-.53.684.003 1.227.195 1.629.57.398.383.598.855.601 1.418-.003.289-.062.57-.175.844-.121.28-.313.57-.582.875-.274.304-.727.726-1.356 1.257-.531.446-.87.746-1.015.903-.153.16-.274.316-.372.476zm0 0"/></symbol><symbol overflow="visible" id="g"><path d="M.422-1.89l.875-.118c.098.504.27.863.516 1.078.242.223.539.332.886.328.41.004.758-.14 1.047-.43a1.47 1.47 0 00.43-1.062 1.383 1.383 0 00-.399-.996 1.407 1.407 0 00-1.004-.394 3 3 0 00-.62.093l.097-.77c.059.009.105.013.14.013.376 0 .712-.098 1.012-.293.297-.196.446-.497.45-.907a1.103 1.103 0 00-.329-.797c-.218-.21-.5-.316-.843-.32-.344.004-.63.11-.856.324-.23.215-.375.54-.437.965l-.88-.156c.106-.586.348-1.04.731-1.367.38-.32.856-.485 1.422-.489.39.004.75.09 1.078.254.328.172.578.399.758.684.172.293.262.602.262.922 0 .312-.086.594-.25.848a1.76 1.76 0 01-.738.605c.421.102.753.3.988.605.234.31.351.696.351 1.157 0 .629-.23 1.16-.683 1.59-.461.433-1.035.644-1.73.648-.63-.004-1.153-.188-1.567-.559C.71-.809.477-1.293.422-1.89zm0 0"/></symbol><symbol overflow="visible" id="h"><path d="M3.234 0v-1.715H.125v-.805l3.27-4.636h.714v4.636h.97v.805h-.97V0zm0-2.52v-3.226L.992-2.52zm0 0"/></symbol></defs><path d="M10 153.02l.105.066.106.07.207.133.418.27.84.53 1.676 1.056 3.347 2.062 7.266 4.254 6.785 3.7 6.648 3.374 7.215 3.38 6.73 2.886 7.298 2.84 7.164 2.496 6.68 2.066 7.245 1.953.211.055.211.05.426.106.844.203 1.691.399 3.383.746.102.023.105.02 1.45.3 1.656.325.105.02.102.019.207.039.418.078.828.156 1.656.293.227.04.222.038.45.079.902.148 1.797.285.113.016.113.02.223.03 1.348.2 1.8.246.211.031.207.027.422.051.84.106 1.676.199.422.047.418.047.84.09 1.675.167.117.012.114.008.226.023.453.04.91.082.114.007.113.012.23.016.454.039.91.07.453.031.457.032.91.062.227.016.226.011.453.028.91.05.114.008.11.004.226.012.445.023.11.004.113.008.222.008.446.023.226.008.223.008.445.02.895.03.11.005.112.004.223.007.445.012.114.004.11.004.222.004.449.012.11.003h.113l.222.008h.114l.109.004.223.004h.113l.113.004.223.004h.11l.112.004.223.004h.207l.211.004h.207l.207.004h.313l.105.003h2.184l.105-.003h.418l.207-.004h.207l.211-.004h.102l.105-.004.207-.004h.207l.211-.004.414-.008.106-.004h.105l.207-.008.414-.007.114-.004h.113l.226-.008.454-.012.226-.008.223-.007.906-.032.45-.015.902-.04.113-.003.113-.008.227-.008.453-.023.902-.047.113-.008.114-.004.222-.016.453-.027.903-.055.21-.015.212-.012.422-.031.843-.059 1.688-.136.21-.016.208-.02.422-.035.843-.078 1.688-.168.226-.023.231-.024 1.371-.152 1.824-.215.117-.016.114-.011.226-.032.457-.058.914-.121 1.829-.254.109-.016.113-.015.227-.036.445-.066.899-.137 1.792-.285 3.59-.629.102-.02.316-.058.418-.078.836-.164 1.672-.332 3.348-.715.113-.027.113-.024.227-.05.453-.106.91-.207 1.813-.434 3.629-.921 6.777-1.922 6.64-2.137 7.208-2.598 6.722-2.691 7.29-3.203 7.155-3.438 6.676-3.468 7.239-4.047 6.753-4.043 6.625-4.22 7.188-4.85 6.703-4.794 7.27-5.484 6.789-5.39 6.656-5.54 7.215-6.289 6.738-6.136 7.3-6.938 7.169-7.105 6.687-6.895 7.25-7.758 6.766-7.508 6.637-7.617 7.199-8.543 6.719-8.238.234-.29.703-.878.934-1.176 1.875-2.363.468-.594.47-.597.937-1.192.117-.152.117-.149.234-.3.47-.598.116-.152.118-.149.234-.3.117-.153.117-.148.235-.305" fill="none" stroke-width="1.6" stroke-linecap="square" stroke="#5e81b5" stroke-miterlimit="3.25"/><path d="M10 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#a" y="202.65" fill="#666"/><g fill="#666"><use xlink:href="#b" x="6" y="202.65"/><use xlink:href="#c" x="11.562" y="202.65"/><use xlink:href="#d" x="14.34" y="202.65"/></g><path d="M21.379 189.648v-2.398M32.758 189.648v-2.398M44.14 189.648v-2.398M55.52 189.648v-2.398M66.898 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#a" x="56.898" y="202.65" fill="#666"/><g fill="#666"><use xlink:href="#d" x="62.898" y="202.65"/><use xlink:href="#c" x="68.459" y="202.65"/><use xlink:href="#e" x="71.238" y="202.65"/></g><path d="M78.277 189.648v-2.398M89.656 189.648v-2.398M101.035 189.648v-2.398M112.418 189.648v-2.398M123.797 189.648v-4M135.176 189.648v-2.398M146.555 189.648v-2.398M157.934 189.648v-2.398M169.313 189.648v-2.398M180.695 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#d" x="173.694" y="202.65"/><use xlink:href="#c" x="179.255" y="202.65"/><use xlink:href="#e" x="182.034" y="202.65"/></g><path d="M192.074 189.648v-2.398M203.453 189.648v-2.398M214.832 189.648v-2.398M226.21 189.648v-2.398M237.594 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#b" x="230.592" y="202.65"/><use xlink:href="#c" x="236.153" y="202.65"/><use xlink:href="#d" x="238.932" y="202.65"/></g><path d="M248.973 189.648v-2.398M260.352 189.648v-2.398M271.73 189.648v-2.398M283.11 189.648v-2.398M294.488 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#b" x="287.49" y="202.65"/><use xlink:href="#c" x="293.051" y="202.65"/><use xlink:href="#e" x="295.83" y="202.65"/></g><path d="M305.871 189.648v-2.398M317.25 189.648v-2.398M328.629 189.648v-2.398M340.008 189.648v-2.398M351.387 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#f" x="344.388" y="202.65"/><use xlink:href="#c" x="349.949" y="202.65"/><use xlink:href="#d" x="352.728" y="202.65"/></g><path d="M2.887 189.648H358.5M123.797 226.281h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#a" x="108.796" y="229.78" fill="#666"/><use xlink:href="#b" x="114.796" y="229.78" fill="#666"/><path d="M123.797 218.953h2.398M123.797 211.629h2.398M123.797 204.3h2.398M123.797 196.977h2.398M123.797 189.648h4M123.797 182.324h2.398M123.797 175h2.398M123.797 167.672h2.398M123.797 160.348h2.398M123.797 153.02h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#b" x="114.796" y="156.52" fill="#666"/><path d="M123.797 145.695h2.398M123.797 138.367h2.398M123.797 131.043h2.398M123.797 123.715h2.398M123.797 116.39h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#f" x="114.796" y="119.89" fill="#666"/><path d="M123.797 109.063h2.398M123.797 101.738h2.398M123.797 94.414h2.398M123.797 87.086h2.398M123.797 79.762h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#g" x="114.796" y="83.26" fill="#666"/><path d="M123.797 72.434h2.398M123.797 65.11h2.398M123.797 57.781h2.398M123.797 50.457h2.398M123.797 43.129h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#h" x="114.796" y="46.63" fill="#666"/><path d="M123.797 35.805h2.398M123.797 28.477h2.398M123.797 21.152h2.398M123.797 13.824h2.398M123.797 6.5h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#e" x="114.796" y="10" fill="#666"/><path d="M123.797 226.281V6.5" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/></svg><br>当$y&lt;0$,$F_Y(y)=0$,当$y&lt;0$,$F_Y(y)=1$.<br>当$0\le y&lt;1,F_Y(y)=P\lbrace-\sqrt y\le X\le\sqrt y\rbrace=\int_{-\sqrt y}^{\sqrt y}f_X(x)\mathrm{d}x=\int_{-\sqrt y}^0\dfrac12\mathrm{d}x+\int_0^{\sqrt y}\dfrac14\mathrm{d}x=\dfrac34\sqrt{y}$.<br>当$1\le y&lt;4,F_Y(y)=P\lbrace-1\le X\le\sqrt y\rbrace=\int_{-1}^0\dfrac12\mathrm{d}x+\int_0^{\sqrt y}\dfrac14\mathrm{d}x=\dfrac12+\dfrac{\sqrt y}4$<br>$F_Y(y)=\begin{dcases}0, &amp; x&lt;0 \\ \dfrac34\sqrt{y}, &amp; 0\le x&lt;1 \\ \dfrac12+\dfrac{\sqrt y}4, &amp; 0\le y&lt;1 \\ 1, &amp; x\ge4 \end{dcases}$.<br>$f_Y(y)=F’_Y(y)=\begin{dcases}\dfrac3{8\sqrt{y}}, &amp; 0&lt;x&lt;1 \\ \dfrac1{8\sqrt{y}}, &amp; 1\le x&lt;4 \\ 0, &amp; \text{other}\end{dcases}$.</p>
+<p>例20 $X\sim f(x)=\begin{dcases}\dfrac12, &amp; -1&lt; x&lt;0 \ \dfrac14, &amp; 0\le x&lt;2 \ 0, &amp; \text{other} \end{dcases}$,$Y=X^2$,求$Y\sim f<em>Y(y)$.<br>则$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace X^2\le y\rbrace=\int</em>{g(x)\le y}f_X(x)\mathrm{d}x$</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="312" viewBox="0 0 360 234"><defs><symbol overflow="visible" id="a"><path d="M5.29-2.191H.55v-.82h4.74zm0 0"/></symbol><symbol overflow="visible" id="b"><path d="M3.727 0h-.88v-5.602c-.21.204-.488.407-.831.61a5.526 5.526 0 01-.926.453v-.852c.492-.23.922-.507 1.289-.84.367-.324.625-.644.781-.957h.567zm0 0"/></symbol><symbol overflow="visible" id="c"><path d="M.906 0v-1H1.91v1zm0 0"/></symbol><symbol overflow="visible" id="d"><path d="M.414-3.531C.41-4.375.496-5.055.676-5.574c.172-.512.433-.91.777-1.192.344-.277.774-.418 1.297-.421.379.003.715.082 1.008.234.289.156.531.379.719.668.187.293.335.648.445 1.062.105.422.156.985.16 1.692-.004.844-.09 1.523-.258 2.035-.176.52-.433.918-.773 1.195-.348.281-.781.418-1.301.422-.695-.004-1.234-.25-1.625-.742-.477-.594-.715-1.563-.71-2.91zm.906 0c-.004 1.18.133 1.96.41 2.347.274.391.614.586 1.02.582.398.004.738-.191 1.016-.586.273-.386.41-1.167.414-2.343-.004-1.176-.14-1.957-.414-2.348-.278-.383-.621-.578-1.028-.582a1.133 1.133 0 00-.965.516c-.304.437-.457 1.242-.453 2.414zm0 0"/></symbol><symbol overflow="visible" id="e"><path d="M.414-1.875l.922-.078c.07.453.226.789.476 1.012.247.23.547.343.903.34.422.003.781-.157 1.074-.477.29-.32.434-.742.438-1.27-.004-.5-.145-.894-.422-1.187-.285-.285-.653-.43-1.106-.434a1.6 1.6 0 00-.765.192 1.5 1.5 0 00-.536.5L.57-3.383l.696-3.68h3.558v.844H1.97l-.387 1.922c.43-.297.879-.45 1.352-.45.62 0 1.148.22 1.582.653.425.434.64.989.644 1.668-.004.649-.191 1.211-.566 1.68-.461.578-1.09.863-1.88.867C2.06.117 1.528-.062 1.122-.426.707-.789.473-1.273.414-1.875zm0 0"/></symbol><symbol overflow="visible" id="f"><path d="M5.035-.844V0H.305C.297-.21.328-.414.406-.61c.117-.32.313-.636.578-.953.266-.308.649-.671 1.149-1.085.777-.633 1.3-1.137 1.578-1.512.27-.375.406-.727.41-1.059a1.21 1.21 0 00-.375-.883c-.25-.234-.574-.355-.973-.359-.425.004-.761.133-1.015.383-.258.258-.387.61-.387 1.055L.47-5.117c.062-.672.293-1.188.699-1.54.398-.35.941-.527 1.625-.53.684.003 1.227.195 1.629.57.398.383.598.855.601 1.418-.003.289-.062.57-.175.844-.121.28-.313.57-.582.875-.274.304-.727.726-1.356 1.257-.531.446-.87.746-1.015.903-.153.16-.274.316-.372.476zm0 0"/></symbol><symbol overflow="visible" id="g"><path d="M.422-1.89l.875-.118c.098.504.27.863.516 1.078.242.223.539.332.886.328.41.004.758-.14 1.047-.43a1.47 1.47 0 00.43-1.062 1.383 1.383 0 00-.399-.996 1.407 1.407 0 00-1.004-.394 3 3 0 00-.62.093l.097-.77c.059.009.105.013.14.013.376 0 .712-.098 1.012-.293.297-.196.446-.497.45-.907a1.103 1.103 0 00-.329-.797c-.218-.21-.5-.316-.843-.32-.344.004-.63.11-.856.324-.23.215-.375.54-.437.965l-.88-.156c.106-.586.348-1.04.731-1.367.38-.32.856-.485 1.422-.489.39.004.75.09 1.078.254.328.172.578.399.758.684.172.293.262.602.262.922 0 .312-.086.594-.25.848a1.76 1.76 0 01-.738.605c.421.102.753.3.988.605.234.31.351.696.351 1.157 0 .629-.23 1.16-.683 1.59-.461.433-1.035.644-1.73.648-.63-.004-1.153-.188-1.567-.559C.71-.809.477-1.293.422-1.89zm0 0"/></symbol><symbol overflow="visible" id="h"><path d="M3.234 0v-1.715H.125v-.805l3.27-4.636h.714v4.636h.97v.805h-.97V0zm0-2.52v-3.226L.992-2.52zm0 0"/></symbol></defs><path d="M10 153.02l.105.066.106.07.207.133.418.27.84.53 1.676 1.056 3.347 2.062 7.266 4.254 6.785 3.7 6.648 3.374 7.215 3.38 6.73 2.886 7.298 2.84 7.164 2.496 6.68 2.066 7.245 1.953.211.055.211.05.426.106.844.203 1.691.399 3.383.746.102.023.105.02 1.45.3 1.656.325.105.02.102.019.207.039.418.078.828.156 1.656.293.227.04.222.038.45.079.902.148 1.797.285.113.016.113.02.223.03 1.348.2 1.8.246.211.031.207.027.422.051.84.106 1.676.199.422.047.418.047.84.09 1.675.167.117.012.114.008.226.023.453.04.91.082.114.007.113.012.23.016.454.039.91.07.453.031.457.032.91.062.227.016.226.011.453.028.91.05.114.008.11.004.226.012.445.023.11.004.113.008.222.008.446.023.226.008.223.008.445.02.895.03.11.005.112.004.223.007.445.012.114.004.11.004.222.004.449.012.11.003h.113l.222.008h.114l.109.004.223.004h.113l.113.004.223.004h.11l.112.004.223.004h.207l.211.004h.207l.207.004h.313l.105.003h2.184l.105-.003h.418l.207-.004h.207l.211-.004h.102l.105-.004.207-.004h.207l.211-.004.414-.008.106-.004h.105l.207-.008.414-.007.114-.004h.113l.226-.008.454-.012.226-.008.223-.007.906-.032.45-.015.902-.04.113-.003.113-.008.227-.008.453-.023.902-.047.113-.008.114-.004.222-.016.453-.027.903-.055.21-.015.212-.012.422-.031.843-.059 1.688-.136.21-.016.208-.02.422-.035.843-.078 1.688-.168.226-.023.231-.024 1.371-.152 1.824-.215.117-.016.114-.011.226-.032.457-.058.914-.121 1.829-.254.109-.016.113-.015.227-.036.445-.066.899-.137 1.792-.285 3.59-.629.102-.02.316-.058.418-.078.836-.164 1.672-.332 3.348-.715.113-.027.113-.024.227-.05.453-.106.91-.207 1.813-.434 3.629-.921 6.777-1.922 6.64-2.137 7.208-2.598 6.722-2.691 7.29-3.203 7.155-3.438 6.676-3.468 7.239-4.047 6.753-4.043 6.625-4.22 7.188-4.85 6.703-4.794 7.27-5.484 6.789-5.39 6.656-5.54 7.215-6.289 6.738-6.136 7.3-6.938 7.169-7.105 6.687-6.895 7.25-7.758 6.766-7.508 6.637-7.617 7.199-8.543 6.719-8.238.234-.29.703-.878.934-1.176 1.875-2.363.468-.594.47-.597.937-1.192.117-.152.117-.149.234-.3.47-.598.116-.152.118-.149.234-.3.117-.153.117-.148.235-.305" fill="none" stroke-width="1.6" stroke-linecap="square" stroke="#5e81b5" stroke-miterlimit="3.25"/><path d="M10 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#a" y="202.65" fill="#666"/><g fill="#666"><use xlink:href="#b" x="6" y="202.65"/><use xlink:href="#c" x="11.562" y="202.65"/><use xlink:href="#d" x="14.34" y="202.65"/></g><path d="M21.379 189.648v-2.398M32.758 189.648v-2.398M44.14 189.648v-2.398M55.52 189.648v-2.398M66.898 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#a" x="56.898" y="202.65" fill="#666"/><g fill="#666"><use xlink:href="#d" x="62.898" y="202.65"/><use xlink:href="#c" x="68.459" y="202.65"/><use xlink:href="#e" x="71.238" y="202.65"/></g><path d="M78.277 189.648v-2.398M89.656 189.648v-2.398M101.035 189.648v-2.398M112.418 189.648v-2.398M123.797 189.648v-4M135.176 189.648v-2.398M146.555 189.648v-2.398M157.934 189.648v-2.398M169.313 189.648v-2.398M180.695 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#d" x="173.694" y="202.65"/><use xlink:href="#c" x="179.255" y="202.65"/><use xlink:href="#e" x="182.034" y="202.65"/></g><path d="M192.074 189.648v-2.398M203.453 189.648v-2.398M214.832 189.648v-2.398M226.21 189.648v-2.398M237.594 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#b" x="230.592" y="202.65"/><use xlink:href="#c" x="236.153" y="202.65"/><use xlink:href="#d" x="238.932" y="202.65"/></g><path d="M248.973 189.648v-2.398M260.352 189.648v-2.398M271.73 189.648v-2.398M283.11 189.648v-2.398M294.488 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#b" x="287.49" y="202.65"/><use xlink:href="#c" x="293.051" y="202.65"/><use xlink:href="#e" x="295.83" y="202.65"/></g><path d="M305.871 189.648v-2.398M317.25 189.648v-2.398M328.629 189.648v-2.398M340.008 189.648v-2.398M351.387 189.648v-4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><g fill="#666"><use xlink:href="#f" x="344.388" y="202.65"/><use xlink:href="#c" x="349.949" y="202.65"/><use xlink:href="#d" x="352.728" y="202.65"/></g><path d="M2.887 189.648H358.5M123.797 226.281h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#a" x="108.796" y="229.78" fill="#666"/><use xlink:href="#b" x="114.796" y="229.78" fill="#666"/><path d="M123.797 218.953h2.398M123.797 211.629h2.398M123.797 204.3h2.398M123.797 196.977h2.398M123.797 189.648h4M123.797 182.324h2.398M123.797 175h2.398M123.797 167.672h2.398M123.797 160.348h2.398M123.797 153.02h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#b" x="114.796" y="156.52" fill="#666"/><path d="M123.797 145.695h2.398M123.797 138.367h2.398M123.797 131.043h2.398M123.797 123.715h2.398M123.797 116.39h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#f" x="114.796" y="119.89" fill="#666"/><path d="M123.797 109.063h2.398M123.797 101.738h2.398M123.797 94.414h2.398M123.797 87.086h2.398M123.797 79.762h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#g" x="114.796" y="83.26" fill="#666"/><path d="M123.797 72.434h2.398M123.797 65.11h2.398M123.797 57.781h2.398M123.797 50.457h2.398M123.797 43.129h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#h" x="114.796" y="46.63" fill="#666"/><path d="M123.797 35.805h2.398M123.797 28.477h2.398M123.797 21.152h2.398M123.797 13.824h2.398M123.797 6.5h4" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/><use xlink:href="#e" x="114.796" y="10" fill="#666"/><path d="M123.797 226.281V6.5" fill="none" stroke-width=".2" stroke="#666" stroke-miterlimit="3.25"/></svg><br>当$y&lt;0$,$F<em>Y(y)=0$,当$y&lt;0$,$F_Y(y)=1$.<br>当$0\le y&lt;1,F_Y(y)=P\lbrace-\sqrt y\le X\le\sqrt y\rbrace=\int</em>{-\sqrt y}^{\sqrt y}f<em>X(x)\mathrm{d}x=\int</em>{-\sqrt y}^0\dfrac12\mathrm{d}x+\int<em>0^{\sqrt y}\dfrac14\mathrm{d}x=\dfrac34\sqrt{y}$.<br>当$1\le y&lt;4,F_Y(y)=P\lbrace-1\le X\le\sqrt y\rbrace=\int</em>{-1}^0\dfrac12\mathrm{d}x+\int_0^{\sqrt y}\dfrac14\mathrm{d}x=\dfrac12+\dfrac{\sqrt y}4$<br>$F_Y(y)=\begin{dcases}0, &amp; x&lt;0 \ \dfrac34\sqrt{y}, &amp; 0\le x&lt;1 \ \dfrac12+\dfrac{\sqrt y}4, &amp; 0\le y&lt;1 \ 1, &amp; x\ge4 \end{dcases}$.<br>$f_Y(y)=F’_Y(y)=\begin{dcases}\dfrac3{8\sqrt{y}}, &amp; 0&lt;x&lt;1 \ \dfrac1{8\sqrt{y}}, &amp; 1\le x&lt;4 \ 0, &amp; \text{other}\end{dcases}$.</p>
 </blockquote>
-<p>设$X\sim F_X(x)$,$Y=g(X)$严格单调,<br>则$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace g(X)\le y\rbrace$<br>若$g$严格单调递增,<br>$F_Y(y)=P\lbrace X\le g^{-1}(y)\rbrace=\int_{-\infty}^{g^{-1}(y)}f_X(x)\mathrm{d}x$,<br>$f_Y(y)=f_X(g^{-1}(y))(g^{-1})’(y)$.<br>若$g$严格单调递增,<br>$F_Y(y)=P\lbrace X\ge g^{-1}(y)\rbrace=\int_{g^{-1}(y)}^{+\infty}f_X(x)\mathrm{d}x$,<br>$f_Y(y)=-f_X(g^{-1}(y))(g^{-1})’(y)$.<br>综上所述,$f_Y(y)=\begin{dcases}f_X(g^{-1}(y))|(g^{-1})’(y)|, &amp; \alpha&lt;y&lt;\beta \\ 0, &amp; \text{other}\end{dcases}$,$\alpha=\mathrm{min}(g(a),g(b)),\beta=\mathrm{max}(g(a),g(b))$</p>
+<p>设$X\sim F<em>X(x)$,$Y=g(X)$严格单调,<br>则$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace g(X)\le y\rbrace$<br>若$g$严格单调递增,<br>$F_Y(y)=P\lbrace X\le g^{-1}(y)\rbrace=\int</em>{-\infty}^{g^{-1}(y)}f<em>X(x)\mathrm{d}x$,<br>$f_Y(y)=f_X(g^{-1}(y))(g^{-1})’(y)$.<br>若$g$严格单调递增,<br>$F_Y(y)=P\lbrace X\ge g^{-1}(y)\rbrace=\int</em>{g^{-1}(y)}^{+\infty}f_X(x)\mathrm{d}x$,<br>$f_Y(y)=-f_X(g^{-1}(y))(g^{-1})’(y)$.<br>综上所述,$f_Y(y)=\begin{dcases}f_X(g^{-1}(y))|(g^{-1})’(y)|, &amp; \alpha&lt; y&lt;\beta \ 0, &amp; \text{other}\end{dcases}$,$\alpha=\mathrm{min}(g(a),g(b)),\beta=\mathrm{max}(g(a),g(b))$</p>
 <blockquote>
-<p>例19 对球的直径进行测量,用$X$表示测量值,$X\sim U(a,b),a&gt;0$,求球的体积的概率密度.<br>$x\sim f(x)=\begin{dcases}\dfrac1{b-a}, &amp;a&lt;x&lt;b \\ 0, &amp; \text{other.}\end{dcases}$<br>体积$Y=\dfrac\pi6X^3$,$x=\sqrt[3]{\dfrac6\pi y}$<br>$f_Y(y)=\begin{dcases}f_X(\sqrt[3]{\dfrac6\pi y})(\sqrt[3]{\dfrac6\pi y})’, &amp; \dfrac\pi6a^3&lt;y&lt;\dfrac\pi6b^3 \\ 0, &amp; \text{other}\end{dcases}=\begin{dcases}\dfrac{1}{3(b-a)}\cdot \sqrt[3]{\dfrac6\pi}\cdot y^{-\dfrac23}, &amp; \dfrac\pi6a^3&lt;y&lt;\dfrac\pi6b^3 \\ 0, &amp; \text{other}\end{dcases}$</p>
+<p>例19 对球的直径进行测量,用$X$表示测量值,$X\sim U(a,b),a&gt;0$,求球的体积的概率密度.<br>$x\sim f(x)=\begin{dcases}\dfrac1{b-a}, &amp;a&lt; x&lt; b \ 0, &amp; \text{other.}\end{dcases}$<br>体积$Y=\dfrac\pi6X^3$,$x=\sqrt[3]{\dfrac6\pi y}$<br>$\begin{array}{l}f_Y(y)&amp;=\begin{cases} f_X(\sqrt[3]{\dfrac6\pi y})(\sqrt[3]{\dfrac6\pi y})’, &amp; \dfrac\pi6a^3&lt; y&lt;\dfrac\pi6b^3 \ 0, &amp; \text{other}\end{cases}\&amp;=\begin{cases}\dfrac{1}{3(b-a)}\cdot \sqrt[3]{\dfrac6\pi}\cdot y^{-\dfrac23}, &amp; \dfrac\pi6a^3&lt; y&lt; \dfrac\pi6b^3 \ 0, &amp; \text{other}\end{cases} \end{array}$</p>
+<p>例21 设备开机后无故障工作时间$X\sim$指数分布,$EX=5$.设备故障则关机,无故障工作两小时则关机,求无故障工作时间$Y\sim F_Y(y)$.并问有几个间断点.<br>$Y=\mathrm{min}(X,2)$,$F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace\mathrm{min}(X,2)\le2\rbrace$.<br>$x\sim F_X(x)=\begin{dcases}0, &amp; x&lt;0 \ 1-e^{-\dfrac{x}{5}}, &amp;x\ge 0 \end{dcases}$<br>当$y&lt;0$,$F_Y(y)=0$.<br>当$y\ge0$,$F_Y(y)=1$.<br>当$0\le y&lt;2$,$F_Y(y)=P\lbrace 0\le X\le y\rbrace=F_X(y)-F_X(0)=1-e^{-\dfrac{x}{5}}$.<br>$y\sim F_Y(y)=\begin{dcases}0, &amp; y&lt;0 \ 1-e^{-\dfrac{x}{5}}, &amp;0\le y&lt;2 \ 1, &amp;y\ge2 \end{dcases}$</p>
+<p>例22 $X\sim E(\lambda)$,验证$Y=[x]+1\sim G(1-e^{-\lambda})$.<br>$x\sim F(x)=\begin{dcases}1-e^{-\lambda x}, &amp;x\ge 0\  0, &amp; x&lt;0 \end{dcases}$<br>$P\lbrace Y=k\rbrace=P\lbrace [x]+1=k \rbrace=P\lbrace k-1\le X&lt;k \rbrace=F_X(k)-F_X(k-1)=e^{-\lambda(k-1)}-e^{-\lambda k}=(1-e^{-\lambda})e^{\lambda(k-1)}\sim Ge(1-e^{-\lambda})$.</p>
 </blockquote>
-<!-- 16 9:30  -->
+<h1 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h1><h2 id="判分布-1"><a href="#判分布-1" class="headerlink" title="判分布"></a>判分布</h2><p>$F(x,y)$是联合分布函数:</p>
+<ul>
+<li>单调性$x_1&gt;x_2,F(x_1,y)\ge F(x_2,y)$</li>
+<li>右连续$F(x+0,y)=F(x,y)$</li>
+<li>有界性$F(-\infty,y)=0,F(+\infty,+\infty)=1$</li>
+<li>非负性$P(x_1&lt;X\le x_2,y_1&lt;Y\le y_2)=F(x_2,y_2)-F(x_1,y_2)-F(x_2,y_1)+F(x_1,y_1)$</li>
+</ul>
+<p>$p_{ij}$是联合分布律:</p>
+<ul>
+<li>$p_{ij}\ge0$</li>
+<li>$\sum\limits<em>i\sum\limits_j p</em>{ij}=1$</li>
+</ul>
+<p>$f(x,y)$是联合密度:</p>
+<ul>
+<li>$f(x,y)\ge0$</li>
+<li>$\int<em>{-\infty}^{+\infty}\int</em>{-\infty}^{+\infty}f(x,y)\mathrm{d}x\mathrm{d}y=1$</li>
+</ul>
+<h2 id="求分布-1"><a href="#求分布-1" class="headerlink" title="求分布"></a>求分布</h2><h3 id="求联合"><a href="#求联合" class="headerlink" title="求联合"></a>求联合</h3><h4 id="求-F-x-y"><a href="#求-F-x-y" class="headerlink" title="求$F(x,y)$"></a>求$F(x,y)$</h4><p>若$(X,Y)\sim p<em>{ij}$,$F(x,y)=P(X\le x,Y\le y)=\sum\limits</em>{x<em>i\le x,y_i\le y}p</em>{ij}$.</p>
+<blockquote>
+<p>例3.3.1 已知联合概率密度$\begin{array}{c|c c} X \backslash Y &amp; 0 &amp; 1 \ \hline 0 &amp; 7/21 &amp; 4/21 \ 1 &amp; 7/21 &amp; 3/21\end{array}$,求$F(x,y)$.<br>$F(x,y)=\left\lbrace\begin{array}{ll}0, &amp; x\lt0\text{ or }y\lt0 \ 11/21, &amp; 0\le x\lt1,y\ge1 \ 14/21, &amp; x\ge1,0\le y\lt1 \ 7/21, &amp; 0\le x\lt1,0\le y\lt1 \ 1, &amp; x\ge1,y\ge1 \ \end{array}\right.$</p>
+</blockquote>
+<p>若$(X,Y)\sim f(x,y)$,$F(x,y)=P(X\le x,Y\le y)=\int<em>{-\infty}^x\mathrm{d}u\int</em>{-\infty}^yf(u,v)\mathrm{d}v$.</p>
+<blockquote>
+<p>例3.3.2 $(X,Y)\sim f(x,y)=\left\lbrace\begin{array}{ll}2e^{-(x+y)},&amp;0\lt x\lt y\0,&amp;\text{other}\end{array}\right.$求$(x,y)\sim F(x,y)$.<br>若$x&lt;0$或$y&lt;0$,$F(x,y)=0$.<br>若$0\le y&lt;x$,$F(x,y)=\int_0^y\mathrm{d}t\int_0^t2e^{-(s+t)}\mathrm{d}s=2\int_0^ye^{-t}\mathrm{d}t\int_0^te^{-s}\mathrm{d}s=\int_0^ye^{-t}(1-e^{-t})\mathrm{d}t=1-2e^{-y}+e^{-2y}$.<br>若$0\le x&lt;y$,$F(x,y)=\int_0^x\mathrm{d}s\int_s^ye^{-(s+t)}\mathrm{d}t=1-2e^{-y}-e^{-2x}+2e^{-(x+y)}$.</p>
+</blockquote>
+<h4 id="求-p-ij"><a href="#求-p-ij" class="headerlink" title="求$p_{ij}$."></a>求$p_{ij}$.</h4><blockquote>
+<p>例3.3.9 袋子中有①,①,②,③四个球,先从中无放回取两次.设$X_1,X_2$分别表示第一次,第二次取到球的号码.</p>
+<blockquote>
+<p>求$X_1,X_2$的联合分布.<br>$\begin{array}{c|c c c} X_1\backslash X_2 &amp; 1 &amp; 2 &amp; 3 \ \hline 1 &amp; 1/6 &amp; 1/6 &amp; 1/6 \ 2 &amp; 1/6 &amp; 0 &amp; 1/12 \ 3 &amp; 1/6 &amp; 1/12 &amp; 0 \end{array}$</p>
+</blockquote>
+</blockquote>
+<h4 id="求-f-x-y"><a href="#求-f-x-y" class="headerlink" title="求$f(x,y)$"></a>求$f(x,y)$</h4><p>二维均匀分布:$(X,Y)\sim f(x,y)=\left\lbrace\begin{array}{ll}\dfrac{1}{S_D},&amp;(x,y)\in D\0,&amp;(x,y)\notin D\end{array}\right.$</p>
+<p>二维正态分布$(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$.</p>
+<ul>
+<li>若$(X_1,X_2)\sim N$,则$X_1\sim N,X_2\sim N$.</li>
+<li>若$X_1\sim N,X_2\sim N$,且$X_1,X_2$相互独立,则$(X_1,X_2)\sim N$,且$\rho=0$.</li>
+<li>若$(X_1,X_2)\sim N$,则$k_1X_1+k_2X_2\sim N$.</li>
+<li>若$(X_1,X_2)\sim N$,$Y_1=a_1X_1+a_2X_2,Y_2=b_1X_1+b_2X_2$,$\begin{vmatrix}a_1&amp;a_2\b_1&amp;b_2\end{vmatrix}\neq0$,则$(Y_1,Y_2)\sim N$.</li>
+<li>若$(X<em>1,X_2)\sim N$,则$X_1,X_2$独立当且仅当$\rho</em>{XY}=0$.</li>
+</ul>
+<h3 id="求边缘"><a href="#求边缘" class="headerlink" title="求边缘"></a>求边缘</h3><h4 id="求-F-X-x-和-F-Y-y"><a href="#求-F-X-x-和-F-Y-y" class="headerlink" title="求$F_X(x)$和$F_Y(y)$"></a>求$F_X(x)$和$F_Y(y)$</h4><p>$F_X(x)=F(x,+\infty)$,$F_Y(y)=F(+\infty,y)$.</p>
+<h4 id="求-p-i-cdot-和-p-cdot-j"><a href="#求-p-i-cdot-和-p-cdot-j" class="headerlink" title="求$p{i\cdot}$和$p{\cdot j}$"></a>求$p<em>{i\cdot}$和$p</em>{\cdot j}$</h4><p>$p<em>{i\cdot}=\sum\limits</em>{j}p<em>{ij}$,$p</em>{\cdot j}=\sum\limits<em>{i}p</em>{ij}$.</p>
+<h4 id="求-f-X-x-和-f-Y-y"><a href="#求-f-X-x-和-f-Y-y" class="headerlink" title="求$f_X(x)$和$f_Y(y)$"></a>求$f_X(x)$和$f_Y(y)$</h4><p>$f<em>X(x)=\int</em>{-\infty}^{+\infty}f(x,y)\mathrm{d}y$,$f<em>Y(y)=\int</em>{-\infty}^{+\infty}f(x,y)\mathrm{d}x$.</p>
+<h3 id="求条件"><a href="#求条件" class="headerlink" title="求条件"></a>求条件</h3><p>$P(Y=y<em>j|X=x_i)=\dfrac{p</em>{ij}}{p_{i\cdot}}$.</p>
+<p>$f_{Y|X}(y|x)=\dfrac{f(x,y)}{f_X(x)}$.</p>
+<h3 id="判独立"><a href="#判独立" class="headerlink" title="判独立"></a>判独立</h3><ul>
+<li>$X,Y$独立当且仅当$F(x,y)=F_X(x)F_Y(y)$.</li>
+<li>$X,Y$独立当且仅当$p<em>{ij}=p</em>{i\cdot}p_{\cdot j}$.</li>
+<li>$X,Y$独立当且仅当$f(x,y)=f_X(x)f_Y(y)$.</li>
+</ul>
+<h2 id="用分布-1"><a href="#用分布-1" class="headerlink" title="用分布"></a>用分布</h2><blockquote>
+<p>例3.3.3 $P(X=-1|Y=1)=\dfrac23,P(X=-1|Y=0)=\dfrac35$,$\begin{array}{c|ccc|c}X\backslash Y&amp;-1&amp;0&amp;1&amp;\\hline-1&amp;&amp;&amp;0.2&amp;\1&amp;0.1&amp;&amp;&amp;\\hline&amp;0.2&amp;&amp;&amp;1\end{array}$<br>计算得$\begin{array}{c|ccc|c}X\backslash Y&amp;-1&amp;0&amp;1&amp;\\hline-1&amp;0.1&amp;0.3&amp;0.2&amp;0.6\1&amp;0.1&amp;0.2&amp;0.1&amp;0.4\\hline&amp;0.2&amp;0.5&amp;0.3&amp;1\end{array}$.</p>
+<p>例3.3.4 若$X\sim N(0,4),Y\sim N(1,9)$独立,求$f(x,y)$.<br>$X\sim f_X(x)=\dfrac{1}{\sqrt{2\pi}\cdot2}e^{-\frac{x^2}{8}}$;<br>$Y\sim f_Y(y)=\dfrac{1}{\sqrt{2\pi}\cdot3}e^{-\frac{(y-1)^2}{18}}$;<br>$f(x,y)=f_X(x)f_Y(y)=\dfrac{1}{12\pi}e^{-(\frac{x^2}{8}+\frac{(y-1)^2}{18})}$.</p>
+<p>例3.3.5 $X\sim U[0,1]$,在$X=x(0&lt;x&lt;1)$的条件下,$Y$在$[0,x]$上服从均匀分布.</p>
+<blockquote>
+<p>求$f(x,y)$.<br>$f<em>X(x)=\left\lbrace\begin{array}{ll}1,&amp;0\le x\le1\0,&amp;\text{other}\end{array}\right.$,<br>$f</em>{Y|X}(y|x)=\left\lbrace\begin{array}{ll}\dfrac1x,&amp;0\le y\le x\0,&amp;\text{other}\end{array}\right.$,<br>$f(x,y)=f<em>X(x)\cdot f</em>{Y|X}(y|x)=\left\lbrace\begin{array}{ll}\dfrac1x,&amp;0\le y\le x\le1\0,&amp;\text{other}\end{array}\right.$</p>
+<p>求$f_Y(y)$.<br>当$0&lt;y&lt;1$,$f_Y(y)=\int_y^1\dfrac1x\mathrm{d}x=-\ln y$.<br>$f_Y(y)=\left\lbrace\begin{array}{ll}-\ln y,&amp;0\lt y\lt1\0,&amp;\text{other}\end{array}\right.$,</p>
+<p>求$P(X+Y&gt;1)$.<br>$P(X+Y&gt;1)=\iint\limits<em>Df(x,y)\mathrm{d}x\mathrm{d}y=\int</em>{\frac12}^1\mathrm{d}x\int_{1-x}^x\dfrac1x\mathrm{d}y=1-\ln2$.</p>
+</blockquote>
+<p>例3.3.6 已知$(X,Y)$在点$(0,0),(1,-1),(1,1)$为顶点的三角形上均匀分布.</p>
+<blockquote>
+<p>求$f(x,y)$.<br>$f(x,y)=\left\lbrace\begin{array}{ll}1,&amp;0\le x\le1,|y|\le x\0,&amp;\text{other}\end{array}\right.$</p>
+<p>求$f<em>X(x),f_Y(y),f</em>{X|Y}(x|y),f<em>{Y|X}(y|x)$,判断$X,Y$独立性.<br>$f_X(x)=\left\lbrace\begin{array}{ll}\int</em>{-x}^x1\mathrm{d}y,&amp;0\le x\le1\0,&amp;\text{other}\end{array}\right.=\left\lbrace\begin{array}{ll}2x,&amp;0\le x\le1\0,&amp;\text{other}\end{array}\right.$.<br>$f<em>Y(y)=\left\lbrace\begin{array}{ll}\int</em>{-y}^11\mathrm{d}x,&amp;-1\le y\lt0\\int<em>y^11\mathrm{d}x,&amp;0\le y\le1\0,&amp;\text{other}\end{array}\right.=\left\lbrace\begin{array}{ll}1+y,&amp;-1\le y\lt0\1-y,&amp;0\le y\le1\0,&amp;\text{other}\end{array}\right.$.<br>$f</em>{X|Y}(x|y)=\left\lbrace\begin{array}{ll}\dfrac{1}{1-|y|},&amp;|y|\lt x\le1\0,&amp;\text{other}\end{array}\right.$.<br>$f_{Y|X}(y|x)=\left\lbrace\begin{array}{ll}\dfrac{1}{2x},&amp;|y|\lt x\le1\0,&amp;\text{other}\end{array}\right.$.<br>不独立.</p>
+<p>求$P(X&gt;0,Y&gt;0,P(X&gt;\dfrac{1}{2}|Y&gt;0),P(X&gt;\dfrac12|Y=\dfrac14)$.<br>$P(X&gt;0,Y&gt;0)=\dfrac12$.<br>$P(X&gt;\dfrac{1}{2}|Y&gt;0)=\dfrac34$.<br>$P(X&gt;\dfrac12|Y=\dfrac14)=\dfrac23$.</p>
+</blockquote>
+<p>例3.3.8 $X,Y$相互独立,$X\sim E(\lambda)$,$P(Y=-1)=\dfrac14$,$P(Y=-1)=\dfrac34$.计算$P(X-Y\le1),P(XY\le2)$.<br>$X\sim f_X(x)=\left\lbrace\begin{array}{ll}\lambda e^{-\lambda x}, &amp;x&gt;0 \ 0, &amp; \text{other}\end{array}\right.\sim F_X(x)=\left\lbrace\begin{array}{ll}1-e^{-\lambda x}, &amp;x\ge 0 \ 0, &amp; x&lt;0 \end{array}\right.$.<br>$P(X-Y\le1)=P(X\le0)P(Y=-1)+P(X\le2)P(Y=1)=\dfrac34(1-e^{-2\lambda})$.<br>$P(XY\le2)=P(X\le2)P(Y=1)+P(X\ge-2)P(Y=-1)=1-\dfrac34e^{-2\lambda}$.</p>
+</blockquote>
+<h2 id="求函数分布-1"><a href="#求函数分布-1" class="headerlink" title="求函数分布"></a>求函数分布</h2><h3 id="多维到一维"><a href="#多维到一维" class="headerlink" title="多维到一维"></a>多维到一维</h3><h4 id="离散-离散-到离散"><a href="#离散-离散-到离散" class="headerlink" title="(离散,离散)到离散"></a>(离散,离散)到离散</h4><blockquote>
+<p>例3.3.9 袋子中有①,①,②,③四个球,先从中无放回取两次.设$X_1,X_2$分别表示第一次,第二次取到球的号码.<br>$\begin{array}{c|c c c} X_1\backslash X_2 &amp; 1 &amp; 2 &amp; 3 \ \hline 1 &amp; 1/6 &amp; 1/6 &amp; 1/6 \ 2 &amp; 1/6 &amp; 0 &amp; 1/12 \ 3 &amp; 1/6 &amp; 1/12 &amp; 0 \end{array}$</p>
+<blockquote>
+<p>求$Y=X_1X_2$的分布.<br>$Y=X_1X_2$的所有可能取值有$1,2,3,6$.<br>$Y\sim\begin{bmatrix}1&amp;2&amp;3&amp;6\1/6&amp;1/3&amp;1/3&amp;1/6\end{bmatrix}$.</p>
+</blockquote>
+</blockquote>
+<p>$X\sim p_k,Y\sim q_k$,$X,Y$独立且取值在某一集合.</p>
+<ul>
+<li>$Z=X+Y$且$X,Y$独立非负整数,$P(Z=k)=p_0q_k+\cdots+p_kq_0$.</li>
+<li>$Z=\max (X,Y)$且$X,Y$独立非负整数,$P(Z=k)=p<em>k(q_0+\cdots+q_k)+q_k(p_0+\cdots+p</em>{q-1})$.</li>
+<li>$Z=\min(X,Y)$且$X,Y\le l$独立非负整数,$P(Z=k)=p<em>k(q_k+\cdots+q_l)+q_k(p</em>{k+1}+\cdots+p_l)$.</li>
+</ul>
+<blockquote>
+<p>例3.3.10 $X,Y\overset{iid}{\sim}Ge(p)$,求$Z=\max(X,Y)$的分布,<br>$P(X=k)=P(Y=k)=pq^{k-1}$.<br>$P(Z=k)=pq^{k-1}(p+pq+\cdots+pq^{k-1})+pq^{k-1}(p+pq+\cdots+pq^{k-2})=pq^{k-1}(2-q^k-q^{k-1})$.</p>
+<p>例3.3.17 $X,Y$独立,且$Y\sim\begin{bmatrix}-1&amp;1\\dfrac14&amp;\dfrac34\end{bmatrix}$.</p>
+<blockquote>
+<p>若$X\sim P(\lambda)$,求$Z=XY$的分布.<br>$P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda}$.<br>$P(Z=0)=P(X=0)=e^{-\lambda}$.<br>$P(Z=k)=P(X=k)P(Y=1)=\dfrac{3}{4}\dfrac{\lambda^k}{k!}e^{-\lambda}(k&gt;0)$.<br>$P(Z=k)=P(X=k)P(Y=-1)=\dfrac{1}{4}\dfrac{\lambda^k}{k!}e^{-\lambda}(k&lt;0)$.</p>
+</blockquote>
+</blockquote>
+<h4 id="连续-连续-到连续"><a href="#连续-连续-到连续" class="headerlink" title="(连续,连续)到连续"></a>(连续,连续)到连续</h4><p>$(X,Y)\sim f(x,y),Z=g(X,Y)$,$F<em>Z(z)=P(Z\le z)=P(g(X,Y)\le z)=\iint\limits</em>{g(x,y)\le z}f(x,y)\mathrm{d}\sigma$.</p>
+<p>$(X,Y)\sim f(x,y),Z=X+Y$,$f<em>Z(z)=\int</em>{-\infty}^{+\infty}f(x,z-x)\mathrm{d}x=\int<em>{-\infty}^{+\infty}f(z-y,y)\mathrm{d}y$,若$X,Y$独立,$f_Z(z)=\int</em>{-\infty}^{+\infty}f<em>X(x)f_Y(z-x)\mathrm{d}x=\int</em>{-\infty}^{+\infty}f_X(z-y)f_Y(y)\mathrm{d}y$.</p>
+<p>$(X,Y)\sim f(x,y),Z=X-Y$,$f<em>Z(z)=\int</em>{-\infty}^{+\infty}f(x,x-z)\mathrm{d}x=\int<em>{-\infty}^{+\infty}f(y+z,y)\mathrm{d}y$,若$X,Y$独立,$f_Z(z)=\int</em>{-\infty}^{+\infty}f<em>X(x)f_Y(x-z)\mathrm{d}x=\int</em>{-\infty}^{+\infty}f_X(y+z)f_Y(y)\mathrm{d}y$.</p>
+<p>$(X,Y)\sim f(x,y),Z=XY$,$f<em>Z(z)=\int</em>{-\infty}^{+\infty}\dfrac{1}{|x|}f(x,\dfrac{z}{x})\mathrm{d}x=\int<em>{-\infty}^{+\infty}\dfrac{1}{|y|}f(\dfrac{z}{y},y)\mathrm{d}y$,若$X,Y$独立,$f_Z(z)=\int</em>{-\infty}^{+\infty}\dfrac{1}{|x|}f<em>X(x)f_Y(\dfrac{z}{x})\mathrm{d}x=\int</em>{-\infty}^{+\infty}\dfrac{1}{|y|}f_X(\dfrac{z}{y})f_Y(y)\mathrm{d}y$.</p>
+<p>$(X,Y)\sim f(x,y),Z=\dfrac{X}{Y}$,$f<em>Z(z)=\int</em>{-\infty}^{+\infty}|y|f(yz,y)\mathrm{d}y$,若$X,Y$独立,$f<em>Z(z)=\int</em>{-\infty}^{+\infty}|y|f_X(yz)f_Y(y)\mathrm{d}y$.</p>
+<blockquote>
+<p>例3.3.12 设$(X,Y)$在$0\le x\le2,0\le y\le1$上服从均匀分布,求$Z=XY\sim f_Z(z)$.</p>
+<blockquote>
+<p>[分布函数法]当$0&lt;z&lt;2$,$F_Z(z)XY\le z=\int_0^z\mathrm{d}x\int_0^1\dfrac12\mathrm{d}y+\int_z^2\mathrm{d}x\int_0^{\frac{z}{x}}\dfrac12\mathrm{d}y=\dfrac12z(1-\ln z+\ln2)$,<br>$f_Z(z)=\dfrac12(\ln2-\ln z)$.</p>
+<p>[卷积公式法]由$0\le y\le 1$,$0\le z\le x$.<br>当$0&lt;z&lt;2$,$f<em>Z(z)=\int</em>{-\infty}^{+\infty}\dfrac{1}{|x|}f(x,\dfrac{z}{x})\mathrm{d}x=\int_z^2\dfrac{1}{2x}\mathrm{d}x=\dfrac12(\ln2-\ln z)$.</p>
+</blockquote>
+<p>例3.3.11 $(X,Y)\sim f(x,y)=\left\lbrace\begin{array}{ll}2-x-y,&amp;0\lt x\lt1,0\lt y\lt1\0,&amp;\text{other}\end{array}\right.$.求$Z=X+Y\sim f<em>Z(z)$.<br>$f_Z(z)=\int</em>{-\infty}^{+\infty}f(x,z-x)\mathrm{d}x=\left\lbrace\begin{array}{ll}\int<em>0^z(2-z)\mathrm{d}x,&amp;0\lt z\lt1\\int</em>{z-1}^1(2-z)\mathrm{d}x,&amp;1\lt z\lt2\0,&amp;\text{other}\end{array}\right.=\left\lbrace\begin{array}{ll}z(2-z),&amp;0\lt z\lt1\(2-z)^2,&amp;1\lt z\lt2\0,&amp;\text{other}\end{array}\right.$</p>
+</blockquote>
+<p>$(X,Y)\sim F(x,y)$,$Z=\max(X,Y)$,$F_Z(z)=P(Z\le z)=P(X\le z,Y\le z)=F(z,z)$.当$X,Y$独立,则$F_Z(z)=F_X(x)F_Y(y)$.若$X_1,X_2,\cdots,X_n\overset{idd}{\sim}F$,$F_Z(z)=[F(Z)]^n$,$f(z)=n[F(z)]^{n-1}f(z)$.</p>
+<p>$(X,Y)\sim F(x,y)$,$Z=\min(X,Y)$,$X,Y$独立,$F_Z(z)=1-[1-F_X(z)][1-F_Y(z)]$.若$X_1,X_2,\cdots,X_n\overset{idd}{\sim}F$,$F_Z(z)=1-[1-F(Z)]^n$,$f(z)=n[1-F(z)]^{n-1}f(z)$.</p>
+<blockquote>
+<p>例3.3.11 $(X,Y)\sim f(x,y)=\left\lbrace\begin{array}{ll}6e^{-(2x+3y)},&amp;x\gt0,y\gt0\0,&amp;\text{other}\end{array}\right.$.求$Z=\max(X,Y)\sim F_Z(z)$.<br>容易得到$X\sim E(2),Y\sim E(3)$,$X,Y$独立.<br>$F_Z(z)=F_X(z)F_Y(z)\left\lbrace\begin{array}{ll}(1-e^{-2z})(1-e^{-3z}),&amp;z\ge0\0,&amp;\text{other}\end{array}\right.$</p>
+</blockquote>
+<p>$X,Y$独立:</p>
+<ul>
+<li>$X\sim B(n,p),Y\sim B(m,p),X+Y\sim B(n+m,p)$</li>
+<li>$X\sim P(\lambda_1),Y\sim P(\lambda_2),X+Y\sim P(\lambda_1+\lambda_2)$</li>
+<li>$X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma^2),X+Y\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$.</li>
+<li>$X\sim \chi^2(n),Y\sim \chi^2(m),X+Y\sim \chi^2(n+m)$</li>
+</ul>
+<h4 id="离散-连续-到连续"><a href="#离散-连续-到连续" class="headerlink" title="(离散,连续)到连续"></a>(离散,连续)到连续</h4><blockquote>
+<p>例3.3.17 $X,Y$独立,且$Y\sim\begin{bmatrix}-1&amp;1\\dfrac14&amp;\dfrac34\end{bmatrix}$.</p>
+<blockquote>
+<p>若$X\sim N(0,1)$,求$Z=XY$的分布.<br>$F_Z(z)=P(XY\le z)=P(X\ge z)P(Y=-1)+P(X\le z)P(Y=1)=\varPhi(z)$.<br>$f_Z(z)=\varphi(z)=\dfrac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}$.</p>
+</blockquote>
+<p>例3.3.15 设$(X,Y)$在$0&lt;x&lt;1,x^2&lt;y&lt;\sqrt{x}$上服从均匀分布,$U=\left\lbrace\begin{array}{ll}1,&amp;X\le Y\0,&amp;X\gt Y\end{array}\right.$.</p>
+<blockquote>
+<p>求$(X,Y)\sim f(x,y)$.<br>$f(x,y)=\left\lbrace\begin{array}{ll}3,&amp;(x,y)\in D\0,&amp;\text{other}\end{array}\right.$.</p>
+<p>求$Z=U+X\sim F<em>Z(z)$.<br>当$0\le z&lt;1$,$F_Z(z)=P(U+X\le z)=P(U=0,X\le z)=P(Y&lt;X\le z)=\int_0^z\mathrm{d}x\int</em>{x^2}^x3\mathrm{d}y=\dfrac32z^2-z^3$.<br>当$1\le z&lt;2$,$F_Z(z)=P(U+X\le z)=P(U=0,X\le z)+P(U=1,X\le z-1)=P(Y&lt;X)+P(X\le z-1,X\le Y)=\dfrac12+\int_0^z\mathrm{d}x\int_x^{\sqrt{x}}3\mathrm{d}y=\dfrac12+2(z-1)^{\dfrac32}-\dfrac32(z-1)^2$.</p>
+</blockquote>
+</blockquote>
+<h3 id="到多维"><a href="#到多维" class="headerlink" title="到多维"></a>到多维</h3><blockquote>
+<p>例3.3.16 $X,Y$独立,且$X\sim\begin{bmatrix}0&amp;1\\dfrac14&amp;\dfrac34\end{bmatrix}$,$Y\sim E(\lambda)$.令$U=\left\lbrace\begin{array}{ll}1,&amp;X\lt Y\0,&amp;X\ge Y\end{array}\right.,V=\left\lbrace\begin{array}{ll}1,&amp;X\lt 2Y\0,&amp;X\ge 2Y\end{array}\right.$,求$(U,V)\sim p_{ij}$.<br>$P(U=0)=P(X<Y)=P(Y>0)P(X=0)+P(Y&gt;1)P(X=1)=\dfrac14+\dfrac{3}{4}e^{-1}$.<br>$P(V=0)=P(X<2Y)=P(Y>0)P(X=0)+P(Y&gt;\dfrac12,X=1)=\dfrac14+\dfrac{3}{4}e^{-\frac12}$<br>$P(U=0,V=1)=0$<br>$\begin{array}{c|c c} U \backslash V &amp; 0 &amp; 1 \ \hline 0 &amp; \dfrac14+\dfrac{3}{4}e^{-1} &amp; 0 \ 1 &amp; \dfrac{3}{4}(e^{-\frac12}-e^{-1}) &amp; \dfrac34-\dfrac14e^{\frac12} \end{array}$</p>
+<p>例3.3.18 $X,Y,Z\overset{iid}{\sim}U(0,1)$,求$P(X\ge YZ)$.<br>令$U=YZ$,$f<em>U(u)=\int</em>{-\infty}^{+\infty}\dfrac{1}{|y|}f(y,\dfrac{u}{y})\mathrm{d}y=\int<em>{-\infty}^{+\infty}\dfrac{1}{|y|}f_Y(y)f_Z(\dfrac{u}{y})\mathrm{d}y=\left\lbrace\begin{array}{ll}\int</em>{u}^1\dfrac{1}{y}\mathrm{d}y,&amp;0\lt u\lt1\0,&amp;\text{other}\end{array}\right.=\left\lbrace\begin{array}{ll}-\ln u,&amp;0\lt u\lt1\0,&amp;\text{other}\end{array}\right.$<br>$g(x,u)=f_X(x)f_U(u)=\left\lbrace\begin{array}{ll}-\ln u,&amp;0\lt x\lt1,0\lt u\lt1\0,&amp;\text{other}\end{array}\right.$.<br>$P(X\ge U)=\int_0^1\mathrm{d}u\int_u^1(-\ln u)\mathrm{d}x=\dfrac34$.</p>
+</blockquote>
+<h1 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h1><h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>$X\sim p_i$,$EX=\sum\limits_ix_ip_i$.</p>
+<!-- 24 -->
       
        <hr><span style="font-style: italic;color: gray;"> article_txt </span>
     </div>
